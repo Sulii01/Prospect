@@ -20,7 +20,10 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = date.today().strftime("%Y%m%d")  # přidává se k CSS/JS kvůli cache
+# Verze CSS/JS = otisk jejich obsahu. Změní se při každé úpravě souboru,
+# takže prohlížeč i GitHub Pages vždy načtou aktuální styly a skripty.
+import hashlib
+VERSION = hashlib.md5((ROOT / "assets/css/style.css").read_bytes() + (ROOT / "assets/js/main.js").read_bytes()).hexdigest()[:10]
 
 # --------------------------------------------------------------------------
 # Jazykové verze
