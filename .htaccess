@@ -1,0 +1,57 @@
+# Vygenerováno skriptem build.py – neupravujte ručně, změny dělejte v REDIRECTS v build.py
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+RewriteEngine On
+
+RewriteRule ^cinnosti/?$ /cinnosti.html [R=301,L,NE]
+RewriteRule ^reference/?$ /reference.html [R=301,L,NE]
+RewriteRule ^dotovane\-projekty/?$ /dotovane-projekty.html [R=301,L,NE]
+RewriteRule ^projektovani/?$ /cinnosti.html#projektovani [R=301,L,NE]
+RewriteRule ^vyvoj/?$ /cinnosti.html#vyvoj [R=301,L,NE]
+RewriteRule ^dodavky/?$ /cinnosti.html#dodavky [R=301,L,NE]
+RewriteRule ^montaze/?$ /cinnosti.html#montaze [R=301,L,NE]
+RewriteRule ^software/?$ /cinnosti.html#software [R=301,L,NE]
+RewriteRule ^servis/?$ /cinnosti.html#servis [R=301,L,NE]
+RewriteRule ^obchodni\-cinnost/?$ /cinnosti.html#obchodni-cinnost [R=301,L,NE]
+RewriteRule ^vodni\-hospodarstvi/?$ /vodni-hospodarstvi.html [R=301,L,NE]
+RewriteRule ^teplo\-a\-klimatizace/?$ /teplo-a-klimatizace.html [R=301,L,NE]
+RewriteRule ^hute\-a\-strojirenstvi/?$ /hute-a-strojirenstvi.html [R=301,L,NE]
+RewriteRule ^plynova\-zarizeni/?$ /plynova-zarizeni.html [R=301,L,NE]
+RewriteRule ^srtp\-a\-elektro/?$ /srtp-a-elektro.html [R=301,L,NE]
+RewriteRule ^vybrane\-reference\-1/?$ /vodni-hospodarstvi.html#reference [R=301,L,NE]
+RewriteRule ^vybrane\-reference\-2/?$ /teplo-a-klimatizace.html#reference [R=301,L,NE]
+RewriteRule ^vybrane\-reference\-3/?$ /hute-a-strojirenstvi.html#reference [R=301,L,NE]
+RewriteRule ^vybrane\-reference\-4/?$ /plynova-zarizeni.html#reference [R=301,L,NE]
+RewriteRule ^vybrane\-reference/?$ /srtp-a-elektro.html#reference [R=301,L,NE]
+RewriteRule ^oblast\-vodniho\-hospodarstvi/?$ /reference.html?obor=vodni-hospodarstvi [R=301,L,NE]
+RewriteRule ^oblast\-tepelnych\-hospodarstvi\-a\-klimatizacnich\-zarizeni/?$ /reference.html?obor=teplo-a-klimatizace [R=301,L,NE]
+RewriteRule ^oblast\-hutnich\-a\-strojirenskych\-provozu/?$ /reference.html?obor=hute-a-strojirenstvi [R=301,L,NE]
+RewriteRule ^oblast\-plynovych\-zarizeni/?$ /reference.html?obor=plynova-zarizeni [R=301,L,NE]
+RewriteRule ^oblast\-srtp\-a\-elektro/?$ /reference.html?obor=srtp-a-elektro [R=301,L,NE]
+RewriteRule ^dalsi\-reference/?$ /reference.html?obor=dalsi [R=301,L,NE]
+RewriteRule ^reference\-v\-oblasti\-vodnich\-zdroju\-a\-upraven\-vod/?$ /reference.html#ref-reference-v-oblasti-vodnich-zdroju-a-upraven-vod [R=301,L,NE]
+RewriteRule ^reference\-v\-oblasti\-cerpacich\-stanic\-a\-distribuce\-pitne\-vody\-1/?$ /reference.html#ref-reference-v-oblasti-cerpacich-stanic-a-distribuce-pitne-vody-1 [R=301,L,NE]
+RewriteRule ^reference\-v\-oblasti\-cerpacich\-stanic\-technologicke\-vody/?$ /reference.html#ref-reference-v-oblasti-cerpacich-stanic-technologicke-vody [R=301,L,NE]
+RewriteRule ^reference\-v\-oblasti\-cistiren\-odpadnich\-vod\-cov\-a\-kanalizacnich\-cerpacich\-stanic\-cs/?$ /reference.html#ref-reference-v-oblasti-cistiren-odpadnich-vod-cov-a-kanalizacnich-cerpacich-stanic-cs [R=301,L,NE]
+RewriteRule ^srtp\-reference/?$ /reference.html#ref-srtp-reference [R=301,L,NE]
+RewriteRule ^silnoprouda\-elektrotechnika/?$ /reference.html#ref-silnoprouda-elektrotechnika [R=301,L,NE]
+RewriteRule ^trafostanice\-reference/?$ /reference.html#ref-trafostanice-reference [R=301,L,NE]
+RewriteRule ^vodni\-zdroje\-a\-upravny\-vod/?$ /vodni-hospodarstvi.html#vodni-zdroje-a-upravny-vod [R=301,L,NE]
+RewriteRule ^cerpaci\-stanice\-a\-distribuce\-pitne\-vody/?$ /vodni-hospodarstvi.html#cerpaci-stanice-a-distribuce-pitne-vody [R=301,L,NE]
+RewriteRule ^cerpaci\-stanice\-a\-distribuce\-technologicke\-vody/?$ /vodni-hospodarstvi.html#cerpaci-stanice-a-distribuce-technologicke-vody [R=301,L,NE]
+RewriteRule ^cistirny\-odpadnich\-vod\-a\-kanalizacni\-cerpaci\-stanice/?$ /vodni-hospodarstvi.html#cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice [R=301,L,NE]
+RewriteRule ^kotelny\-a\-vymenikove\-stanice/?$ /teplo-a-klimatizace.html#kotelny-a-vymenikove-stanice [R=301,L,NE]
+RewriteRule ^klimatizacni\-zarizeni/?$ /teplo-a-klimatizace.html#klimatizacni-zarizeni [R=301,L,NE]
+RewriteRule ^zarizeni\-distribucni\-plynarenske\-soustavy/?$ /plynova-zarizeni.html#zarizeni-distribucni-plynarenske-soustavy [R=301,L,NE]
+RewriteRule ^plynojemy\-a\-kompresorove\-stanice\-plynu/?$ /plynova-zarizeni.html#plynojemy-a-kompresorove-stanice-plynu [R=301,L,NE]
+RewriteRule ^ridici\-systemy/?$ /srtp-a-elektro.html#ridici-systemy [R=301,L,NE]
+RewriteRule ^provozni\-rozvody\-silnoproudu/?$ /srtp-a-elektro.html#provozni-rozvody-silnoproudu [R=301,L,NE]
+RewriteRule ^energetika/?$ /srtp-a-elektro.html#energetika [R=301,L,NE]
+RewriteRule ^stavebni\-elektroinstalace/?$ /srtp-a-elektro.html#stavebni-elektroinstalace [R=301,L,NE]
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

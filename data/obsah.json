@@ -1,0 +1,1049 @@
+{
+  "_napoveda": "Hlavní datový soubor webu. Po úpravě spusťte: python3 build.py  (viz poznámky.md)",
+  "firma": {
+    "nazev": "PROSPECT spol. s r.o.",
+    "kratky_nazev": "PROSPECT",
+    "slogan": "návrhy a dodávky automatizovaných celků",
+    "ulice": "Výstavní 2224/8",
+    "mesto": "Ostrava – Mariánské Hory",
+    "psc": "709 00",
+    "ic": "14616688",
+    "dic": "CZ14616688",
+    "telefony": [
+      "+420 596 616 500",
+      "+420 596 616 606"
+    ],
+    "fax": "+420 596 616 265",
+    "email": "prospect@prospect.cz",
+    "rejstrik": "Společnost je zapsaná v OR vedeném Krajským soudem v Ostravě, oddíl C, vložka 660.",
+    "kancelar": "Kanceláře firmy naleznete v Ostravě-Mariánských Horách nedaleko Domu Energetiky na křižovatce ulic Výstavní a Zelené v budově společnosti FITE a.s. ve 4. patře.",
+    "mapa_embed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d41181.151670544685!2d18.264528!3d49.827011!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3cf44ccd3c20c474!2sProspect%20spol.%20S%20R.o.!5e0!3m2!1sen!2scz!4v1572269228667!5m2!1sen!2scz",
+    "mapa_odkaz": "https://www.google.com/maps/search/?api=1&query=V%C3%BDstavn%C3%AD+2224%2F8+Ostrava",
+    "web_en": "http://en.prospect.cz/",
+    "web": "https://www.prospect.cz/"
+  },
+  "seo": {
+    "titulek": "Investiční výstavby technologických celků | PROSPECT spol. s r.o.",
+    "popis": "Nabízíme komplexní služby pro investiční výstavby technologických celků. Naše odborné týmy zajišťují efektivní a spolehlivou realizaci projektů."
+  },
+  "uvod": {
+    "hero_stitek": "Ostrava · od roku 1991",
+    "hero_nadpis": "Řídicí systémy a automatizace technologických celků",
+    "hero_text": "Projekčně-inženýrská organizace v oblasti investiční výstavby. Navrhujeme, programujeme, dodáváme a servisujeme automatizované technologické celky – od projektu až po dálkový dohled.",
+    "cisla": [
+      {
+        "hodnota": 1991,
+        "pripona": "",
+        "popis": "rok založení společnosti"
+      },
+      {
+        "hodnota": 100,
+        "pripona": "+",
+        "popis": "projektů zpracovaných ročně"
+      },
+      {
+        "hodnota": 50,
+        "pripona": " %",
+        "popis": "z nich takřka polovinu sami realizujeme"
+      },
+      {
+        "hodnota": 9,
+        "pripona": "",
+        "popis": "zemí, kde máme za sebou zakázky"
+      }
+    ],
+    "o_nas": [
+      "PROSPECT spol. s r.o. působí jako projekčně-inženýrská organizace v oblasti investiční výstavby, se zaměřením na vyšší dodávky automatizovaných technologických celků, technického vybavení budov, elektrotechnických zařízení, zařízení měření a regulace a řídicích systémů.",
+      "Společnost PROSPECT spol. s r.o. vznikla v roce 1991 a je zapsána v obchodním rejstříku u Krajského soudu v Ostravě. Struktura kmenových zaměstnanců, externích spolupracovníků a praxí prověřených spolupracujících firem vytvářejí předpoklady pro nabídku a poskytování komplexních služeb v oblasti realizace dodávek - a to ve fázi, počínající zpracováním projektových dokumentací až po pravidelné pozáruční prohlídky a údržbu provozovaného zařízení s jeho dálkovou správou a monitorováním prostřednictvím radiových nebo mobilních sítí a internetu.",
+      "Filosofie firmy je založena na profesionálním přístupu ve věcech technických a korektnosti v oblasti obchodních vztahů."
+    ],
+    "obory_text": "Činnost společnosti je soustředěna zejména na následující obory:",
+    "dodavky_text": [
+      "Profesní složení pracovníků společnosti pokrývá především potřeby pro zajištění vlastních generálních nebo finálních dodávek staveb nebo realizaci zakázek podle projektové dokumentace, dodané zákazníkem.",
+      "Součástí činností prováděných společností PROSPECT spol. s r.o. je vedle projekčních prací také zpracování uživatelských programů používaných řídicích systémů vč. jejich vizualizace, provádění technického dozoru v době realizace, individuální a komplexní vyzkoušení dodaného zařízení, vypracování revizních zpráv a návodů k obsluze, zaškolení obsluhy, provádění záručního a pozáručního servisu.",
+      "Uvedené činnosti poskytujeme také samostatně dle individuálních požadavků objednatele. Kompletní dodávky, zahrnující profese stavební, technologické a elektro zajišťujeme společně se stálými spolupracujícími subdodavateli s dostatečnými výrobními a montážními kapacitami.",
+      "Po dobu existence firmy pravidelně zpracováváme projektovou dokumentaci pro více než 100 akcí ročně a z nich takřka polovinu následně samostatně také realizujeme."
+    ],
+    "zahranici_text": "Aktivity společnosti se neomezují pouze na území České republiky, ale máme za sebou zakázky i na Slovensku, v Německu, na Ukrajině, v Polsku, Litvě, v Bulharsku, v Chorvatsku a ve Španělsku.",
+    "zeme": [
+      "Česká republika",
+      "Slovensko",
+      "Německo",
+      "Ukrajina",
+      "Polsko",
+      "Litva",
+      "Bulharsko",
+      "Chorvatsko",
+      "Španělsko"
+    ],
+    "prostredky_text": "K zajištění služeb takového rozsahu disponuje firma potřebnými technickými a výrobními prostředky.",
+    "ism_text": "Společnost PROSPECT spol. s r.o. má zavedený integrovaný systém managementu jakosti a environmentu dle norem ČSN EN ISO 9001, ČSN EN ISO 14001 a ČSN OHSAS 18001.",
+    "certifikaty": [
+      {
+        "nazev": "Politika ISM",
+        "popis": "Integrovaný systém managementu",
+        "soubor": "assets/docs/politika-ism.pdf"
+      },
+      {
+        "nazev": "ČSN EN ISO 9001",
+        "popis": "Systém managementu kvality",
+        "soubor": "assets/docs/csn-en-iso-9001.pdf"
+      },
+      {
+        "nazev": "ČSN EN ISO 14001",
+        "popis": "Systém environmentálního managementu",
+        "soubor": "assets/docs/csn-en-iso-14001.jpg"
+      },
+      {
+        "nazev": "ČSN OHSAS 18001",
+        "popis": "Management BOZP",
+        "soubor": "assets/docs/csn-ohsas-18001.jpg"
+      }
+    ],
+    "energo_text": "Od roku 2008 se na přípravě a realizaci generálních a finálních dodávek technologických celků podílí také dceřiná společnost PROSPECT ENERGO a.s.",
+    "energo_web": "https://www.prospect-energo.cz",
+    "klienti": [
+      "OVAK a.s.",
+      "Plzeňský Prazdroj a.s.",
+      "EVRAZ VÍTKOVICE STEEL",
+      "ArcelorMittal Ostrava",
+      "Třinecké železárny",
+      "SmVaK Ostrava",
+      "Siemens",
+      "VÚHŽ a.s. Dobrá",
+      "OFZ, a.s. Istebné",
+      "Železiarne Podbrezová",
+      "Huta Częstochowa",
+      "ThyssenKrupp Steel Europe",
+      "TATRA TRUCK",
+      "BONATRANS GROUP",
+      "Vítkovice Heavy Machinery",
+      "ČEZ Aréna Ostrava",
+      "OKD",
+      "RWE Transgas",
+      "Veolia",
+      "Statutární město Ostrava",
+      "Lázně Darkov",
+      "Nestlé Holešov",
+      "Spolchemie",
+      "Pivovar Radegast",
+      "Pivovar Velké Popovice"
+    ]
+  },
+  "ridici_systemy": {
+    "nadpis": "Technologie, se kterými pracujeme",
+    "text": "Programovatelné automaty, vizualizace, frekvenční měniče, čidla i dálkové přenosy – volíme osvědčené značky a respektujeme standardy zákazníka.",
+    "skupiny": [
+      {
+        "nazev": "PLC – řídicí automaty",
+        "polozky": [
+          "Siemens SIMATIC",
+          "Allen-Bradley",
+          "TECO",
+          "Mitsubishi"
+        ]
+      },
+      {
+        "nazev": "Vizualizace a SCADA",
+        "polozky": [
+          "Siemens WinCC",
+          "Wonderware InTouch",
+          "Microsys Promotic"
+        ]
+      },
+      {
+        "nazev": "Frekvenční měniče",
+        "polozky": [
+          "Siemens",
+          "Danfoss",
+          "ABB",
+          "Nord",
+          "Lenze"
+        ]
+      },
+      {
+        "nazev": "Čidla a analyzátory",
+        "polozky": [
+          "Siemens",
+          "Hach-Lange",
+          "Krohne",
+          "Endress+Hauser",
+          "WTW",
+          "Rosemount",
+          "JSP Nová Paka",
+          "BD Sensors"
+        ]
+      },
+      {
+        "nazev": "Dálkové přenosy",
+        "polozky": [
+          "Radiomodemy",
+          "GSM/GPRS modemy",
+          "CONEL",
+          "RACOM"
+        ]
+      },
+      {
+        "nazev": "Projekce",
+        "polozky": [
+          "EPLAN",
+          "AutoCAD",
+          "Word",
+          "Excel"
+        ]
+      }
+    ]
+  },
+  "obory": [
+    {
+      "id": "vodni-hospodarstvi",
+      "nazev": "Vodní hospodářství",
+      "ikona": "voda",
+      "perex": "Vodní zdroje, úpravny vod, čerpací stanice, distribuce pitné i technologické vody a čistírny odpadních vod.",
+      "cover": "cerpaci-stanice-a-distribuce-pitne-vody-2",
+      "uvod": [
+        "V technologiích vodního hospodářství pokrývají naše aktivity oblast vodních zdrojů, úpraven vod, čerpacích stanic a distribučních zařízení pro rozvod pitné vody a průmyslové technologické vody, významným způsobem se pak podílíme také na návrzích a budování přečerpávacích kanalizačních stanic a čistíren odpadních vod, provozovaných přes vodohospodářské dispečinky."
+      ],
+      "sekce": [
+        {
+          "id": "vodni-zdroje-a-upravny-vod",
+          "nazev": "Vodní zdroje a úpravny vod",
+          "odstavce": [
+            "Čerpání z vrtů a studen a následnou úpravu vody jsme pomáhali realizovat pomocí bezdrátových komunikací přes námi vybudované vodárenské dispečinky v prameništích a úpravnách pivovarů Pivovar Plzeň, Pivovar Radegast a Pivovar Velké Popovice. Řízené čerpání z místních zdrojů a automatizaci úpravy vody zajišťujeme také společnosti Ostravské vodovody a kanalizace a.s.",
+            "S nasazením distribuovaných řídicích systémů, vzájemně propojených pomocí radiomodemů a GSM/GPRS modemů jsou optimálně využívány dostupné zdroje pitné vody a upravená voda je akumulována v zásobních vodojemech.",
+            "Součástí technologií úpravy vody, které jsou předmětem našeho zájmu, jsou také reverzní osmózy, příprava a dávkování vápenného mléka, filtrace vody pomocí pískových filtrů, chlórové hospodářství atd."
+          ],
+          "foto": [
+            "vodni-zdroje-a-upravny-vod-1",
+            "vodni-zdroje-a-upravny-vod-2",
+            "vodni-zdroje-a-upravny-vod-3",
+            "vodni-zdroje-a-upravny-vod-4"
+          ]
+        },
+        {
+          "id": "cerpaci-stanice-a-distribuce-pitne-vody",
+          "nazev": "Čerpací stanice a distribuce pitné vody",
+          "odstavce": [
+            "Dodávky a řízení komplexů čerpacích stanic a zvyšovacích automatických tlakových stanic (ATS) pro dopravu vody ke spotřebiteli představují také část našich finálních dodávek. Jsme významným dodavatelem ATS pro Statutární město Ostrava a podílíme se na rekonstrukcích technicky zastaralých tlakových stanic v rámci bytové výstavby a na jejich dálkovém monitorování pomocí moderních bezdrátových komunikačních technologií.",
+            "Distribuci upravené vody s optimalizací jejího využití zajišťujeme pomocí automatizační techniky také v pivovarech skupiny Plzeňský Prazdroj a.s. a ze zdrojů vodárenské společnosti OVAK a.s."
+          ],
+          "foto": [
+            "cerpaci-stanice-a-distribuce-pitne-vody-1",
+            "cerpaci-stanice-a-distribuce-pitne-vody-2",
+            "cerpaci-stanice-a-distribuce-pitne-vody-3",
+            "cerpaci-stanice-a-distribuce-pitne-vody-4"
+          ]
+        },
+        {
+          "id": "cerpaci-stanice-a-distribuce-technologicke-vody",
+          "nazev": "Čerpací stanice a distribuce technologické vody",
+          "odstavce": [
+            "Čerpání technologické vody do chladicích okruhů tepelně namáhaných dílů, zejména v hutních provozech zajišťujeme pomocí automatizační techniky a měřicích přístrojů například u technologií mimopecního zpracování oceli v ocelárnách EVRAZ VÍTKOVICE STEEL a nebo Huta Częstochowa. Řízení dodávky požární vody jsme realizovali pro Pivovar Plzeň. Ve všech případech se tak děje pomocí průmyslových řídicích systémů, provázaných s nadřazenou úrovni řízení provozu."
+          ],
+          "foto": [
+            "cerpaci-stanice-a-distribuce-technologicke-vody-1",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-2",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-3",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-4"
+          ]
+        },
+        {
+          "id": "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice",
+          "nazev": "Čistírny odpadních vod a kanalizační čerpací stanice",
+          "odstavce": [
+            "Podílíme se na rekonstrukci stávajících a výstavbě nových čistíren odpadních vod v rámci působností významných vodárenských společností, jako jsou např. OVAK, SmVaK Ostrava, VaK Vsetín, VaK Krnov, ale i pro menší komunální čistírny samostatných obcí nebo závodů. Na některých zakázkách se účastníme jen v projekční fázi přípravy výstavby, na jiných působíme jako dodavatelé ucelených částí čistíren a souvisejících čerpacích stanic na kanalizačních přiváděčích.",
+            "Rekonstrukce části elektro a nasazení řídicích systémů jsme realizovali také na ČOV v Pivovaru Plzeň a Pivovaru Velké Popovice.",
+            "Finálními dodávkami elektro a řídicích systémů se účastníme na rekonstrukcích stávajících ČOV v Polsku a na výstavbě nových ČOV v Polsku, Bulharsku, Litvě a Chorvatsku."
+          ],
+          "foto": [
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-1",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-2",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-3",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "reference-v-oblasti-vodnich-zdroju-a-upraven-vod",
+          "nazev": "Vodní zdroje a úpravny vod",
+          "uvod": [
+            "Projektovou dokumentaci částí elektro, MaR, SŘTP a části strojní a účast na realizacích v rámci rekonstrukcí, intenzifikací a modernizací zařízení pramenišť a úpraven pitné vody jsme prováděli v následujících lokalitách:"
+          ],
+          "skupiny": [
+            {
+              "nazev": "Ostravské vodárny a kanalizace a.s.",
+              "polozky": [
+                "Prameniště Dubí",
+                "Prameniště Nová Ves",
+                "Vodní zdroj Bělský Les",
+                "Vodní zdroj Palesek",
+                "Vodní zdroj Pešatek",
+                "Vodní zdroj Důlňák",
+                "Vodní zdroj Ještěrka 1 a 2",
+                "Úpravna vody Nová Ves Ostrava"
+              ]
+            },
+            {
+              "nazev": "Severomoravské vodovody a kanalizace Ostrava a.s",
+              "polozky": [
+                "Úpravna Vody Podhradí",
+                "Úpravna vody Vyšní Lhoty"
+              ]
+            },
+            {
+              "nazev": "Plzeňský Prazdroj, a.s.",
+              "polozky": [
+                "Úpravna vody v Pivovaru Prazdroj",
+                "Vodní zdroje pro pivovar Velké Popovice",
+                "Studny u řeky Morávky pro pivovar Radegast",
+                "Měření hladiny Roudná",
+                "Dávkování kyseliny HCl a H₂SO₄ na úpravně vody",
+                "Výstavba nového vodního zdroje Habří"
+              ]
+            },
+            {
+              "nazev": "Ostatní",
+              "polozky": [
+                "HYDROSPOR spol. s r.o. – jímání vod MFK v Prostřední Suché"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cerpacich-stanic-a-distribuce-pitne-vody-1",
+          "nazev": "Čerpací stanice a distribuce pitné vody",
+          "uvod": [
+            "Projektová dokumentace částí elektro, MaR, SŘTP a části strojní a účast na realizacích v rámci rekonstrukcí čerpacích stanic, ze kterých je čerpána pitná voda do distribučních sítí pro zásobování obyvatelstva anebo jsou používány jako automatické tlakové stanice (ATS) pro zvyšování tlaku dodávané vody do spotřebiště."
+          ],
+          "skupiny": [
+            {
+              "nazev": "Ostravské vodárny a kanalizace a.s.",
+              "polozky": [
+                "ČS Úpravna vody Nová Ves Ostrava",
+                "ČS Vodní zdroj Bělský Les",
+                "ČS Vodní zdroj Palesek",
+                "ČS Vodní zdroj Pešatek",
+                "ČS Vodní zdroj Důlňák",
+                "ČS Vodní zdroje Ještěrka 1 a 2",
+                "Více než 30 ATS v distribuční síti města Ostravy"
+              ]
+            },
+            {
+              "nazev": "Plzeňský Prazdroj a.s.",
+              "polozky": [
+                "ČS Úpravna vody v Pivovaru Prazdroj",
+                "ATS požární vody v Úpravně vody v Pivovaru Prazdroj",
+                "ČS u řeky Morávky pro pivovar Radegast",
+                "ATS Hotel Harmony Ostrava"
+              ]
+            },
+            {
+              "nazev": "Ostatní",
+              "polozky": [
+                "Obec Bílá – zvýšení kapacity čerpání vody",
+                "TALPA-RPF, s.r.o. – posílení vodovodu ul. Na Rovince",
+                "TALPA-RPF, s.r.o. – záchytný dren Hulváky",
+                "STASPO, spol. s r.o. – Mošnov, regulační vodárenský uzel"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cerpacich-stanic-technologicke-vody",
+          "nazev": "Čerpací stanice technologické vody",
+          "uvod": [
+            "Projektová dokumentace částí elektro, MaR, SŘTP a části strojní a účast na realizacích v rámci výstavby a rekonstrukcí čerpacích stanic v hutních a strojírenských provozech"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "ČS Chladicí vody pro Ostrava Business Park – II. etapa",
+                "Rekonstrukce bagrovacích čerpadel v Elektrárně Vítkovice",
+                "ČS chladicí vody Siemens elektromotory Mohelnice",
+                "ČS TUV v elektrárně Plzeňský Prazdroj",
+                "Akumulační nádrže a čerpací stanice TUV Plzeňský Prazdroj",
+                "ČS užitkové vody v Pivovaru Velké Popovice",
+                "Čerpání vody pro sladovnu v Pivovaru Radegast",
+                "ČS chladicí vody pro vakuovou stanici ve Válcovnách trub Chomutov, Železárny Hrádek",
+                "ČS chladicího okruhu vakuové stanice pro Materiálový a metalurgický výzkum s.r.o.",
+                "ČS pro chlazení tepelně namáhaných dílů elektrické obloukové pece 22 v OFZ Istebné"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cistiren-odpadnich-vod-cov-a-kanalizacnich-cerpacich-stanic-cs",
+          "nazev": "Čistírny odpadních vod (ČOV) a kanalizační čerpací stanice (ČS)",
+          "uvod": [
+            "Projektovou dokumentaci částí elektro, MaR, SŘTP a části strojní a účast na realizacích v rámci rekonstrukcí, intenzifikací a modernizací technologií ČOV, provozovaných vodárenskými společnostmi, obcemi nebo soukromými vlastníky, jsme zajišťovali v těchto lokalitách:"
+          ],
+          "skupiny": [
+            {
+              "nazev": "Výběr pro Ostravské vodárny a kanalizace a.s.",
+              "polozky": [
+                "ÚČOV Ostrava – rekonstrukce vstupní ČS",
+                "ÚČOV Ostrava – rekonstrukce hrubého předčištění",
+                "ÚČOV Ostrava – rekonstrukce ČS mechanicky předčištěných vod",
+                "ÚČOV Ostrava – rekonstrukce dmýchárny",
+                "ÚČOV Ostrava – rekonstrukce kogeneračních jednotek",
+                "ÚČOV Ostrava – rekonstrukce dosazovacích nádrží",
+                "ÚČOV Ostrava – rekonstrukce odstředivky kalu",
+                "ÚČOV Ostrava – instalace technologické linky pro výrobu ledové tříště",
+                "ÚČOV Ostrava – rekonstrukce čerpadel vratného kalu",
+                "ÚČOV Ostrava – rekonstrukce výměníků kalu",
+                "ÚČOV Ostrava – Důl Jan Šverma odkanalizování",
+                "ÚČOV Ostrava – rekonstrukce čerpadel velké cirkulace",
+                "ÚČOV Ostrava – rekonstrukce rozvodny",
+                "ČOV Michálkovice – výstavba nové ČOV",
+                "ČSOV Hegerova Stará Bělá 2 výstavba nové čerpací stanice",
+                "ČSOV Mexická – rekonstrukce elektroinstalace",
+                "ČOV Heřmanice 1 – rekonstrukce ČOV",
+                "ČOV Heřmanice 2 – rekonstrukce ČOV",
+                "ČOV Alexander – výstavba nové ČOV",
+                "ČS na kanalizačních sítích – výstavba nových ČS"
+              ]
+            },
+            {
+              "nazev": "Výběr pro Severomoravské vodovody a kanalizace Ostrava a.s.",
+              "polozky": [
+                "ČOV Opava",
+                "ČOV Frýdek – Místek",
+                "ČOV Nový Jičín",
+                "ČOV Orlová",
+                "ČOV Rychvald",
+                "ČOV Kopřivnice",
+                "ČOV Frenštát pod Radhoštěm",
+                "ČOV Třinec",
+                "ČOV Karviná",
+                "ČOV Brušperk",
+                "ČOV Štramberk",
+                "ČOV Velké Hoštice",
+                "ČOV Bruntál",
+                "ČOV Václavovice",
+                "ČS na kanalizačních sítích"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Vsetín, a.s.",
+              "polozky": [
+                "ČOV Zašová",
+                "ČOV Kelč",
+                "ČOV Valašské Meziříčí"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Hlučín, s.r.o.",
+              "polozky": [
+                "ČOV Hlučín",
+                "ČS na kanalizačních sítích"
+              ]
+            },
+            {
+              "nazev": "Krnovské vodovody a kanalizace, s.r.o.",
+              "polozky": [
+                "ČOV Krnov",
+                "ČS na kanalizačních sítích"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Kroměříž, a.s.",
+              "polozky": [
+                "ČOV Bystřice pod Hostýnem"
+              ]
+            },
+            {
+              "nazev": "Městské vodovody a kanalizace Úpice p.o.",
+              "polozky": [
+                "ČOV Úpice"
+              ]
+            },
+            {
+              "nazev": "ČOV provozované jejich vlastníky mimo vodárenské společnosti",
+              "polozky": [
+                "ČOV Pivovar Prazdroj",
+                "ČOV Pivovar Velké Popovice",
+                "ČOV Litovelská cukrovarna",
+                "ČOV Spolchemie Ústí nad Labem",
+                "ČOV Štěpánkovice",
+                "ČOV Dolní Životice",
+                "ČOV Štarnov",
+                "ČOV Sulov",
+                "ČOV Hamé Babice",
+                "ČOV Pivovar Klášter"
+              ]
+            },
+            {
+              "nazev": "ČOV realizované v zahraničí",
+              "polozky": [
+                "V Polsku: Wierzawice, Jaroslawsko, Wadowica, Rokietnice a další",
+                "V Bulharsku: Sopot, Jablanica, Pirdop, Knezha, Panaguriště",
+                "V Litvě: Salantai, Vydmantai",
+                "V Chorvatsku: Mali Lošinj"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teplo-a-klimatizace",
+      "nazev": "Teplo a klimatizace",
+      "ikona": "teplo",
+      "perex": "Kotelny, výměníkové a předávací stanice, klimatizace a vzduchotechnika včetně energetických dispečinků.",
+      "cover": "kotelny-a-vymenikove-stanice-2",
+      "uvod": [
+        "Naším příspěvkem pro efektivní a hospodárné využití zdrojů tepelné energie jsou dodávky souborů zařízení tepelného hospodářství, řízeného takřka výhradně regulační technikou společností SIEMENS, vycházející z osvědčených základů původních komponentů měření a regulace (MaR) a technologických čidel firmy LANDIS a GYR, později LANDIS a STAEFA.",
+        "S rekonstrukcemi kotelen, výměníkových a předávacích stanic a s instalací výkonných klimatizačních a vzduchotechnických zařízení zřizujeme provozovatelům těchto zařízení také nová dispečerská stanoviště, vybavená počítačovou technikou s vizualizačními programy."
+      ],
+      "sekce": [
+        {
+          "id": "kotelny-a-vymenikove-stanice",
+          "nazev": "Kotelny a výměníkové stanice",
+          "odstavce": [
+            "Již od začátku rušení kotelen na tuhá paliva a jejich nahrazování tepelnými zdroji na plynná media se zabýváme návrhy a dodávkami systémů měření a regulace pro centrální i místní kotelny. Od dodávek jen zařízení MaR a elektro jsme postupně přešli k dodávkám celých technologií kotelen, výměníkových stanic a předávacích stanic. Významnými komplety tepelného hospodářství s naší účastí jsou tepelné systémy Lázní Darkov v Karviné, Rehabilitačního ústavu Hrabyně, v závodě Siemens Elektromotory Mohelnice, v Nemocnici Jeseník nebo výměníkové stanice v Ostravě, Bohumíně, Orlové, Krnově, atd..",
+            "Vedle těchto velkých akcí zajišťujeme dodávky tepelné techniky i pro střední a malé kotelny škol, úřadů i pro bytovou výstavbu."
+          ],
+          "foto": [
+            "kotelny-a-vymenikove-stanice-1",
+            "kotelny-a-vymenikove-stanice-2",
+            "kotelny-a-vymenikove-stanice-3",
+            "kotelny-a-vymenikove-stanice-4"
+          ]
+        },
+        {
+          "id": "klimatizacni-zarizeni",
+          "nazev": "Klimatizační zařízení",
+          "odstavce": [
+            "Spolu s nasazováním regulační techniky u tepelných zdrojů realizujeme dodávky zařízení pro klimatizaci nejrůznějších komerčních, obytných i výrobních prostor. Realizovali jsme dodávky zařízení MaR a řídicích systémů pro chirurgické pavilóny nemocnic ve Vsetíně nebo ve Valašském Meziříčí, systém pro klimatizaci Komerční banky, České spořitelny a Krajského soudu v Ostravě ale i provozní budovy a obřadní síně krematoria v Ostravě.",
+            "Průmyslové klimatizační a ventilační zařízení řídíme v těžebních závodech OKD, ale také ve sportovní hale ČEZ Aréna v Ostravě."
+          ],
+          "foto": [
+            "klimatizacni-zarizeni-1",
+            "klimatizacni-zarizeni-2",
+            "klimatizacni-zarizeni-3",
+            "klimatizacni-zarizeni-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "oblast-tepelnych-hospodarstvi-a-klimatizacnich-zarizeni",
+          "nazev": "Tepelná hospodářství a klimatizační zařízení",
+          "uvod": [
+            "Projektová dokumentace částí elektro, MaR a SŘTP a části strojní a účast na realizacích v rámci výstavby a rekonstrukcí kotelen, tepelných zdrojů a vzduchotechnických zařízení pro průmyslové podniky, nemocnice, zdravotnická zařízení, školy, objekty sociálních služeb, občanskou vybavenost, bytová společenství i státní správu."
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Statutární město Ostrava – ÚČOV rekonstrukce kotelny",
+                "BorsodChem MCHZ, s.r.o. – novostavba kotelny na výrobu vodní páry",
+                "IVG Colbachini CZ, s.r.o. – doplnění výměníkové stanice",
+                "Česko-slezská výrobní, a.s. – vytápění areálu společnosti",
+                "Siemens, s.r.o., odštěpný závod Elektromotory Mohelnice - rekonstrukce tepelného hospodářství, plynofikace areálu výrobního závodu, využití odpadního tepla z kompresorů",
+                "Lázně Darkov - rekonstrukce tepelného hospodářství, řízení tepelných zdrojů včetně vybudování energetického dispečinku",
+                "Bonatrans Group Bohumín - ÚT haly S13 centrálního skladu.",
+                "Veolia Krnov - rekonstrukce předávacích stanic tepla, modernizace systému MaR",
+                "TŘINECKÉ ŽELEZÁRNY, a.s., Válcovna Trub - Využití odpadního tepla z karuselové pece",
+                "ARMATURY Group a.s. Dolní Benešov - regulace vytápění výrobních hal",
+                "Nemocnice Jeseník - modernizace systému vytápění",
+                "Centrum sociálních služeb Hrabyně (rehabilitační ústav) - rekonstrukce tepelného hospodářství, včetně vybudování tepelného dispečinku",
+                "Befra electronic s.r.o., Horní Suchá - plynofikace budov, regulace objektových kotelen, připojení VZT jednotek",
+                "Městská policie Ostrava, služebna Třebovice - rekonstrukce zdroje tepla",
+                "Budova RPG Ostrava Nádražní ul. - zdroj tepla a chladu",
+                "Hotel Harmony Club Ostrava - rekonstrukce výměníkové stanice",
+                "Důl Darkov - modernizace systému regulace tepelné energie",
+                "Hotel Imperial Ostrava - oprava výměníkové stanice",
+                "Důl Darkov, Důl Lazy - ohřev vtažných větrů",
+                "Nemocnice Frýdek-Místek - modernizace tepelného hospodářství",
+                "TESCO Ostrava Hrabová - výměníková stanice, rádiový přenos dat na dispečink",
+                "Důl Darkov - rekonstrukce tepelného hospodářství",
+                "ČEZ Aréna Ostrava - rekonstrukce tepelného hospodářství",
+                "Rekonstrukce budovy SmP - kotelna a VZT",
+                "Biocel Paskov - řízení výměníkových stanic vč. centrálního dispečinku",
+                "Rehabilitační centrum Hrabyně - rekonstrukce vzduchotechniky",
+                "Nemocnice Valašské Meziříčí - řízení kotelny a klimatizace operačních sálů vč. energetického dispečinku",
+                "Ostravské tiskárny - rekonstrukce výměníkové stanice vč. centrálního dispečinku",
+                "Nemocnice Vsetín - řízení kotelny a klimatizace operačních sálů vč. energetického dispečinku",
+                "Výměníkové stanice MCHZ Ostrava - řízení výměníkových stanic vč. energetického dispečinku",
+                "Rekonstrukce lokálních výměníkových stanic - další desítky realizovaných různých obchodních případů",
+                "Rekonstrukce předávacích stanic - další desítky různých obchodních případů",
+                "Rekonstrukce a realizace plynových kotelen - další desítky různých obchodních případů"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hute-a-strojirenstvi",
+      "nazev": "Hutě a strojírenství",
+      "ikona": "hute",
+      "perex": "Elektro, MaR a řídicí systémy pro mimopecní rafinaci oceli, válcovny a strojírenské provozy.",
+      "cover": "hute-a-strojirenstvi-1",
+      "uvod": [
+        "V rámci modernizace technologických procesů v hutní výrobě, ocelárnách a navazujících strojírenských provozech, zajišťujeme zejména dodávky zařízení elektro, měření a regulace a řídicích systémů pro zařízení mimopecní rafinace oceli a provozů válcoven a úpraven válcovaného materiálu.",
+        "Významnými zakázkami v naší historii byly dodávky v rámci budování nových vakuovacích stanic a zařízení sekundární metalurgie pro ocelárny EVRAZ VÍTKOVICE STEEL anebo Huta Częstochowa v Polsku a nasazení rozsáhlého distribuovaného řídicího systému v rámci EVRAZ VÍTKOVICE STEEL pro úpravnu válcovny plechu 3,5 KVARTO, prováděného spolu s rekonstrukcemi ovládacích kabin a rekonstrukcemi silových rozvoden.",
+        "Podíleli jsme se i na budování zařízení pro plynulé odlévání oceli a sekundární metalurgie v ArcelorMittal Ostrava a významným způsobem spolupracujeme se společností VÚHŽ a.s. Dobrá, které dodáváme software pro průmyslové podávače drátů a plněných profilů a zařízení foukání argonu do oceli pro tuzemské i zahraniční ocelárenské provozy.",
+        "Zakázky realizované dle našich projektů s využitím námi vypracovaných řídicích programů jsou k vidění také ve společnostech Třinecké železárny a.s., Železárny Podbrezová nebo OFZ, a.s. Istebné."
+      ],
+      "sekce": [],
+      "reference": [
+        {
+          "id": "oblast-hutnich-a-strojirenskych-provozu",
+          "nazev": "Hutní a strojírenské provozy",
+          "uvod": [
+            "Projektová dokumentace částí elektro, MaR a SŘTP a účast na realizacích v rámci výstavby nových provozů anebo při rekonstrukcích stávajících technologických linek nebo strojů v průmyslových závodech těžkého strojírenství"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "BONATRANS GROUP a.s. – nové vodní hospodářství válcovny",
+                "BONATRANS GROUP a.s. – modernizace čerpací stanice č.2",
+                "Recycling-kovové Odpady a.s. – nová drticí linka",
+                "AL INVEST Břidličná a.s. – regulace průtoku chladicí vody",
+                "Aludyne Czech s.r.o. – potrubní rozvody chladicí vody",
+                "Siemens, s.r.o. – rozšíření kompresorovny",
+                "TATRA TRUCK a.s. - zkušebna motorů, Obrobna",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. – úprava technologie pánvové pece",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. - jeřábová dráha pro sklad kontislitků",
+                "Mondelez CR Biscuit Production s.r.o. – filtrace glykolové směsi",
+                "VÍTKOVICE STEEL, a.s. - instalace CNC soustruhu",
+                "VÍTKOVICE STEEL, a.s. - výměna rovnačky těžké profilové tratě",
+                "OFZ, a.s., Istebné - zavážení přísad do Elektrických obloukových pecí EOP 21 a EOP 22",
+                "OFZ, a.s., Istebné - přestavba Elektrické obloukové pece EOP 21",
+                "ArcelorMittal Ostrava a.s. - rekonstrukce sázecího stroje tandemové pece",
+                "OFZ, a.s., Istebné - přestavba Elektrické obloukové pece EOP 22",
+                "Karuselová pec ve Válcovny trub Chomutov, a.s.",
+                "Železiarne Podbrezová a.s. - vakuovací zařízení oceli typu VD",
+                "ArcelorMittal Ostrava a.s. - skládkový stroj",
+                "ArcelorMittal Ostrava a.s. - thermokamerový systém pro vysoké pece VP2 a VP3",
+                "KOHUT Třinec s.r.o. – příprava a dávkování vápenného mléka",
+                "VÍTKOVICE STEEL, a.s. - linka pro párování štětovnic",
+                "ThyssenKrupp Steel Europe (Německo) – pokusná koksovací pec",
+                "Kroková pec ve Válcovny trub Chomutov, a.s.",
+                "VÍTKOVICE HEAVY MACHINERY a.s. – výměna potrubí technologické vody",
+                "VÍTKOVICE HEAVY MACHINERY a.s. - odprášení ocelárny",
+                "VÍTKOVICE HEAVY MACHINERY a.s. - využití odpadního tepla z EOP č.5",
+                "VD vakuová stanice ve Válcovny trub Chomutov, a.s., Železárny Hrádek",
+                "VÍTKOVICE STEEL, a.s. - obnova zkouškového hospodářství válcovny 3,5 Kvarto",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. - válcovna trub - rekonstrukce pil Behringer",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. - válcovna trub - oprava hydraulických nůžek",
+                "VÍTKOVICE STEEL, a.s. - řídicí a informační systém válcovny 3,5 Kvarto",
+                "Huta Częstochowa (Polsko) - rekonstrukce vakuovací stanice VD/O2 - 100t",
+                "VÍTKOVICE STEEL, a.s. - GOMO ocelárna I, ISSM",
+                "Kontilití č. 3 v Nové huti Ostrava - elektrické ohřevy potrubí",
+                "Kontilití č. 3 v Nové huti Ostrava - technologické vzduchotechniky",
+                "Kompresorová stanice pro minihuť v Nové huti Ostrava",
+                "Vodní hospodářství pro minihuť v Nové huti Ostrava",
+                "Hutní závod Dněproděržinsk (Ukrajina)",
+                "Vodní hospodářství pro vakuovací stanici VD100t Huta Częstochowa (Polsko)"
+              ]
+            }
+          ]
+        }
+      ],
+      "foto": [
+        "hute-a-strojirenstvi-1",
+        "hute-a-strojirenstvi-2",
+        "hute-a-strojirenstvi-3",
+        "hute-a-strojirenstvi-4"
+      ]
+    },
+    {
+      "id": "plynova-zarizeni",
+      "nazev": "Plynová zařízení",
+      "ikona": "plyn",
+      "perex": "Regulační a předávací stanice plynu, plynojemy, kompresorové stanice a kogenerační jednotky.",
+      "cover": "zarizeni-distribucni-plynarenske-soustavy-2",
+      "uvod": [
+        "V této oblasti se podílíme jednak na projektování a realizaci dodávek části elektro a MaR pro plynárenská zařízení spojená s distribucí a regulačními stanicemi plynu společnosti RWE Transgas a na druhé straně pro plynová hospodářství čistíren odpadních vod a degazačních stanic v rámci důlních děl OKD."
+      ],
+      "sekce": [
+        {
+          "id": "zarizeni-distribucni-plynarenske-soustavy",
+          "nazev": "Zařízení distribuční plynárenské soustavy",
+          "odstavce": [
+            "Regulační stanice plynu z úrovně VVTL na VTL a STL podzemních zásobníků plynu ve Štramberku, uzlové regulační stanice v Ostravě Děhylově i regulační stanice pro Závod Hyundai v Nošovicích jsou v části elektro, MaR a SŘTP vybudovány dle našich projektů, na jejichž realizaci jsme se rovněž výraznou měrou podíleli. Stejně tomu je tak i u měřicích uzlů plynárenské distribuční soustavy u kterých je prováděno dálkové dozorování. Při realizaci zakázek řešíme vazby na samostatně dodávané lokální subsystémy zahraničních dodavatelů jako jsou např. RMG, ARGUS, SIEGER, zabezpečovali jsme komunikační linky pro obchodní a provozní měření systému ELSTER a ELCOR a to vše v návaznosti na telemetrické stanice pro dálkové dozorování a ovládání stanice."
+          ],
+          "foto": [
+            "zarizeni-distribucni-plynarenske-soustavy-1",
+            "zarizeni-distribucni-plynarenske-soustavy-2",
+            "zarizeni-distribucni-plynarenske-soustavy-3",
+            "zarizeni-distribucni-plynarenske-soustavy-4"
+          ]
+        },
+        {
+          "id": "plynojemy-a-kompresorove-stanice-plynu",
+          "nazev": "Plynojemy a kompresorové stanice plynu",
+          "odstavce": [
+            "Tato zařízení na čistírnách odpadních vod vybavujeme v části elektro a MaR potřebnými komponenty a čidly, umožňující efektivní využití bioplynu, vzniklého ve vyhnívacích nádržích čistíren nebo bioreaktorech. V rámci rekonstrukcí plynových hospodářství ČOV se podílíme na zakázkách řešících plynové kompresorové jednotky a připojení a regulaci nově instalovaných kogeneračních jednotek (převážně firem TEDOM nebo MOTORGAS) ve vazbě na tepelné hospodářství provozovatele."
+          ],
+          "foto": [
+            "plynojemy-a-kompresorove-stanice-plynu-1",
+            "plynojemy-a-kompresorove-stanice-plynu-2",
+            "plynojemy-a-kompresorove-stanice-plynu-3",
+            "plynojemy-a-kompresorove-stanice-plynu-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "oblast-plynovych-zarizeni",
+          "nazev": "Plynová zařízení",
+          "uvod": [
+            "Projektová dokumentace částí elektro, MaR a SŘTP a účast na realizacích v rámci výstavby nových plynárenských provozů anebo při rekonstrukcích stávajících regulačních a předávacích stanic plynu, plynových hospodářství čistíren odpadních vod a bioplynových stanic."
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Regulační stanice plynu Plzeňský Prazdroj",
+                "Bioplynová stanice Piaszcyna (Polsko)",
+                "Regulační stanice plynu Kladno 7",
+                "Bioplynová stanice Ultzama (Španělsko)",
+                "Redukční stanice plynu Ruská - Mokrý Háj",
+                "Předávací a regulační stanice plynu pro průmyslovou zónu Nošovice",
+                "Důl Darkov - instalace kogenerační jednotky",
+                "Důl Lazy - instalace kogenerační jednotky",
+                "ÚČOV - oprava MaR plynového hospodářství",
+                "Kogenerační jednotky na ÚČOV Ostrava",
+                "Kogenerační jednotka na ČOV Český Těšín",
+                "Rekonstrukce plynojemu a kogenerační jednotka na ČOV Nový Jičín",
+                "Kogenerační jednotka na ČOV Třinec",
+                "Dispečerský systém SmP a.s.",
+                "Kogenerační jednotka v rámci rekonstrukce ČOV Orlová",
+                "Rekonstrukce předávací stanice plynu Děhylov II",
+                "Rekonstrukce plynového hospodářství ČOV Opava",
+                "Rekonstrukce předávací stanice podzemních zásobníků plynu Štramberk"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "srtp-a-elektro",
+      "nazev": "SŘTP a elektro",
+      "ikona": "srtp",
+      "perex": "Řídicí systémy technologických procesů, silnoproudé rozvody, energetika a stavební elektroinstalace.",
+      "cover": "ridici-systemy-2",
+      "uvod": [
+        "Návrh komponent automatizační techniky a realizace jejich dodávek pro řízení kompletních provozů, provázaných technologických celků nebo jednotlivých strojů a mechanizmů s využitím programovatelných automatů, operátorských a dispečerských pracovišť je jedním ze základních úkolů, které zajišťujeme od samotného vzniku společnosti. Se strojním zařízením, vybaveným námi dodanou a zprovozněnou řídicí technikou je možno se setkat ve všech oborech, které jsou předmětem našeho zájmu."
+      ],
+      "sekce": [
+        {
+          "id": "ridici-systemy",
+          "nazev": "Řídicí systémy",
+          "odstavce": [
+            "Pracujeme převážně s programovatelnými automaty SIMATIC společnosti Siemens, ale na základě přání zákazníka jsme realizovali akce i s automaty společností Allen - Bradley, TECO nebo Mitsubishi.",
+            "Technologická čidla, procesní analyzátory a regulační akční členy zajišťujeme zejména od zahraničních společností Siemens, Hach-Lange, Krohne, Endress+Hauser, WTW, Rosemount nebo od tuzemských dodavatelů JSP Nová Paka, BD Sensors a dalších. Výběr technologických čidel konzultujeme se zákazníkem, abychom vyhověli požadavku na jim zvolenou standardizaci. Pro hospodárné otáčkové řízení pohonů používáme frekvenční měniče osvědčených výrobců Siemens, Danfoss, ABB, Nord nebo Lenze.",
+            "Rozsáhlé řídicí systémy a dispečinky máme realizovány ve společnosti EVRAZ VÍTKOVICE STEEL, v pivovarech Plzeňského Prazdroje a.s, na čistírnách odpadních vod u vodárenských podniků a nebo na zdrojích a v centrální úpravně pitné vody pro Ostravu, provozovanou OVAK a.s.",
+            "Pro dálkové přenosy používáme převážně radiomodemy a GSM/GPRS modemy firem CONEL a RACOM."
+          ],
+          "foto": [
+            "ridici-systemy-1",
+            "ridici-systemy-2",
+            "ridici-systemy-3",
+            "ridici-systemy-4"
+          ]
+        },
+        {
+          "id": "provozni-rozvody-silnoproudu",
+          "nazev": "Provozní rozvody silnoproudu",
+          "odstavce": [
+            "Vedle návrhů nových silnoproudých rozváděčů na různých napěťových úrovních se zabýváme rekonstrukcemi stávajících rozvoden nízkého i vysokého napětí s minimálními odstávkami bez potřeby dlouhodobého zastavení provozu. Totéž platí i pro rekonstrukce ovládacích kabin strojírenských provozů. Máme za sebou rekonstrukce celých rozvoden ve společnosti EVRAZ Vítkovice Steel nebo na Ústřední ČOV v Ostravě.",
+            "Máme zkušenosti s nasazováním přepěťových ochran, otápěním technologických potrubí atd."
+          ],
+          "foto": [
+            "provozni-rozvody-silnoproudu-1",
+            "provozni-rozvody-silnoproudu-2",
+            "provozni-rozvody-silnoproudu-3",
+            "provozni-rozvody-silnoproudu-4"
+          ]
+        },
+        {
+          "id": "energetika",
+          "nazev": "Energetika",
+          "odstavce": [
+            "Projektujeme a realizujeme dodávky VN rozváděčů a trafostanic, včetně jejich napojení na vysokonapěťové napájecí soustavy. Umíme vyvádět vyrobenou elektrickou energii z kogeneračních jednotek nebo zajišťovat náhradní napájení pomocí bateriových nouzových zdrojů a dieselagregátů.",
+            "Zajišťujeme dodávky kompenzačních rozváděčů a v rámci dodávek řídicích systémů jsme schopni provádět hlídání čtvrthodinového maxima.",
+            "Máme za sebou projekty elektro pro bioplynové stanice (BPS) a finální dodávku včetně zprovoznění a dálkové správy elektrozařízení, technologických čidel a řídicího systému pro BPS v České republice, Španělsku a Polsku."
+          ],
+          "foto": [
+            "energetika-1",
+            "energetika-2",
+            "energetika-3",
+            "energetika-4"
+          ]
+        },
+        {
+          "id": "stavebni-elektroinstalace",
+          "nazev": "Stavební elektroinstalace",
+          "odstavce": [
+            "Při realizaci zakázek vypracováváme projektové dokumentace také pro stavební elektroinstalace provozních objektů, kancelářských budov, hal nebo provozoven a podle nich realizujeme jejich dodávky a montáže. Podobným způsobem postupujeme i u venkovního osvětlení. Osvětlení interiéru i exteriéru a vnitřní napájecí rozvody dle našich návrhů jsou provedeny například v komplexu administrativní budovy Vinohradská 230 v Praze a nebo v nově budovaných objektech čistíren odpadních vod, úpraven a rekonstruovaných provozů."
+          ],
+          "foto": [
+            "stavebni-elektroinstalace-1",
+            "stavebni-elektroinstalace-2",
+            "stavebni-elektroinstalace-3",
+            "stavebni-elektroinstalace-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "srtp-reference",
+          "nazev": "SŘTP – řídicí systémy a dispečinky",
+          "uvod": [
+            "Při nasazování moderní řídicí techniky na bázi programovatelných automatů ve všech oblastech naší činnosti (viz reference členěné po oborech) jsme mimo jiné vybudovali dispečerská pracoviště, vybavená počítači s vizualizačními programy, v rámci zakázek:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "ČOV SPOLCHEMIE - výměna řídicího systému",
+                "OVAK a.s. – Monitorovací stanice - Na Heleně, Hornopolní",
+                "Aludyne Czech s.r.o. – softwarové a vizualizační práce",
+                "ÚČOV Ostrava – modernizace řídicího systému",
+                "ÚČOV Ostrava - výměna procesních stanic",
+                "ČOV Krnov - rekonstrukce a intenzifikace",
+                "Pivovar Plzeňský Prazdroj - sběr dat z čidel vodního hospodářství závodu",
+                "Pivovar Radegast - monitoring vodního hospodářství",
+                "Pivovar Rychtář Hlinsko - úprava studené vody",
+                "Pivovar Litovel - výroba varní vody",
+                "Huta Częstochowa - rekonstrukce vakuovací stanice VD/O2 - 100t",
+                "Elektrárna Vítkovice - dehydratace kalu",
+                "ČOV Velké Popovice a monitoring vodních zdrojů",
+                "PERLA, bavlnářské závody a.s., Ústí n. O. - úprava studniční vody",
+                "Rekonstrukce ČOV Nový Jičín",
+                "Rekonstrukce ČOV Brušperk",
+                "Pivovar Plzeňský Prazdroj - úpravna vody a monitorování vodního hospodářství",
+                "Pivovar Plzeňský Prazdroj - zvýšení kapacity prameniště Roudná",
+                "ČOV Jablonné n. Orlicí",
+                "Rekonstrukce ČOV Rehabilitačního centra Hrabyně",
+                "Rekonstrukce a oprava ČS Úpravny vody Nová Ves",
+                "Důl Darkov - rekonstrukce tepelného hospodářství",
+                "Rekonstrukce tepelných rozvodů Rehabilitačního centra Hrabyně",
+                "ČOV Cukrovar Brottewitz (Německo)",
+                "Nemocnice Valašské Meziříčí - tepelné hospodářství a klimatizace operačních sálů",
+                "Státní léčebné lázně Darkov - tepelné hospodářství",
+                "Nemocnice Vsetín - tepelné hospodářství a klimatizace operačních sálů"
+              ]
+            },
+            {
+              "popis": "Zastaralé programovatelné automaty různých výrobců nahrazujeme řídicími systémy SIMATIC a tyto systémy pak rozšiřujeme pro potřebu monitorování a automatizování další technologie provozovatele. Takové rekonstrukce ŘS proběhly například na zakázkách:",
+              "polozky": [
+                "Ústřední čistírna odpadních vod Ostrava - rekonstrukce SŘTP",
+                "Úpravna vody Nová Ves Ostrava - výměna řídicího systému",
+                "Vítkovické slévárny, spol. s r. o. - rekonstrukce licího stroje"
+              ]
+            },
+            {
+              "popis": "V součinnosti s firmou Siemens, s.r.o. při výměnách řídicích systémů v provozech koksovny ArcelorMittal Ostrava: Odprášení, Dohašování koksu, Lanovlek, Pokusná koksovna SHO, Odsíření, kde jsme zajišťovali vypracování projektové dokumentace, montáže a softwarové práce.",
+              "polozky": []
+            }
+          ]
+        },
+        {
+          "id": "silnoprouda-elektrotechnika",
+          "nazev": "Silnoproudá elektrotechnika",
+          "uvod": [
+            "Rekonstrukce rozvoden při nepřerušení jejich provozu máme za sebou v:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "OVAK a.s. – ČSOV Mexická oprava silového napájení",
+                "Dopravní podnik Ostrava a.s. – provozní silnoproudé rozvody v areálu Poruba",
+                "Dopravní podnik Ostrava a.s. – provozní silnoproudé rozvody myčka tramvají",
+                "Minipivovar Český Těšín – výroba a dodávka rozváděčů",
+                "ČOV Krnov - rekonstrukce a intenzifikace",
+                "ÚČOV Ostrava - rekonstrukce rozvodny přiváděče A",
+                "ÚČOV Ostrava - rekonstrukce rozvodny kotelny",
+                "ÚČOV Ostrava - rekonstrukce dvou rozvoden dmýchárny",
+                "Třinecké železárny - rekonstrukce stykovny Slévárny oceli II",
+                "ÚČOV Ostrava - rekonstrukce rozvodny ČS mechanicky předčištěných vod",
+                "ÚČOV Ostrava - Rekonstrukce rozvodny na sběrači D"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "trafostanice-reference",
+          "nazev": "Trafostanice",
+          "uvod": [
+            "Návrhy trafostanic nebo jejich úprav a rekonstrukcí, včetně jejich připojení na VN napájecí rozvody jsme zajišťovali v rámci zakázek:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Ostrava Business Park – II. etapa",
+                "Prameniště Nová Ves – rekonstrukce transformátoru",
+                "ÚČOV Ostrava - rekonstrukce NN rozvodny hlavní trafostanice",
+                "ÚČOV Ostrava - rekonstrukce VN rozvodny hlavní trafostanice",
+                "Rekonstrukce trafostanice 22/0,4 kV pro PK Raduň",
+                "Trafostanice 22/0,4 kV pro Slezské divadlo Opava",
+                "Rekonstrukce trafostanice 22/0,4 kV vodního zdroje Palesek",
+                "Kioskové trafostanice 22/0,4 kV vodního zdroje Bělský Les",
+                "Trafostanice 22/0,4 kV objektu ředitelství OVAK a.s.",
+                "Trafostanice 22/0,4kV v podzemním kolektoru v Ostravě",
+                "Výměna transformátorů na ČOV Frýdek - Místek"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cinnosti_uvod": "Projekt, vývoj, dodávka, montáž, software i servis – zajistíme celý životní cyklus zařízení, nebo jednotlivé činnosti samostatně dle individuálních požadavků objednatele.",
+  "cinnosti": [
+    {
+      "id": "projektovani",
+      "nazev": "Projektování",
+      "odstavce": [
+        "Samostatně nebo jako součást finálních dodávek zajišťujeme zákazníkům zpracování projektových dokumentací staveb ve všech stupních, od vypracování studií, investičních záměrů, dokumentací pro vydání územního rozhodnutí, dokumentací pro vydání stavebního povolení, zadávacích dokumentací pro potřebu veřejných zakázek, až po realizační dokumentace pro provádění stavby a dokumentace skutečného provedení díla. Nedílnou součástí práce projekční skupiny je také vypracování provozních předpisů nebo návodů na obsluhu zařízení.",
+        "V souladu se stavebním zákonem provádíme projednávání dokumentace se správci inženýrských sítí a s osobami nebo organizacemi, od kterých se požaduje vydání souhlasného stanoviska k navrženému technickému řešení.",
+        "Projekty části elektro, MaR a SŘTP zajišťujeme vlastním projekčním oddělením za účasti autorizovaných inženýrů, dokumentaci ostatních profesí zajišťujeme s podporou spolupracujících firem jako generální projektant stavby.",
+        "Projekty zpracováváme v elektronické formě pomocí softwarových prostředků EPLAN, AUTOCAD, WORD, EXCEL a jsme vybavení vlastní výkonnou reprografickou technikou."
+      ],
+      "foto": [
+        "projektovani-1",
+        "projektovani-2",
+        "projektovani-3",
+        "projektovani-4"
+      ]
+    },
+    {
+      "id": "vyvoj",
+      "nazev": "Vývoj",
+      "odstavce": [
+        "Na základě požadavků na netypová řešení, nebo s cílem vyhovět individuálním přáním zákazníků, se podílíme na vývoji nových zařízení, která jsou následně prověřena po jejich nasazení k praktickému využití. Jedná se též o modelová pracoviště k ověření variantních technologických postupů a dosud neprověřených provozních metod a nebo o variantní využití upravených technologických čidel a elektronických zařízení k jiným účelům, než pro která jsou výrobcem prioritně určena.",
+        "Výsledkem vlastního vývoje je mimo jiné i zařízení pro kontinuální monitorování kvality pitné vody - FISHMONITOR, založeném na počítačovém vyhodnocování aktivity detekčních ryb. Toto zařízení je ve své rozšířené verzi schopno také bezdrátově přenášet obraz z akvária na dispečerská stanoviště nebo na libovolný počítač, připojený k internetové síti."
+      ],
+      "foto": [
+        "vyvoj-1",
+        "vyvoj-2",
+        "vyvoj-3",
+        "vyvoj-4"
+      ]
+    },
+    {
+      "id": "dodavky",
+      "nazev": "Dodávky",
+      "odstavce": [
+        "K zajištění dodávek dle vlastních nebo zákazníkem poskytnutých projektů disponujeme realizační skupinou, která realizuje inženýrským způsobem generální nebo finální dodávky a subdodávky staveb na základě uzavřených smluv s vybranými subdodavateli, vybavenými pro výkon svých činností dostatečnými technickými kapacitami a kvalifikovanými odborníky.",
+        "Realizační skupina zajišťuje rovněž nákup technologických zařízení a čidel od zahraničních nebo tuzemských dodavatelů a tyto předává k zabudování na stavbu."
+      ],
+      "foto": [
+        "dodavky-1",
+        "dodavky-2",
+        "dodavky-3",
+        "dodavky-4"
+      ]
+    },
+    {
+      "id": "montaze",
+      "nazev": "Montáže",
+      "odstavce": [
+        "Za účasti vlastních koordinátorů na stavbách provádíme odborné vedení stavebních činností a montáží našich partnerských montážních organizací dle schválené projektové dokumentace a připravených harmonogramů výstavby. V průběhu montáží provádíme koordinaci s dalšími účastníky výstavby a zajišťujeme v souladu s projekční skupinou potřebná operativní opatření, vedoucí ke zdárnému průběhu montážních prací.",
+        "Montáže zakončujeme individuálními zkouškami, navazujícím komplexním vyzkoušením a předáním díla do zkušebního provozu. Dílo zákazníkovi předáváme s kompletní průvodní dokumentací k dodanému zařízení, potřebnými revizemi, dokumentací skutečného provedení a provozními předpisy."
+      ],
+      "foto": [
+        "montaze-1",
+        "montaze-2",
+        "montaze-3",
+        "montaze-4"
+      ]
+    },
+    {
+      "id": "software",
+      "nazev": "Software",
+      "odstavce": [
+        "O vypracování řídicích programů používaných automatizačních prostředků, vyhotovení vizualizačních programů na operátorských počítačových pracovištích a zajištění komunikací s dalšími samostatnými subsystémy nebo nadřazenou úrovní řízení se stará naše skupina programátorů v rámci realizačního útvaru.",
+        "Pro programování řídicích automatů používáme software jednotlivých výrobců PLC. K zobrazení dat na operátorských PC využíváme vizualizační software firem Siemens - WinCC, Wonderware - Intouch nebo Microsys - Promotic. Při výběru typu vizualizace se řídíme přáním zákazníka, velikostí aplikace a cenou vizualizace.",
+        "Řídicí automaty projektujeme jako otevřený, snadno rozšiřitelný systém, který je schopen komunikovat s ostatními systémy zákazníka řadou standardních průmyslových protokolů. Realizujeme rovněž přenos informací z řízeného procesu nejen na technologické PC, ale i na počítače v místní firemní síti nebo internetu. Zajišťujeme dálkový dozor s možností úprav software na dálku pomocí mobilních sítí.",
+        "Realizujeme přenosy technologických dat a hlášení z míst kde není trvalá obsluha na centrální dispečinky nebo na mobilní telefony, pomocí rádiových nebo mobilních sítí."
+      ],
+      "foto": [
+        "software-1",
+        "software-2",
+        "software-3",
+        "software-4"
+      ]
+    },
+    {
+      "id": "servis",
+      "nazev": "Servis",
+      "odstavce": [
+        "U všech realizovaných zakázek vykonáváme záruční a pozáruční servis a své znalosti z diagnostiky a parametrizace zařízení uplatňujeme u zákazníků i pro nám známé komponenty dodané třetími organizacemi. Smluvně zajišťujeme periodické prověrky a u tepelných zařízení vykonáváme předsezónní a posezónní kontroly."
+      ],
+      "foto": [
+        "servis-1",
+        "servis-2",
+        "servis-3",
+        "servis-4"
+      ]
+    },
+    {
+      "id": "obchodni-cinnost",
+      "nazev": "Obchodní činnost",
+      "odstavce": [
+        "Důležitou náplní společnosti je rovněž obchodní činnost s komponenty řídicích systémů, regulátorů, čidel, regulačních armatur a dalšího zařízení měření a regulace se zajímavými cenami pro zákazníka a zajišťování odborných pomocí pro externí organizace."
+      ],
+      "foto": [
+        "obchodni-cinnost-1",
+        "obchodni-cinnost-2",
+        "obchodni-cinnost-3",
+        "obchodni-cinnost-4"
+      ]
+    }
+  ],
+  "reference_uvod": "Výčet projektů probíhajících i v minulosti dokončených, členěný podle oborů. Použijte vyhledávání nebo filtr podle oboru.",
+  "dalsi_reference": {
+    "id": "dalsi-reference",
+    "nazev": "Další reference",
+    "uvod": [
+      "Zde uvádíme méně obvyklé nebo jinak zajímavé realizované zakázky, se kterými jsme se při své činnosti setkali:"
+    ],
+    "skupiny": [
+      {
+        "polozky": [
+          "Zařízení na výrobu dusíku, pro důl ČSM Jih a pro pracoviště TU VŠB Ostrava",
+          "Sklady a čerpací stanice kejdy u podniků živočišné výroby v Návsí u Jablunkova a v Sázavě",
+          "Sklady dusíkatých hnojiv Dobré Miasto a Czluchow v Polsku",
+          "Nestle Holešov - chuticí a barvicí stanice linky na výrobu bonbónů",
+          "Instalace srážkoměrů s dálkovými přenosy v rámci monitorování kanalizační sítě v Ostravě",
+          "Onkologie Fakultní nemocnice Ostrava - Gama nůž – projektová dokumentace",
+          "Rybochovné zařízení Sedlnice",
+          "Nová Karolína - komunikační sítě pro technologii tepla a chladu",
+          "Rekonstrukce Domu kultury města Ostravy",
+          "Čerpací stanice pro trenažér smyků Centrum bezpečné jízdy – AQUAVANA",
+          "Model bioplynové stanice – dálkový monitoring",
+          "Synchronizace fontány s produkcí zvonkohry na Masarykově náměstí v Ostravě",
+          "Vstupní promíchávací zařízení biomasy pro bioplynové stanice Klokočov, Bílovec, Pustějov",
+          "Výsuvné patníky na pěší zóně v centru Ostravy",
+          "Podzemní kolektor Centrum v Ostravě - měřící a signalizační zařízení",
+          "Dávkovač krmiv pro hospodářskou farmu na Ukrajině",
+          "Pivovar Plzeňský Prazdroj - otápění trubních rozvodů pitné a upravené vody",
+          "Model vyhnívací nádrže pro výzkumné účely společnosti SmVaK Ostrava a.s."
+        ]
+      }
+    ]
+  },
+  "dotace": {
+    "uvod": "Podílíme se také na projektech, které jsou spolufinancovány Evropskou unií či jinými organizacemi.",
+    "projekty": [
+      {
+        "nazev": "Speciální regulované rotační pohony průmyslových agregátů",
+        "kod": "CZ.01.1.02/0.0/0.0/16_084/0010144",
+        "popis": "Předmětem řešení projektu je Průmyslový výzkum a Experimentální vývoj řízení pohybu pohonů otáčení průmyslových zařízení stanovenou rychlostí, s možností jejich změn a sladění v systému, pro optimální podmínky výrobního procesu. Hlavním výsledkem projektu bude prototyp a užitný vzor Mini – digitální řídicí jednotky, umožňující přesné nastavení parametrů výrobních procesů, s maximálními úsporami elektrické energie.",
+        "financovani": "Je spolufinancován Evropskou unií.",
+        "prijemce": "Projekt HTL s.r.o.",
+        "spoluprijemce": "PROSPECT spol. s r.o.",
+        "doba": "18. 4. 2018 – 17. 4. 2020",
+        "poskytovatel": "Ministerstvo průmyslu a obchodu",
+        "soubor": "assets/docs/dotace-htl-publicita-2019.pdf",
+        "nahled": "assets/img/dotace-htl-nahled.webp"
+      }
+    ]
+  }
+}
