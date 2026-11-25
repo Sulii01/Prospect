@@ -155,8 +155,8 @@ Pak přidejte `"energetika-5"` do pole `foto` a spusťte `python3 build.py`. Bez
 Ostatní obrázky:
 | Soubor | Použití |
 |---|---|
-| `assets/img/logo-prospect-white.png` | logo v hlavičce a patičce (bílá verze pro tmavé pozadí) |
-| `assets/img/logo-prospect.png` | původní modré logo (pro světlé pozadí, záloha) |
+| `assets/img/logo-prospect-white.png` | bílé logo v patičce (pro tmavé pozadí) |
+| `assets/img/logo-prospect.png` | původní barevné logo v hlavičce |
 | `assets/img/pas-realizaci.webp` | pás 6 fotografií pod sekcí O společnosti |
 | `assets/img/prospect-energo.webp` | logo dceřiné společnosti |
 | `assets/img/certifikace.png` | značky IQNet / CQS |
@@ -170,16 +170,22 @@ Ostatní obrázky:
 
 Soubor je rozdělený do číslovaných bloků (1 Proměnné, 2 Základ, 3 Komponenty, 4 Úvod, 5 Podstránky, 6 Patička, 7 Animace, 8 Responzivita).
 
-**Nejčastější změny jsou v bloku 1 (`:root`):**
+**Nejčastější změny jsou v bloku 1 (`:root`).** Web používá firemní barvy z loga a z původního webu prospect.cz:
 ```css
---bg: #050b14;      /* pozadí stránky */
---cyan: #00bdf2;    /* hlavní akcentová barva (tlačítka, odkazy, zvýraznění) */
---blue: #0069aa;    /* druhá firemní barva */
---ok: #3cf0a0;      /* zelená „ONLINE/RUN“ */
---radius: 18px;     /* zaoblení karet */
---wrap: 1240px;     /* maximální šířka obsahu */
---font-head / --font-body / --font-mono   /* písma */
+--bg: #ffffff;       /* pozadí stránky (bílá) */
+--bg-2: #eef4f9;     /* střídavé sekce (světle modrošedá) */
+--text: #15283a;     /* hlavní text */
+--blue: #0069aa;     /* FIREMNÍ MODRÁ – tlačítka, odkazy, pruh s čísly, hlavičky podstránek */
+--blue-dark: #004b7c;/* tmavší odstín (hover, přechody) */
+--cyan: #00bdf2;     /* světle modrá z loga – zvýraznění, odrážky */
+--grey: #a6a7a9;     /* šedá z původního webu */
+--navy: #0b2a44;     /* patička */
+--ok: #22c55e;       /* zelená „ONLINE/RUN“ */
+--radius: 18px;      /* zaoblení karet */
+--wrap: 1240px;      /* maximální šířka obsahu */
 ```
+Stačí změnit hodnotu proměnné a barva se změní všude, kde se používá. V hlavičce je barevné logo `logo-prospect.png`, v patičce bílé `logo-prospect-white.png`.
+
 - **Jiná písma:** upravte odkaz na Google Fonts v `build.py` (funkce `page()`, řádek `fonts.googleapis.com`) a proměnné `--font-*`.
 - **Vypnutí animace nadpisů** (lesk na zvýrazněném textu): v `.hl` smažte řádek `animation: shine…`.
 - **Rychlost běžícího pásu zákazníků:** `.marquee-track { animation: marquee 60s … }`. Vyšší číslo znamená pomalejší pás.

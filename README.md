@@ -4,7 +4,7 @@ https://sulii01.github.io/Prospect/
 
 Moderní web společnosti **PROSPECT spol. s r.o.** (Ostrava, od roku 1991), projekčně-inženýrské organizace zaměřené na **řídicí systémy, automatizaci, MaR a elektro** pro technologické celky.
 
-Web nahrazuje původní stránky [www.prospect.cz](https://www.prospect.cz/) (redakční systém Eliška). Veškerý obsah původního webu je převzatý: texty, reference, fotografie, certifikáty, kontakty i dotovaný projekt. Nový web ho podává v tmavém technologickém vzhledu inspirovaném velínem a operátorským HMI panelem.
+Web nahrazuje původní stránky [www.prospect.cz](https://www.prospect.cz/) (redakční systém Eliška). Veškerý obsah původního webu je převzatý: texty, reference, fotografie, certifikáty, kontakty i dotovaný projekt. Nový web ho podává v moderním světlém vzhledu ve firemních barvách, s animovaným operátorským HMI panelem.
 
 Web je **dvojjazyčný**: česká verze leží v kořeni webu a kompletní **anglická verze** ve složce `en/`. Přepínač CZ / EN v hlavičce vede vždy na stejnou stránku v druhém jazyce.
 
@@ -56,7 +56,7 @@ Na konci každé stránky je **kontaktní sekce**: telefon, e-mail, adresa, IČ/
 - **Přesměrování starých adres** (`.htaccess`). Např. `/ridici-systemy` vede na `srtp-a-elektro.html#ridici-systemy`, takže staré odkazy a výsledky ve vyhledávačích dál fungují.
 
 ### Vzhled
-- Barvy vycházejí z loga: **#00BDF2** (světle modrá) a **#0069AA** (tmavě modrá) na tmavém pozadí velínu (#050B14). Zelená **#3CF0A0** je stavová barva „RUN / ONLINE“.
+- **Světlý vzhled ve firemních barvách** z loga a původního webu: bílé a světle modrošedé (#EEF4F9) pozadí, firemní modrá **#0069AA** (tlačítka, odkazy, pruh s čísly, hlavičky podstránek), světle modrá **#00BDF2** z loga na zvýraznění a tmavě modrá patička (#0B2A44). V bílé hlavičce je původní barevné logo. Zelená **#22C55E** je stavová barva „RUN / ONLINE“.
 - Písma (Google Fonts): **Space Grotesk** pro nadpisy, **Inter** pro text a **JetBrains Mono** pro technické popisky.
 - Ikony oborů a činností jsou vlastní lineární SVG vložené přímo v HTML, takže se nenačítají žádné další soubory.
 
@@ -91,7 +91,7 @@ Na konci každé stránky je **kontaktní sekce**: telefon, e-mail, adresa, IČ/
 
 ## Co se oproti původnímu webu změnilo
 
-- **Vzhled:** moderní tmavý „control room“ design místo šablony z roku ~2015.
+- **Vzhled:** moderní světlý design ve firemních barvách místo šablony z roku ~2015.
 - **Struktura:** 45 původních podstránek se slilo do 9 přehledných stránek. Podkategorie oborů jsou sekce na stránce oboru a duplicitní stránky „Vybrané reference“ se sloučily do jedné stránky Reference s vyhledáváním.
 - **Obsah:** všechny texty jsou zachované. Opravily se jen zjevné překlepy, např. „manamegentu“ → „managementu“, „WinnCC“ → „WinCC“, „Rossemound“ → „Rosemount“, „řídící“ → „řídicí“ nebo „Kompesorová“ → „Kompresorová“. Úvodní stránka má navíc úderné nadpisy, čísla a přehled technologií sestavené z původních textů.
 - **Fotografie:** všech 80 fotografií je převedeno do WebP ve dvou velikostech pro rychlé načítání.

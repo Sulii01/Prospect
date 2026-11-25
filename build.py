@@ -243,7 +243,7 @@ def header(active, filename):
 <header class="site-header" data-header>
   <div class="wrap header-in">
     <a class="brand" href="index.html" aria-label="{e(F["nazev"])} – {L["home_aria"]}">
-      <img src="{P}assets/img/logo-prospect-white.png" alt="PROSPECT" width="157" height="24">
+      <img src="{P}assets/img/logo-prospect.png" alt="PROSPECT" width="170" height="25">
       <span class="brand-tag">{e(F["slogan"])}</span>
     </a>
     <nav class="main-nav" aria-label="{L["nav_aria"]}" data-nav>
@@ -334,7 +334,7 @@ def page(filename, title, description, active, body, body_class=""):
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
 <meta name="author" content="{e(F["nazev"])}">
-<meta name="theme-color" content="#050b14">
+<meta name="theme-color" content="#0069aa">
 <link rel="canonical" href="{e(canonical)}">
 <link rel="alternate" hreflang="cs" href="{e(url_cs)}">
 <link rel="alternate" hreflang="en" href="{e(url_en)}">
