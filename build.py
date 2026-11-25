@@ -190,7 +190,6 @@ def page(filename, title, description, active, body, body_class=""):
 <html lang="cs" class="no-js">
 <head>
 <meta charset="utf-8">
-{'<base href="/">' if filename == "404.html" else ""}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
