@@ -1,5 +1,7 @@
 # PROSPECT spol. s r.o. – nový web
 
+https://sulii01.github.io/Prospect/
+
 Moderní web společnosti **PROSPECT spol. s r.o.** (Ostrava, od roku 1991), projekčně-inženýrské organizace zaměřené na **řídicí systémy, automatizaci, MaR a elektro** pro technologické celky.
 
 Web nahrazuje původní stránky [www.prospect.cz](https://www.prospect.cz/) (redakční systém Eliška). Veškerý obsah původního webu je převzatý: texty, reference, fotografie, certifikáty, kontakty i dotovaný projekt. Nový web ho podává v tmavém technologickém vzhledu inspirovaném velínem a operátorským HMI panelem.
