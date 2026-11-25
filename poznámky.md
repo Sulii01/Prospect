@@ -6,18 +6,20 @@ Praktický návod pro správu webu PROSPECT. Celkový popis webu je v [README.md
 
 ## 0. Zlaté pravidlo
 
-> **Texty se upravují v `data/obsah.json`, ne v HTML souborech.**
+> **Texty se upravují v `data/obsah.json` (česky) a `data/obsah.en.json` (anglicky), ne v HTML souborech.**
 > Po každé úpravě spusťte v kořeni projektu:
 >
 > ```bash
 > python3 build.py
 > ```
 >
-> Skript přepíše všechny `*.html` stránky, `sitemap.xml`, `robots.txt` a `.htaccess`. Ruční změny v HTML by se tím ztratily.
+> Skript přepíše všechny `*.html` stránky (české v kořeni, anglické ve složce `en/`), `sitemap.xml`, `robots.txt` a `.htaccess`. Ruční změny v HTML by se tím ztratily.
 
 | Co chci změnit | Kde |
 |---|---|
-| Texty, reference, kontakty, čísla, seznam zákazníků | `data/obsah.json` |
+| Texty, reference, kontakty, čísla, seznam zákazníků | `data/obsah.json` (CZ) a `data/obsah.en.json` (EN) |
+| Texty menu, tlačítek a nadpisů sekcí (CZ i EN) | slovník `T` v `build.py` |
+| Vzhled a popisky HMI panelu v úvodu | funkce `hmi_panel()` a `T[…]["hmi"]` v `build.py` |
 | Barvy, písma, mezery, velikosti, rozvržení | `assets/css/style.css` |
 | Chování (menu, animace, HMI panel, filtr, galerie) | `assets/js/main.js` |
 | Rozložení stránek, pořadí sekcí, menu, ikony, přesměrování | `build.py` |
@@ -119,6 +121,14 @@ Krátký text pro dlaždici na úvodní stránce je prvních ~110 znaků prvníh
 ### 1.6 Dotované projekty – `dotace.projekty`
 Každý projekt má `nazev`, `kod`, `popis`, `financovani`, `prijemce`, `spoluprijemce`, `doba`, `poskytovatel`, `soubor` (PDF) a `nahled` (obrázek). Pro další projekt zkopírujte celý objekt `{ … }` a oddělte ho čárkou.
 
+### 1.7 Anglická verze – `data/obsah.en.json`
+- Soubor má **úplně stejnou strukturu** jako `obsah.json`, jen s anglickými texty. Hodnoty `id`, `foto`, `cover`, `soubor` a `ikona` musí zůstat stejné jako v české verzi. Podle nich se páruje přepínač jazyků, filtr referencí a fotografie.
+- **Když přidáte nebo změníte obsah v češtině, udělejte stejnou změnu i v `obsah.en.json`.** Jinak bude anglická verze neúplná, protože se nepřekládá automaticky.
+- Texty, které nejsou v JSON (menu, tlačítka, nadpisy sekcí úvodu, popisky HMI panelu), jsou ve slovníku `T` na začátku `build.py`: část `"cs"` pro češtinu a `"en"` pro angličtinu.
+- Anglické stránky se ukládají do složky `en/` se stejnými názvy souborů jako české (`en/vodni-hospodarstvi.html` atd.). Přepínač CZ / EN tak vždy vede na odpovídající stránku.
+- Jednotné anglické termíny: ČOV = *WWTP*, ÚČOV = *Central WWTP*, ČS = *PS (pumping station)*, MaR = *I&C*, SŘTP = *process control*, ATS = *booster station*, VZT = *HVAC*, VN/NN = *HV/LV*, EOP = *EAF*.
+- Publicita dotace (PDF) existuje jen česky, v angličtině je to u odkazu uvedené.
+
 ---
 
 ## 2. Fotografie
@@ -183,7 +193,7 @@ Soubor je rozdělený do číslovaných bloků (1 Proměnné, 2 Základ, 3 Kompo
 1. **Menu:** burger na mobilu a rozbalovací „Obory“.
 2. **Animace při scrollu:** prvky s třídou `reveal` se plynule objeví. Prodlevu určuje `style="--d:120ms"`.
 3. **Počítadla:** prvek s `data-count="100" data-suffix="+"`.
-4. **HMI panel:** ilustrační hodnoty. Výchozí čísla a rozsah kolísání jsou ve funkci `updateHmi()`, např. `vals.flow = 128 + Math.sin(t / 4) * 6`. Vzhled panelu (nádrže, potrubí, čidla) je SVG v konstantě `HMI` v `build.py`.
+4. **HMI panel:** ilustrační hodnoty. Výchozí čísla a rozsah kolísání jsou ve funkci `updateHmi()`, např. `vals.flow = 128 + Math.sin(t / 4) * 6`. JS mění texty s atributem `data-val` (pressure, flow, level) a výšku vody v obdélníku `data-level-rect`. Vzhled panelu (nádrže, potrubí, motory, ventily, displeje) je SVG ve funkci `hmi_panel()` v `build.py`. Pomocné funkce `tank()`, `motor()`, `valve()`, `display()` a `instrument()` kreslí jednotlivé prvky, takže jdou snadno přidat další. Barvy SCADA obrazovky jsou v `style.css` u tříd `.s-…` (např. `.s-bg` = tyrkysové pozadí).
 5. **Lightbox:** každý odkaz s třídou `g-item` uvnitř `.gallery`.
 6. **Filtr referencí:** hledá bez ohledu na diakritiku a velikost písmen. Parametr `?obor=` v adrese předvolí filtr.
 7. **Scrollspy:** zvýraznění v postranním obsahu stránek oborů.
@@ -194,21 +204,22 @@ Soubor je rozdělený do číslovaných bloků (1 Proměnné, 2 Základ, 3 Kompo
 
 | Část | K čemu |
 |---|---|
+| `LANGS`, `T` | jazykové verze (kam se ukládají) a texty rozhraní v češtině a angličtině |
 | `ICONS` | SVG ikony (24×24). Novou přidáte jako `"nazev": '<path d="…"/>'`. Lze použít ikony z https://lucide.dev, stačí obsah tagu `<svg>`. |
-| `NAV` | položky hlavního menu (pořadí, texty) |
+| `header()` | položky hlavního menu (pořadí; názvy jsou v `T[…]["nav"]`) |
 | `header()`, `footer()` | hlavička a patička. **Kontaktní sekce** a mapa jsou ve `footer()`. |
 | `page()` | společná kostra stránky: `<head>`, SEO meta tagy, písma, CSS a JS |
-| `HMI` | SVG animovaného panelu na úvodu |
+| `hmi_panel()` | SVG animovaného SCADA panelu na úvodu (+ pomocné `tank()`, `motor()`, `valve()`, `display()`, `instrument()`) |
 | `build_index()` | úvodní stránka (pořadí a nadpisy sekcí) |
 | `build_obor()` | šablona stránky oboru |
 | `build_cinnosti()`, `build_reference()`, `build_dotace()`, `build_404()` | ostatní stránky |
 | `REDIRECTS` | přesměrování starých adres na nové (zapisuje se do `.htaccess`) |
 
 **Přidání úplně nové stránky** (např. „Kariéra“):
-1. Do `obsah.json` přidejte data, např. `"kariera": {...}`.
+1. Do `obsah.json` i `obsah.en.json` přidejte data, např. `"kariera": {...}`.
 2. V `build.py` vytvořte funkci `build_kariera()` podle vzoru `build_dotace()` a zavolejte `page("kariera.html", "Kariéra", "popis…", "kariera", body)`.
 3. Funkci zavolejte v bloku `if __name__ == "__main__":` a přidejte `"kariera.html"` do seznamu `pages` kvůli sitemapě.
-4. Do `NAV` přidejte `("kariera.html", "Kariéra", "kariera")`.
+4. Do menu ve funkci `header()` přidejte položku a do `T["cs"]["nav"]` a `T["en"]["nav"]` její název.
 
 ---
 
@@ -236,7 +247,7 @@ Kompletní seznam je v `.htaccess`.
 
 ## 7. Co z původního webu chybí nebo je potřeba doplnit
 
-- **Anglická verze** (`en.prospect.cz`) nebyla předmětem úpravy. Odkaz „EN“ v hlavičce na ni vede.
+- Původní anglický web `en.prospect.cz` už není potřeba, protože nová anglická verze je ve složce `en/`. Pokud doména `en.prospect.cz` dál existuje, doporučujeme ji přesměrovat na `www.prospect.cz/en/`.
 - **Google Analytics:** původní web používal měření `G-0JM7X8EGJ8` s lištou souhlasu s cookies. Nový web žádné cookies nepoužívá. Pokud chcete měření vrátit, je nutné doplnit **i lištu souhlasu** (GDPR), např. open-source [CookieConsent](https://cookieconsent.orestbida.com/), a měřicí kód vložit do `<head>` ve funkci `page()` v `build.py`.
 - **Administrace (Eliška CMS)** už není. Obsah se spravuje přes `obsah.json`.
 - Fotografie v sekcích oborů a činností převzaly původní fotky ve stejném pořadí. Pokud máte novější nebo kvalitnější snímky, stačí je vyměnit (viz kap. 2).

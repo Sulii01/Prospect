@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-Generátor statického webu PROSPECT spol. s r.o.
+Generátor statického webu PROSPECT spol. s r.o. (česky + anglicky).
 
-Načte veškerý obsah z data/obsah.json a vygeneruje hotové HTML stránky
-do kořenové složky projektu. Nepotřebuje žádné knihovny – stačí Python 3.8+.
+Načte obsah z data/obsah.json (čeština) a data/obsah.en.json (angličtina)
+a vygeneruje hotové HTML stránky:
+    • česká verze  → kořenová složka projektu (index.html, …)
+    • anglická verze → složka en/ (en/index.html, …)
+Nepotřebuje žádné knihovny – stačí Python 3.8+.
 
 Použití:
     python3 build.py
@@ -17,9 +20,135 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DATA = json.loads((ROOT / "data" / "obsah.json").read_text(encoding="utf-8"))
-F = DATA["firma"]
 VERSION = date.today().strftime("%Y%m%d")  # přidává se k CSS/JS kvůli cache
+
+# --------------------------------------------------------------------------
+# Jazykové verze
+#   data  = soubor s obsahem
+#   out   = kam se stránky uloží
+#   P     = předpona cesty k assets/ (anglické stránky leží o složku níž)
+# --------------------------------------------------------------------------
+LANGS = {
+    "cs": {"data": "data/obsah.json", "out": ROOT, "P": "", "dir": ""},
+    "en": {"data": "data/obsah.en.json", "out": ROOT / "en", "P": "../", "dir": "en/"},
+}
+
+# --------------------------------------------------------------------------
+# Texty uživatelského rozhraní (menu, tlačítka, nadpisy sekcí…)
+# Obsah samotný (odstavce, reference) je v data/*.json.
+# --------------------------------------------------------------------------
+T = {
+    "cs": {
+        "html_lang": "cs", "og_locale": "cs_CZ",
+        "skip": "Přeskočit na obsah", "home_aria": "úvodní stránka",
+        "nav": ["Úvod", "Obory", "Činnosti", "Reference", "Dotované projekty", "Kontakt"],
+        "nav_aria": "Hlavní navigace", "menu_open": "Otevřít menu",
+        "other_lang": "EN", "other_lang_name": "English", "other_hreflang": "en",
+        "contact_eyebrow": "Kontakt", "contact_h": "Pojďme spolu řídit vaši technologii.",
+        "contact_lead": "Projekt, dodávka, program i servis. Ozvěte se nám – rádi s vámi probereme váš záměr.",
+        "phone": "Telefon", "email": "E-mail – sekretariát", "address": "Adresa",
+        "company": "Společnost", "ident": "Identifikace", "ic": "IČ", "dic": "DIČ", "fax": "Fax",
+        "where": "Kde nás najdete", "postcode": "PSČ", "map": "Mapa",
+        "footer_about": "Projekčně-inženýrská organizace v oblasti investiční výstavby od roku 1991.",
+        "f_fields": "Obory", "f_services": "Činnosti", "f_company": "Společnost",
+        "f_refs": "Reference", "f_grants": "Dotované projekty", "f_cert": "Certifikace ISM",
+        "f_other": "English version", "to_top": "Nahoru ↑", "lb_close": "Zavřít", "lb_prev": "Předchozí", "lb_next": "Další",
+        # úvod
+        "cta_fields": "Naše obory", "cta_refs": "Reference",
+        "hero_tags": ["PLC SIMATIC", "SCADA / vizualizace", "MaR", "Dálkový dohled", "Elektro NN / VN"],
+        "stats_aria": "PROSPECT v číslech", "clients_aria": "Vybraní zákazníci", "clients_label": "Pracovali jsme pro",
+        "about_eyebrow": "O společnosti", "about_h": 'Od projektu po dálkový dohled. <span class="hl">Od roku 1991.</span>',
+        "strip_aria": "Ukázky realizací PROSPECT",
+        "fields_eyebrow": "Obory", "fields_h": "Pět oborů. Jedna řídicí logika.",
+        "fields_lead": "Automatizujeme technologie od úpraven vod po ocelárny – vždy s vlastním projektem, programem a servisem.",
+        "field_more": "Více o oboru", "selected_refs": "Vybrané reference",
+        "ctrl_eyebrow": "Řídicí systémy &amp; software", "ctrl_h": 'Srdce každé technologie je <span class="hl">řídicí systém</span>.',
+        "ctrl_btn": "Řídicí systémy", "ctrl_btn2": "Software a vizualizace",
+        "ctrl_alt": "Rozváděč s řídicím systémem SIMATIC",
+        "ctrl_caption": "Rozváděče, PLC a operátorská pracoviště – navrženo, naprogramováno a oživeno u nás.",
+        "svc_eyebrow": "Činnosti", "svc_h": "Celý životní cyklus zařízení pod jednou střechou.",
+        "world_eyebrow": "Mezinárodní působnost", "world_h": 'Z Ostravy do <span class="hl">devíti zemí</span> Evropy.',
+        "q_eyebrow": "Kvalita", "q_h": "Certifikovaný integrovaný systém managementu", "q_badges_alt": "Certifikační značky IQNet a CQS",
+        "energo_eyebrow": "Skupina PROSPECT", "energo_alt": "Logo PROSPECT ENERGO",
+        # podstránky
+        "crumb_home": "Úvod", "crumb_fields": "Obory", "crumbs_aria": "Drobečková navigace",
+        "specs": "specializace", "ref_actions": "referenčních akcí", "toc": "Na této stránce", "toc_aria": "Obsah stránky",
+        "inquiry": "Poptat řešení", "refs_eyebrow": "Reference", "refs_h": "Vybrané reference – {}",
+        "all_refs": "Všechny reference", "prev_field": "← Předchozí obor", "next_field": "Další obor →", "pager_aria": "Další obory",
+        "actions": "akcí", "photo": "fotografie",
+        "svc_title": "Činnosti", "refs_title": "Reference", "grants_title": "Dotované projekty",
+        "listed": "uvedených akcí", "fields_n": "oborů", "countries_n": "zemí",
+        "search_label": "Hledat v referencích", "search_ph": "Hledat – např. ČOV, Prazdroj, Třinec, kogenerační…",
+        "filter_aria": "Filtr podle oboru", "all": "Vše", "other_refs": "Další reference",
+        "empty": 'Nic jsme nenašli. Zkuste jiný výraz, nebo nám <a href="#kontakt">napište</a>.',
+        "grant_eu": "EU", "recipient": "Příjemce", "corecipient": "Spolupříjemce", "duration": "Doba řešení",
+        "grant_pdf": "Publicita projektu (PDF)", "grant_alt": "Publicita projektu",
+        "nf_title": "Stránka nenalezena", "nf_lead": "Požadovaná stránka neexistuje nebo byla přesunuta. Nový web má jednodušší strukturu – zkuste některý z oborů.",
+        "nf_back": "Zpět na úvod",
+        # HMI panel
+        "hmi": {"title": "ČERPACÍ STANICE", "online": "PLC-01 · ONLINE", "app": "HMI · Vodárenský dispečink",
+                "well": "VRT V-1", "filter": "FILTR F-1", "res": "VDJ-1", "pump1": "Č-101", "pump2": "Č-102",
+                "mode": "Režim", "auto": "Automat", "run": "Chod", "stby": "Záloha",
+                "trend": "TREND FT-201 · m³/h", "note": "Ilustrační vizualizace řízeného procesu",
+                "cap1": "(120 m³)", "cap2": "(450 m³)"},
+    },
+    "en": {
+        "html_lang": "en", "og_locale": "en_GB",
+        "skip": "Skip to content", "home_aria": "home page",
+        "nav": ["Home", "Fields", "Services", "References", "EU projects", "Contact"],
+        "nav_aria": "Main navigation", "menu_open": "Open menu",
+        "other_lang": "CZ", "other_lang_name": "Čeština", "other_hreflang": "cs",
+        "contact_eyebrow": "Contact", "contact_h": "Let's control your technology together.",
+        "contact_lead": "Design, supply, programming and service. Get in touch – we will be glad to discuss your project.",
+        "phone": "Phone", "email": "E-mail – office", "address": "Address",
+        "company": "Company", "ident": "Company ID", "ic": "Reg. No.", "dic": "VAT No.", "fax": "Fax",
+        "where": "How to find us", "postcode": "Postcode", "map": "Map",
+        "footer_about": "Engineering and design company in the field of investment construction since 1991.",
+        "f_fields": "Fields", "f_services": "Services", "f_company": "Company",
+        "f_refs": "References", "f_grants": "EU-funded projects", "f_cert": "ISM certification",
+        "f_other": "Česká verze", "to_top": "Back to top ↑", "lb_close": "Close", "lb_prev": "Previous", "lb_next": "Next",
+        "cta_fields": "Our fields", "cta_refs": "References",
+        "hero_tags": ["PLC SIMATIC", "SCADA / visualisation", "I&amp;C", "Remote monitoring", "LV / HV electrical"],
+        "stats_aria": "PROSPECT in numbers", "clients_aria": "Selected clients", "clients_label": "We have worked for",
+        "about_eyebrow": "About us", "about_h": 'From design to remote monitoring. <span class="hl">Since 1991.</span>',
+        "strip_aria": "Examples of PROSPECT projects",
+        "fields_eyebrow": "Fields", "fields_h": "Five fields. One control logic.",
+        "fields_lead": "We automate technologies from water treatment plants to steelworks – always with our own design, software and service.",
+        "field_more": "More about this field", "selected_refs": "Selected references",
+        "ctrl_eyebrow": "Control systems &amp; software", "ctrl_h": 'At the heart of every technology is a <span class="hl">control system</span>.',
+        "ctrl_btn": "Control systems", "ctrl_btn2": "Software &amp; visualisation",
+        "ctrl_alt": "Switchboard with a SIMATIC control system",
+        "ctrl_caption": "Switchboards, PLCs and operator workstations – designed, programmed and commissioned by us.",
+        "svc_eyebrow": "Services", "svc_h": "The entire equipment life cycle under one roof.",
+        "world_eyebrow": "International projects", "world_h": 'From Ostrava to <span class="hl">nine countries</span> in Europe.',
+        "q_eyebrow": "Quality", "q_h": "Certified integrated management system", "q_badges_alt": "IQNet and CQS certification marks",
+        "energo_eyebrow": "PROSPECT group", "energo_alt": "PROSPECT ENERGO logo",
+        "crumb_home": "Home", "crumb_fields": "Fields", "crumbs_aria": "Breadcrumbs",
+        "specs": "specialisations", "ref_actions": "reference projects", "toc": "On this page", "toc_aria": "Page contents",
+        "inquiry": "Send an inquiry", "refs_eyebrow": "References", "refs_h": "Selected references – {}",
+        "all_refs": "All references", "prev_field": "← Previous field", "next_field": "Next field →", "pager_aria": "Other fields",
+        "actions": "projects", "photo": "photo",
+        "svc_title": "Services", "refs_title": "References", "grants_title": "EU-funded projects",
+        "listed": "listed projects", "fields_n": "fields", "countries_n": "countries",
+        "search_label": "Search references", "search_ph": "Search – e.g. WWTP, Pilsner, Třinec, CHP…",
+        "filter_aria": "Filter by field", "all": "All", "other_refs": "Other references",
+        "empty": 'Nothing found. Try another term, or <a href="#kontakt">write to us</a>.',
+        "grant_eu": "EU", "recipient": "Recipient", "corecipient": "Co-recipient", "duration": "Project period",
+        "grant_pdf": "Project publicity (PDF, Czech)", "grant_alt": "Project publicity",
+        "nf_title": "Page not found", "nf_lead": "The requested page does not exist or has been moved. Try one of our fields.",
+        "nf_back": "Back to home",
+        "hmi": {"title": "PUMPING STATION", "online": "PLC-01 · ONLINE", "app": "HMI · Water control centre",
+                "well": "WELL W-1", "filter": "FILTER F-1", "res": "RES-1", "pump1": "P-101", "pump2": "P-102",
+                "mode": "Mode", "auto": "Automatic", "run": "Run", "stby": "Standby",
+                "trend": "TREND FT-201 · m³/h", "note": "Illustrative visualisation of a controlled process",
+                "cap1": "(120 m³)", "cap2": "(450 m³)"},
+    },
+}
+
+# Globální stav pro právě generovaný jazyk (nastavuje build_language)
+DATA = F = L = None
+LANG = "cs"
+P = ""
 
 
 def e(text):
@@ -29,6 +158,11 @@ def e(text):
 
 def tel_href(num):
     return "tel:" + re.sub(r"[^\d+]", "", num)
+
+
+def other_lang_href(filename):
+    """Odkaz na stejnou stránku v druhém jazyce."""
+    return f"en/{filename}" if LANG == "cs" else f"../{filename}"
 
 
 # --------------------------------------------------------------------------
@@ -69,59 +203,59 @@ def icon(name, cls="ico"):
 def img(foto_id, alt, cls="", sizes="(max-width: 700px) 100vw, 50vw", eager=False):
     """Obrázek s náhledem (-sm) a velkou verzí. foto_id = název souboru bez přípony."""
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
-    return (f'<img class="{cls}" src="assets/img/foto/{foto_id}-sm.webp" '
-            f'srcset="assets/img/foto/{foto_id}-sm.webp 640w, assets/img/foto/{foto_id}.webp 1200w" '
+    return (f'<img class="{cls}" src="{P}assets/img/foto/{foto_id}-sm.webp" '
+            f'srcset="{P}assets/img/foto/{foto_id}-sm.webp 640w, {P}assets/img/foto/{foto_id}.webp 1200w" '
             f'sizes="{sizes}" alt="{e(alt)}" {load} decoding="async">')
+
+
+def short(t, n):
+    return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
 
 
 # --------------------------------------------------------------------------
 # Společné části: hlavička, menu, patička
 # --------------------------------------------------------------------------
-NAV = [
-    ("index.html", "Úvod", "uvod"),
-    ("index.html#obory", "Obory", "obory"),  # rozbalovací menu oborů
-    ("cinnosti.html", "Činnosti", "cinnosti"),
-    ("reference.html", "Reference", "reference"),
-    ("dotovane-projekty.html", "Dotované projekty", "dotace"),
-    ("#kontakt", "Kontakt", "kontakt"),
-]
-
-
-def header(active):
+def header(active, filename):
+    nav = L["nav"]
+    items = [
+        ("index.html", nav[0], "uvod"), ("index.html#obory", nav[1], "obory"),
+        ("cinnosti.html", nav[2], "cinnosti"), ("reference.html", nav[3], "reference"),
+        ("dotovane-projekty.html", nav[4], "dotace"), ("#kontakt", nav[5], "kontakt"),
+    ]
     obory_menu = "".join(
         f'<li><a href="{o["id"]}.html">{icon(o["ikona"])}<span><strong>{e(o["nazev"])}</strong>'
         f'<small>{e(o["perex"])}</small></span></a></li>' for o in DATA["obory"])
-    items = []
-    for href, label, key in NAV:
+    lis = []
+    for href, label, key in items:
         cur = ' aria-current="page"' if key == active else ""
         if key == "obory":
-            items.append(
+            lis.append(
                 f'<li class="has-mega"><button class="nav-link mega-toggle" aria-expanded="false" '
                 f'aria-controls="mega">{label}{icon("chevron", "ico chev")}</button>'
                 f'<div class="mega" id="mega"><ul>{obory_menu}</ul></div></li>')
         else:
-            items.append(f'<li><a class="nav-link" href="{href}"{cur}>{label}</a></li>')
+            lis.append(f'<li><a class="nav-link" href="{href}"{cur}>{label}</a></li>')
     return f'''
-<a class="skip" href="#obsah">Přeskočit na obsah</a>
+<a class="skip" href="#obsah">{L["skip"]}</a>
 <header class="site-header" data-header>
   <div class="wrap header-in">
-    <a class="brand" href="index.html" aria-label="{e(F["nazev"])} – úvodní stránka">
-      <img src="assets/img/logo-prospect-white.png" alt="PROSPECT" width="157" height="24">
+    <a class="brand" href="index.html" aria-label="{e(F["nazev"])} – {L["home_aria"]}">
+      <img src="{P}assets/img/logo-prospect-white.png" alt="PROSPECT" width="157" height="24">
       <span class="brand-tag">{e(F["slogan"])}</span>
     </a>
-    <nav class="main-nav" aria-label="Hlavní navigace" data-nav>
-      <ul>{"".join(items)}</ul>
+    <nav class="main-nav" aria-label="{L["nav_aria"]}" data-nav>
+      <ul>{"".join(lis)}</ul>
       <div class="nav-extra">
-        <a class="lang" href="{e(F["web_en"])}" hreflang="en" lang="en">{icon("globe")}EN</a>
+        <a class="lang" href="{other_lang_href(filename)}" hreflang="{L["other_hreflang"]}" lang="{L["other_hreflang"]}" title="{L["other_lang_name"]}">{icon("globe")}{L["other_lang"]}</a>
         <a class="btn btn-sm btn-primary" href="{tel_href(F["telefony"][0])}">{icon("phone")}{e(F["telefony"][0])}</a>
       </div>
     </nav>
-    <button class="burger" aria-label="Otevřít menu" aria-expanded="false" data-burger><span></span><span></span><span></span></button>
+    <button class="burger" aria-label="{L["menu_open"]}" aria-expanded="false" data-burger><span></span><span></span><span></span></button>
   </div>
 </header>'''
 
 
-def footer():
+def footer(filename):
     tels = "".join(f'<a href="{tel_href(t)}">{e(t)}</a>' for t in F["telefony"])
     obory = "".join(f'<li><a href="{o["id"]}.html">{e(o["nazev"])}</a></li>' for o in DATA["obory"])
     cin = "".join(f'<li><a href="cinnosti.html#{c["id"]}">{e(c["nazev"])}</a></li>' for c in DATA["cinnosti"])
@@ -130,24 +264,24 @@ def footer():
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-main reveal">
-        <p class="eyebrow">Kontakt</p>
-        <h2 id="kontakt-h">Pojďme spolu řídit vaši technologii.</h2>
-        <p class="lead">Projekt, dodávka, program i servis. Ozvěte se nám – rádi s vámi probereme váš záměr.</p>
+        <p class="eyebrow">{L["contact_eyebrow"]}</p>
+        <h2 id="kontakt-h">{L["contact_h"]}</h2>
+        <p class="lead">{L["contact_lead"]}</p>
         <div class="contact-cards">
-          <a class="ccard" href="{tel_href(F["telefony"][0])}">{icon("phone")}<span><small>Telefon</small><strong>{e(F["telefony"][0])}</strong></span></a>
-          <a class="ccard" href="mailto:{e(F["email"])}">{icon("mail")}<span><small>E-mail – sekretariát</small><strong>{e(F["email"])}</strong></span></a>
-          <a class="ccard" href="{e(F["mapa_odkaz"])}" target="_blank" rel="noopener">{icon("pin")}<span><small>Adresa</small><strong>{e(F["ulice"])}, {e(F["mesto"])}</strong></span></a>
+          <a class="ccard" href="{tel_href(F["telefony"][0])}">{icon("phone")}<span><small>{L["phone"]}</small><strong>{e(F["telefony"][0])}</strong></span></a>
+          <a class="ccard" href="mailto:{e(F["email"])}">{icon("mail")}<span><small>{L["email"]}</small><strong>{e(F["email"])}</strong></span></a>
+          <a class="ccard" href="{e(F["mapa_odkaz"])}" target="_blank" rel="noopener">{icon("pin")}<span><small>{L["address"]}</small><strong>{e(F["ulice"])}, {e(F["mesto"])}</strong></span></a>
         </div>
       </div>
       <div class="contact-details reveal">
         <dl class="details">
-          <div><dt>Společnost</dt><dd><strong>{e(F["nazev"])}</strong><br>{e(F["ulice"])}<br>{e(F["mesto"])}<br>PSČ: {e(F["psc"])}</dd></div>
-          <div><dt>Identifikace</dt><dd>IČ: {e(F["ic"])}<br>DIČ: {e(F["dic"])}</dd></div>
-          <div><dt>Telefon</dt><dd class="stack">{tels}<span>Fax: {e(F["fax"])}</span></dd></div>
-          <div><dt>Kde nás najdete</dt><dd>{e(F["kancelar"])}</dd></div>
+          <div><dt>{L["company"]}</dt><dd><strong>{e(F["nazev"])}</strong><br>{e(F["ulice"])}<br>{e(F["mesto"])}<br>{L["postcode"]}: {e(F["psc"])}</dd></div>
+          <div><dt>{L["ident"]}</dt><dd>{L["ic"]}: {e(F["ic"])}<br>{L["dic"]}: {e(F["dic"])}</dd></div>
+          <div><dt>{L["phone"]}</dt><dd class="stack">{tels}<span>{L["fax"]}: {e(F["fax"])}</span></dd></div>
+          <div><dt>{L["where"]}</dt><dd>{e(F["kancelar"])}</dd></div>
         </dl>
         <div class="map">
-          <iframe title="Mapa – {e(F["nazev"])}" src="{e(F["mapa_embed"])}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe title="{L["map"]} – {e(F["nazev"])}" src="{e(F["mapa_embed"])}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -156,38 +290,41 @@ def footer():
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img src="assets/img/logo-prospect-white.png" alt="PROSPECT" width="157" height="24" loading="lazy">
-      <p class="muted">{e(F["slogan"]).capitalize()}. Projekčně-inženýrská organizace v oblasti investiční výstavby od roku 1991.</p>
+      <img src="{P}assets/img/logo-prospect-white.png" alt="PROSPECT" width="157" height="24" loading="lazy">
+      <p class="muted">{e(F["slogan"]).capitalize()}. {L["footer_about"]}</p>
       <p class="muted small">{e(F["rejstrik"])}</p>
     </div>
-    <nav aria-label="Obory"><h3>Obory</h3><ul>{obory}</ul></nav>
-    <nav aria-label="Činnosti"><h3>Činnosti</h3><ul>{cin}</ul></nav>
-    <nav aria-label="Další odkazy"><h3>Společnost</h3><ul>
-      <li><a href="reference.html">Reference</a></li>
-      <li><a href="dotovane-projekty.html">Dotované projekty</a></li>
-      <li><a href="index.html#kvalita">Certifikace ISM</a></li>
+    <nav aria-label="{L["f_fields"]}"><h3>{L["f_fields"]}</h3><ul>{obory}</ul></nav>
+    <nav aria-label="{L["f_services"]}"><h3>{L["f_services"]}</h3><ul>{cin}</ul></nav>
+    <nav aria-label="{L["f_company"]}"><h3>{L["f_company"]}</h3><ul>
+      <li><a href="reference.html">{L["f_refs"]}</a></li>
+      <li><a href="dotovane-projekty.html">{L["f_grants"]}</a></li>
+      <li><a href="index.html#kvalita">{L["f_cert"]}</a></li>
       <li><a href="{e(DATA["uvod"]["energo_web"])}" target="_blank" rel="noopener">PROSPECT ENERGO a.s.</a></li>
-      <li><a href="{e(F["web_en"])}" hreflang="en" lang="en">English version</a></li>
+      <li><a href="{other_lang_href(filename)}" hreflang="{L["other_hreflang"]}" lang="{L["other_hreflang"]}">{L["f_other"]}</a></li>
     </ul></nav>
   </div>
   <div class="wrap footer-bottom">
     <span>© <span data-year>{date.today().year}</span> {e(F["nazev"])}</span>
-    <a href="#top" class="to-top">Nahoru ↑</a>
+    <a href="#top" class="to-top">{L["to_top"]}</a>
   </div>
 </footer>
 <div class="lightbox" data-lightbox hidden>
-  <button class="lb-close" aria-label="Zavřít">×</button>
-  <button class="lb-prev" aria-label="Předchozí">‹</button>
+  <button class="lb-close" aria-label="{L["lb_close"]}">×</button>
+  <button class="lb-prev" aria-label="{L["lb_prev"]}">‹</button>
   <figure><img alt=""><figcaption></figcaption></figure>
-  <button class="lb-next" aria-label="Další">›</button>
+  <button class="lb-next" aria-label="{L["lb_next"]}">›</button>
 </div>'''
 
 
 def page(filename, title, description, active, body, body_class=""):
     full_title = title if "PROSPECT" in title else f"{title} | {F['nazev']}"
-    canonical = F["web"].rstrip("/") + "/" + ("" if filename == "index.html" else filename)
+    base = F["web"].rstrip("/") + "/"
+    page_path = "" if filename == "index.html" else filename
+    url_cs, url_en = base + page_path, base + "en/" + page_path
+    canonical = url_cs if LANG == "cs" else url_en
     doc = f'''<!DOCTYPE html>
-<html lang="cs" class="no-js">
+<html lang="{L["html_lang"]}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -196,84 +333,183 @@ def page(filename, title, description, active, body, body_class=""):
 <meta name="author" content="{e(F["nazev"])}">
 <meta name="theme-color" content="#050b14">
 <link rel="canonical" href="{e(canonical)}">
-<link rel="alternate" hreflang="en" href="{e(F["web_en"])}">
+<link rel="alternate" hreflang="cs" href="{e(url_cs)}">
+<link rel="alternate" hreflang="en" href="{e(url_en)}">
+<link rel="alternate" hreflang="x-default" href="{e(url_cs)}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
-<meta property="og:image" content="{e(F["web"].rstrip("/"))}/assets/img/og-image.jpg">
-<meta property="og:locale" content="cs_CZ">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<meta property="og:image" content="{e(base)}assets/img/og-image.jpg">
+<meta property="og:locale" content="{L["og_locale"]}">
+<link rel="icon" type="image/png" href="{P}assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap&subset=latin-ext" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v={VERSION}">
-<script src="assets/js/main.js?v={VERSION}" defer></script>
+<link rel="stylesheet" href="{P}assets/css/style.css?v={VERSION}">
+<script src="{P}assets/js/main.js?v={VERSION}" defer></script>
 </head>
 <body class="{body_class}" id="top">
-{header(active)}
+{header(active, filename)}
 <main id="obsah">
 {body}
 </main>
-{footer()}
+{footer(filename)}
 </body>
 </html>
 '''
-    (ROOT / filename).write_text(doc, encoding="utf-8")
+    out = LANGS[LANG]["out"]
+    out.mkdir(exist_ok=True)
+    (out / filename).write_text(doc, encoding="utf-8")
     return filename
+
+
+# --------------------------------------------------------------------------
+# HMI panel v úvodu – styl klasické SCADA vizualizace (tyrkysové pozadí,
+# šedé nádrže, bílé potrubí, zelené motory „M“, ventily, bílé displeje hodnot).
+# Hodnoty s atributem data-val a hladinu (data-level-rect) animuje main.js.
+# --------------------------------------------------------------------------
+def motor(x, y, on=True, cls=""):
+    fill = "#22c55e" if on else "#9aa5a8"
+    return (f'<g class="m-motor {cls}" transform="translate({x} {y})"><circle r="11" fill="{fill}" stroke="#123" stroke-width="1.2"/>'
+            f'<text y="4" text-anchor="middle" class="m-letter">M</text></g>')
+
+
+def valve(x, y, on=True, vertical=False):
+    fill = "#22c55e" if on else "#9aa5a8"
+    rot = ' rotate(90)' if vertical else ''
+    return (f'<g transform="translate({x} {y}){rot}"><path d="M-10 -7 L0 0 L-10 7 Z M10 -7 L0 0 L10 7 Z" fill="{fill}" stroke="#123" stroke-width="1"/>'
+            f'<path d="M0 0 V-12 M-5 -12 H5" stroke="#123" stroke-width="1.4"/></g>')
+
+
+def display(x, y, w, key, value, unit):
+    return (f'<g transform="translate({x} {y})"><rect width="{w}" height="18" class="s-disp"/>'
+            f'<text x="{w - 5}" y="13.5" text-anchor="end" class="s-val" data-val="{key}">{value}</text>'
+            f'<text x="{w + 5}" y="13.5" class="s-unit">{unit}</text></g>')
+
+
+def instrument(x, y, tag):
+    return (f'<g transform="translate({x} {y})"><circle r="11" class="s-inst"/>'
+            f'<text y="3.5" text-anchor="middle" class="s-inst-t">{tag}</text></g>')
+
+
+def tank(x, y, w, h, label, cap, idtag, show_name=True):
+    """Šedá válcová nádrž s kopulí, štítkem a kuželovým dnem."""
+    return f'''
+    <g class="s-tank">
+      <path d="M{x} {y + 12} Q{x + w / 2} {y - 10} {x + w} {y + 12} V{y + h} L{x + w / 2 + 10} {y + h + 22} H{x + w / 2 - 10} L{x} {y + h} Z" fill="url(#gSteel)" stroke="#2b3338" stroke-width="1.2"/>
+      <rect x="{x + 2}" y="{y + 16}" width="{w - 4}" height="14" fill="#fff" stroke="#2b3338" stroke-width=".8"/>
+      <text x="{x + w / 2}" y="{y + 27}" text-anchor="middle" class="s-id">{idtag}</text>
+      {f'<text x="{x + w / 2 - 6}" y="{y + h / 2 + 18}" text-anchor="middle" class="s-name">{label}</text>' if show_name else ""}
+      <text x="{x + w / 2}" y="{y + h / 2 + 30}" text-anchor="middle" class="s-cap">{cap if show_name else ""}</text>
+      <circle cx="{x + w / 2}" cy="{y + 44}" r="4" fill="none" stroke="#2b3338"/>
+    </g>'''
+
+
+def hmi_panel():
+    H = L["hmi"]
+    return f'''
+<div class="hmi" aria-hidden="true">
+  <div class="hmi-bar">
+    <span class="hmi-dot"></span><span>{H["online"]}</span>
+    <span class="hmi-title">{H["app"]}</span>
+    <span class="hmi-clock" data-clock>--:--:--</span>
+  </div>
+  <div class="hmi-screen">
+  <svg class="hmi-svg" viewBox="0 0 640 360">
+    <defs>
+      <linearGradient id="gSteel" x1="0" x2="1"><stop offset="0" stop-color="#6f7a80"/><stop offset=".35" stop-color="#b9c1c5"/><stop offset=".6" stop-color="#9aa4a9"/><stop offset="1" stop-color="#5e686d"/></linearGradient>
+      <linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fb3ff"/><stop offset="1" stop-color="#1565c0"/></linearGradient>
+      <clipPath id="cRes"><rect x="481" y="104" width="118" height="146"/></clipPath>
+    </defs>
+    <rect width="640" height="360" class="s-bg"/>
+    <text x="320" y="30" text-anchor="middle" class="s-title">{H["title"]}</text>
+
+    <!-- signálové vedení z PLC (zelená tečkovaná) -->
+    <g class="s-sig">
+      <path d="M232 66 H330 V258"/><path d="M232 74 H440 V68"/><path d="M232 58 H612 V60"/>
+    </g>
+    <g transform="translate(160 50)"><rect width="72" height="32" class="s-btn"/><text x="36" y="20" text-anchor="middle" class="s-btn-t">PLC-01</text><circle cx="64" cy="8" r="3.5" fill="#22c55e"/></g>
+
+    <!-- potrubí -->
+    <g class="s-pipe">
+      <path d="M85 262 V300 H360 V262"/>
+      <path d="M390 170 V90 H480"/>
+      <path d="M540 272 V320 H640"/>
+      <path d="M20 90 H40"/>
+    </g>
+    <g class="s-flow">
+      <path d="M85 262 V300 H360 V262"/>
+      <path d="M390 170 V90 H480"/>
+      <path d="M540 272 V320 H640"/>
+    </g>
+
+    <!-- zdroj (vrt) -->
+    {tank(40, 70, 90, 170, H["well"], H["cap1"], "1001")}
+    <rect x="116" y="160" width="10" height="76" fill="#1d2a30"/>
+    <rect x="117" y="190" width="8" height="45" fill="url(#gWater)"/>
+
+    <!-- čerpadla -->
+    <g transform="translate(190 300)">
+      <circle r="15" fill="url(#gSteel)" stroke="#2b3338"/>
+      <g class="impeller"><path d="M0-10 L3-2 L0 0 Z M10 0 L2 3 L0 0 Z M0 10 L-3 2 L0 0 Z M-10 0 L-2-3 L0 0 Z" fill="#123"/></g>
+      <path d="M0 -15 V-26" stroke="#2b3338" stroke-width="3"/>
+    </g>
+    {motor(190, 262, True)}
+    <text x="190" y="338" text-anchor="middle" class="s-lbl">{H["pump1"]}</text>
+    <rect x="170" y="342" width="40" height="13" class="s-state on"/><text x="190" y="352" text-anchor="middle" class="s-state-t">{H["run"]}</text>
+
+    <g transform="translate(270 300)">
+      <circle r="15" fill="url(#gSteel)" stroke="#2b3338"/>
+      <path d="M0 -15 V-26" stroke="#2b3338" stroke-width="3"/>
+    </g>
+    {motor(270, 262, False)}
+    <text x="270" y="338" text-anchor="middle" class="s-lbl">{H["pump2"]}</text>
+    <rect x="250" y="342" width="40" height="13" class="s-state"/><text x="270" y="352" text-anchor="middle" class="s-state-t">{H["stby"]}</text>
+    {valve(130, 300, True)}{valve(230, 300, True)}{valve(310, 300, False)}
+
+    <!-- filtr -->
+    <g>
+      <path d="M362 176 Q390 158 418 176 V236 L404 262 H376 L362 236 Z" fill="url(#gSteel)" stroke="#2b3338" stroke-width="1.2"/>
+      <rect x="364" y="188" width="52" height="13" fill="#fff" stroke="#2b3338" stroke-width=".8"/>
+      <text x="390" y="198" text-anchor="middle" class="s-id">F-1</text>
+      <text x="390" y="224" text-anchor="middle" class="s-name small">{H["filter"]}</text>
+    </g>
+    {instrument(330, 270, "PT")}
+    {display(290, 214, 46, "pressure", "4.20", "bar")}
+
+    {valve(440, 90, True)}
+    {instrument(440, 56, "FT")}
+    {display(455, 36, 56, "flow", "128.4", "m³/h")}
+
+    <!-- vodojem -->
+    {tank(480, 80, 120, 170, H["res"], H["cap2"], "1002", show_name=False)}
+    <g clip-path="url(#cRes)" opacity=".85"><rect x="481" y="160" width="118" height="90" fill="url(#gWater)" data-level-rect data-bottom="250" data-height="146"/></g>
+    <text x="540" y="196" text-anchor="middle" class="s-name">{H["res"]}</text>
+    <text x="540" y="208" text-anchor="middle" class="s-cap">{H["cap2"]}</text>
+    {instrument(612, 70, "LT")}
+    {display(560, 270, 46, "level", "72.0", "%")}
+    {motor(600, 320, True)}{valve(570, 320, True)}
+
+    <!-- režim -->
+    <g transform="translate(20 22)"><text class="s-lbl dark" y="0">{H["mode"]}</text>
+      <rect y="6" width="78" height="22" class="s-btn"/><text x="39" y="21" text-anchor="middle" class="s-btn-t">{H["auto"]}</text></g>
+    <circle cx="150" cy="262" r="5" class="s-lamp"/><circle cx="510" cy="68" r="5" class="s-lamp"/><circle cx="440" cy="125" r="5" class="s-lamp"/>
+  </svg>
+  <canvas class="hmi-trend" data-trend data-label="{e(H["trend"])}" height="70"></canvas>
+  </div>
+  <p class="hmi-note">{H["note"]}</p>
+</div>'''
 
 
 # --------------------------------------------------------------------------
 # Úvodní stránka
 # --------------------------------------------------------------------------
-HMI = '''
-<div class="hmi" aria-hidden="true">
-  <div class="hmi-bar">
-    <span class="hmi-dot"></span><span>PLC-01 · ONLINE</span>
-    <span class="hmi-title">HMI · Čerpací stanice</span>
-    <span class="hmi-clock" data-clock>--:--:--</span>
-  </div>
-  <svg class="hmi-svg" viewBox="0 0 520 300" role="img">
-    <defs>
-      <linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00bdf2" stop-opacity=".95"/><stop offset="1" stop-color="#0069aa" stop-opacity=".9"/></linearGradient>
-      <pattern id="gGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0v20" fill="none" stroke="rgba(120,180,255,.07)"/></pattern>
-    </defs>
-    <rect width="520" height="300" fill="url(#gGrid)"/>
-    <!-- zdroj / studna -->
-    <g class="hmi-label"><text x="22" y="40">VRT V-1</text></g>
-    <rect x="22" y="52" width="70" height="150" rx="6" class="hmi-tank"/>
-    <rect x="24" y="110" width="66" height="90" rx="4" fill="url(#gWater)" opacity=".55"/>
-    <!-- potrubí -->
-    <path d="M92 180 H170" class="pipe"/><path d="M92 180 H170" class="flow"/>
-    <path d="M230 180 H300 V90 H360" class="pipe"/><path d="M230 180 H300 V90 H360" class="flow"/>
-    <path d="M440 200 V250 H500" class="pipe"/><path d="M440 200 V250 H500" class="flow"/>
-    <!-- čerpadlo -->
-    <g transform="translate(200 180)">
-      <circle r="30" class="pump"/>
-      <g class="impeller"><path d="M0-20 L5-4 L0 0 Z M20 0 L4 5 L0 0 Z M0 20 L-5 4 L0 0 Z M-20 0 L-4-5 L0 0 Z" fill="#00bdf2"/></g>
-      <circle r="4" fill="#e6eef8"/>
-    </g>
-    <text x="178" y="235" class="hmi-tag">Č-101 <tspan class="ok">RUN</tspan></text>
-    <!-- ventil -->
-    <g transform="translate(300 135)"><path d="M-10-10 L10 10 M-10 10 L10-10" stroke="#3cf0a0" stroke-width="2"/><path d="M-10-10 V10 M10-10 V10" stroke="#3cf0a0" stroke-width="2" opacity=".5"/></g>
-    <!-- vodojem -->
-    <g class="hmi-label"><text x="360" y="40">VODOJEM VDJ-1</text></g>
-    <rect x="360" y="52" width="140" height="150" rx="8" class="hmi-tank"/>
-    <rect x="362" y="96" width="136" height="104" rx="6" fill="url(#gWater)" data-level-rect/>
-    <path d="M362 96 q17 -5 34 0 t34 0 t34 0 t34 0" class="wave" data-wave/>
-    <line x1="352" y1="70" x2="358" y2="70" class="tick"/><line x1="352" y1="110" x2="358" y2="110" class="tick"/><line x1="352" y1="150" x2="358" y2="150" class="tick"/><line x1="352" y1="190" x2="358" y2="190" class="tick"/>
-    <!-- čidla -->
-    <g class="sensor" transform="translate(130 150)"><circle r="13"/><text y="4">PT</text></g>
-    <g class="sensor" transform="translate(265 150)"><circle r="13"/><text y="4">FT</text></g>
-    <g class="sensor" transform="translate(430 30)"><circle r="13"/><text y="4">LT</text></g>
-  </svg>
-  <div class="hmi-values">
-    <div><small>Tlak PT-101</small><strong data-val="pressure">4.20</strong><em>bar</em></div>
-    <div><small>Průtok FT-201</small><strong data-val="flow">128.4</strong><em>m³/h</em></div>
-    <div><small>Hladina LT-301</small><strong data-val="level">72.0</strong><em>%</em></div>
-  </div>
-  <canvas class="hmi-trend" data-trend height="70"></canvas>
-  <p class="hmi-note">Ilustrační vizualizace řízeného procesu</p>
-</div>'''
+def hero_title(t):
+    # zvýrazní úvodní slova nadpisu (CZ „Řídicí systémy“, EN „Control systems“)
+    for word in ("Řídicí systémy", "Control systems"):
+        if word in t:
+            return e(t).replace(word, f'<span class="hl">{word}</span>', 1)
+    return e(t)
 
 
 def build_index():
@@ -285,11 +521,12 @@ def build_index():
     o_nas = "".join(f"<p>{e(p)}</p>" for p in U["o_nas"][:2])
     filozofie = e(U["o_nas"][2])
     dodavky = "".join(f"<p>{e(p)}</p>" for p in U["dodavky_text"])
+    q_open, q_close = ("„", "“") if LANG == "cs" else ("“", "”")
 
     cards = []
     for i, o in enumerate(DATA["obory"]):
         subs = "".join(f'<li><a href="{o["id"]}.html#{s["id"]}">{e(s["nazev"])}</a></li>' for s in o["sekce"])
-        subs = subs or f'<li><a href="{o["id"]}.html#reference">Vybrané reference</a></li>'
+        subs = subs or f'<li><a href="{o["id"]}.html#reference">{L["selected_refs"]}</a></li>'
         cards.append(f'''
       <article class="obor-card reveal" style="--d:{i * 70}ms">
         <a class="obor-link" href="{o["id"]}.html" aria-label="{e(o["nazev"])}"></a>
@@ -300,7 +537,7 @@ def build_index():
           <h3>{e(o["nazev"])}</h3>
           <p>{e(o["perex"])}</p>
           <ul class="obor-subs">{subs}</ul>
-          <span class="more">Více o oboru {icon("arrow")}</span>
+          <span class="more">{L["field_more"]} {icon("arrow")}</span>
         </div>
       </article>''')
 
@@ -310,18 +547,17 @@ def build_index():
     tech = "".join(
         f'<div class="tech reveal"><h4>{e(g["nazev"])}</h4><ul>' +
         "".join(f"<li>{e(x)}</li>" for x in g["polozky"]) + "</ul></div>" for g in rs["skupiny"])
-
     steps = "".join(
         f'<li class="reveal" style="--d:{i * 60}ms"><a href="cinnosti.html#{c["id"]}">'
         f'<span class="step-n">{i + 1:02d}</span>{icon(c["id"])}<strong>{e(c["nazev"])}</strong>'
         f'<small>{e(short(c["odstavce"][0], 110))}</small></a></li>'
         for i, c in enumerate(DATA["cinnosti"]))
-
     zeme = "".join(f"<li>{e(z)}</li>" for z in U["zeme"])
     certs = "".join(
-        f'<a class="cert reveal" href="{e(c["soubor"])}" target="_blank" rel="noopener">{icon("doc")}'
+        f'<a class="cert reveal" href="{P}{e(c["soubor"])}" target="_blank" rel="noopener">{icon("doc")}'
         f'<span><strong>{e(c["nazev"])}</strong><small>{e(c["popis"])}</small></span>{icon("external", "ico ext")}</a>'
         for c in U["certifikaty"])
+    tags = "".join(f"<li>{t}</li>" for t in L["hero_tags"])
 
     body = f'''
 <section class="hero">
@@ -332,50 +568,48 @@ def build_index():
       <h1>{hero_title(U["hero_nadpis"])}</h1>
       <p class="lead">{e(U["hero_text"])}</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#obory">Naše obory {icon("arrow")}</a>
-        <a class="btn btn-ghost" href="reference.html">Reference</a>
+        <a class="btn btn-primary" href="#obory">{L["cta_fields"]} {icon("arrow")}</a>
+        <a class="btn btn-ghost" href="reference.html">{L["cta_refs"]}</a>
       </div>
-      <ul class="hero-tags">
-        <li>PLC SIMATIC</li><li>SCADA / vizualizace</li><li>MaR</li><li>Dálkový dohled</li><li>Elektro NN / VN</li>
-      </ul>
+      <ul class="hero-tags">{tags}</ul>
     </div>
-    {HMI}
+    {hmi_panel()}
   </div>
 </section>
 
-<section class="stats" aria-label="PROSPECT v číslech">
+<section class="stats" aria-label="{L["stats_aria"]}">
   <div class="wrap stats-in">{stats}</div>
 </section>
 
-<section class="marquee" aria-label="Vybraní zákazníci">
-  <p class="marquee-label">Pracovali jsme pro</p>
+<section class="marquee" aria-label="{L["clients_aria"]}">
+  <p class="marquee-label">{L["clients_label"]}</p>
   <div class="marquee-track"><ul>{klienti}</ul><ul aria-hidden="true">{klienti}</ul></div>
 </section>
 
 <section class="section about" id="o-nas">
   <div class="wrap about-grid">
     <div class="reveal">
-      <p class="eyebrow">O společnosti</p>
-      <h2>Od projektu po dálkový dohled. <span class="hl">Od roku 1991.</span></h2>
+      <p class="eyebrow">{L["about_eyebrow"]}</p>
+      <h2>{L["about_h"]}</h2>
       {o_nas}
     </div>
     <div class="about-side reveal">
-      <blockquote class="quote"><p>„{filozofie}“</p></blockquote>
+      <blockquote class="quote"><p>{q_open}{filozofie}{q_close}</p></blockquote>
       <div class="about-domains">
         <p>{e(U["obory_text"])}</p>
         <ul>{"".join(f'<li><a href="{o["id"]}.html">{icon(o["ikona"])}{e(o["nazev"])}</a></li>' for o in DATA["obory"])}</ul>
       </div>
     </div>
   </div>
-  <div class="strip reveal" role="img" aria-label="Ukázky realizací PROSPECT"><img src="assets/img/pas-realizaci.webp" alt="" loading="lazy" width="2000" height="430"></div>
+  <div class="strip reveal" role="img" aria-label="{L["strip_aria"]}"><img src="{P}assets/img/pas-realizaci.webp" alt="" loading="lazy" width="2000" height="430"></div>
 </section>
 
 <section class="section" id="obory">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Obory</p>
-      <h2>Pět oborů. Jedna řídicí logika.</h2>
-      <p class="lead">Automatizujeme technologie od úpraven vod po ocelárny – vždy s vlastním projektem, programem a servisem.</p>
+      <p class="eyebrow">{L["fields_eyebrow"]}</p>
+      <h2>{L["fields_h"]}</h2>
+      <p class="lead">{L["fields_lead"]}</p>
     </div>
     <div class="obory-grid">{"".join(cards)}</div>
   </div>
@@ -385,19 +619,19 @@ def build_index():
   <div class="wrap">
     <div class="control-grid">
       <div class="reveal">
-        <p class="eyebrow">Řídicí systémy &amp; software</p>
-        <h2>Srdce každé technologie je <span class="hl">řídicí systém</span>.</h2>
+        <p class="eyebrow">{L["ctrl_eyebrow"]}</p>
+        <h2>{L["ctrl_h"]}</h2>
         <p class="lead">{e(ridici["odstavce"][0])}</p>
         <p>{e(software["odstavce"][2])}</p>
         <p>{e(ridici["odstavce"][2])}</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="srtp-a-elektro.html#ridici-systemy">Řídicí systémy {icon("arrow")}</a>
-          <a class="btn btn-ghost" href="cinnosti.html#software">Software a vizualizace</a>
+          <a class="btn btn-primary" href="srtp-a-elektro.html#ridici-systemy">{L["ctrl_btn"]} {icon("arrow")}</a>
+          <a class="btn btn-ghost" href="cinnosti.html#software">{L["ctrl_btn2"]}</a>
         </div>
       </div>
       <figure class="control-photo reveal">
-        {img("ridici-systemy-4", "Rozváděč s řídicím systémem SIMATIC", "", "(max-width: 900px) 100vw, 40vw")}
-        <figcaption><span class="hmi-dot"></span>Rozváděče, PLC a operátorská pracoviště – navrženo, naprogramováno a oživeno u nás.</figcaption>
+        {img("ridici-systemy-4", L["ctrl_alt"], "", "(max-width: 900px) 100vw, 40vw")}
+        <figcaption><span class="hmi-dot"></span>{L["ctrl_caption"]}</figcaption>
       </figure>
     </div>
     <h3 class="sub-h reveal">{e(rs["nadpis"])}</h3>
@@ -409,8 +643,8 @@ def build_index():
 <section class="section" id="cinnosti">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Činnosti</p>
-      <h2>Celý životní cyklus zařízení pod jednou střechou.</h2>
+      <p class="eyebrow">{L["svc_eyebrow"]}</p>
+      <h2>{L["svc_h"]}</h2>
       <p class="lead">{e(DATA["cinnosti_uvod"])}</p>
     </div>
     <ol class="steps">{steps}</ol>
@@ -421,8 +655,8 @@ def build_index():
 <section class="section world" id="zahranici">
   <div class="wrap world-grid">
     <div class="reveal">
-      <p class="eyebrow">Mezinárodní působnost</p>
-      <h2>Z Ostravy do <span class="hl">devíti zemí</span> Evropy.</h2>
+      <p class="eyebrow">{L["world_eyebrow"]}</p>
+      <h2>{L["world_h"]}</h2>
       <p class="lead">{e(U["zahranici_text"])}</p>
       <p class="muted">{e(U["prostredky_text"])}</p>
     </div>
@@ -433,10 +667,10 @@ def build_index():
 <section class="section quality" id="kvalita">
   <div class="wrap quality-grid">
     <div class="reveal">
-      <p class="eyebrow">Kvalita</p>
-      <h2>Certifikovaný integrovaný systém managementu</h2>
+      <p class="eyebrow">{L["q_eyebrow"]}</p>
+      <h2>{L["q_h"]}</h2>
       <p>{e(U["ism_text"])}</p>
-      <img class="badges" src="assets/img/certifikace.png" alt="Certifikační značky IQNet a CQS" width="122" height="43" loading="lazy">
+      <img class="badges" src="{P}assets/img/certifikace.png" alt="{L["q_badges_alt"]}" width="122" height="43" loading="lazy">
     </div>
     <div class="certs">{certs}</div>
   </div>
@@ -446,26 +680,17 @@ def build_index():
   <div class="wrap">
     <a class="energo-card reveal" href="{e(U["energo_web"])}" target="_blank" rel="noopener">
       <div>
-        <p class="eyebrow">Skupina PROSPECT</p>
+        <p class="eyebrow">{L["energo_eyebrow"]}</p>
         <h2>PROSPECT ENERGO a.s.</h2>
         <p>{e(U["energo_text"])}</p>
         <span class="more">prospect-energo.cz {icon("external")}</span>
       </div>
-      <img src="assets/img/prospect-energo.webp" alt="Logo PROSPECT ENERGO" loading="lazy" width="1000" height="230">
+      <img src="{P}assets/img/prospect-energo.webp" alt="{L["energo_alt"]}" loading="lazy" width="1000" height="230">
     </a>
   </div>
 </section>
 '''
     page("index.html", DATA["seo"]["titulek"], DATA["seo"]["popis"], "uvod", body, "home")
-
-
-def hero_title(t):
-    # zvýrazní slovo „Řídicí systémy“ v hlavním nadpisu
-    return e(t).replace("Řídicí systémy", '<span class="hl">Řídicí systémy</span>', 1)
-
-
-def short(t, n):
-    return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
 
 
 # --------------------------------------------------------------------------
@@ -475,8 +700,8 @@ def gallery(fotos, title):
     if not fotos:
         return ""
     return '<div class="gallery">' + "".join(
-        f'<a href="assets/img/foto/{f}.webp" data-lb="{e(title)}" class="g-item">'
-        f'{img(f, f"{title} – fotografie {i + 1}", "", "(max-width: 700px) 50vw, 25vw")}</a>'
+        f'<a href="{P}assets/img/foto/{f}.webp" data-lb="{e(title)}" class="g-item">'
+        f'{img(f, f"{title} – {L["photo"]} {i + 1}", "", "(max-width: 700px) 50vw, 25vw")}</a>'
         for i, f in enumerate(fotos)) + "</div>"
 
 
@@ -493,15 +718,23 @@ def ref_block(r, obor=None):
     uvod = "".join(f'<p class="muted">{e(p)}</p>' for p in r["uvod"])
     data_obor = f' data-obor="{obor}"' if obor else ""
     return (f'<article class="ref-block reveal"{data_obor} id="ref-{r["id"]}">'
-            f'<header><h3>{e(r["nazev"])}</h3><span class="badge">{count} akcí</span></header>'
+            f'<header><h3>{e(r["nazev"])}</h3><span class="badge">{count} {L["actions"]}</span></header>'
             f'{uvod}<div class="ref-groups">{"".join(groups)}</div></article>')
+
+
+def crumbs(*parts):
+    links = [f'<a href="index.html">{L["crumb_home"]}</a>']
+    for href, label in parts[:-1]:
+        links.append(f'<a href="{href}">{label}</a>')
+    links.append(f'<span aria-current="page">{parts[-1][1]}</span>')
+    return f'<nav class="crumbs" aria-label="{L["crumbs_aria"]}">' + "<span>/</span>".join(links) + "</nav>"
 
 
 def build_obor(o, idx):
     obory = DATA["obory"]
     prev_o, next_o = obory[idx - 1], obory[(idx + 1) % len(obory)]
     toc = "".join(f'<li><a href="#{s["id"]}">{e(s["nazev"])}</a></li>' for s in o["sekce"])
-    toc += '<li><a href="#reference">Vybrané reference</a></li>'
+    toc += f'<li><a href="#reference">{L["selected_refs"]}</a></li>'
     sections = "".join(f'''
     <section class="topic reveal" id="{s["id"]}">
       <span class="topic-n">{idx + 1}.{j + 1}</span>
@@ -517,32 +750,31 @@ def build_obor(o, idx):
 <section class="page-hero">
   <div class="page-hero-img">{img(o["cover"], "", "", "100vw", eager=True)}</div>
   <div class="wrap">
-    <nav class="crumbs" aria-label="Drobečková navigace"><a href="index.html">Úvod</a><span>/</span><a href="index.html#obory">Obory</a><span>/</span><span aria-current="page">{e(o["nazev"])}</span></nav>
+    {crumbs(("index.html#obory", L["crumb_fields"]), (None, e(o["nazev"])))}
     <span class="page-ico">{icon(o["ikona"])}</span>
     <h1>{e(o["nazev"])}</h1>
     <p class="lead">{e(o["perex"])}</p>
-    <div class="hero-meta"><span><strong>{len(o["sekce"]) or "—"}</strong> specializace</span><span><strong>{total}</strong> referenčních akcí</span></div>
+    <div class="hero-meta"><span><strong>{len(o["sekce"]) or "—"}</strong> {L["specs"]}</span><span><strong>{total}</strong> {L["ref_actions"]}</span></div>
   </div>
 </section>
 <div class="wrap page-layout">
-  <aside class="toc" aria-label="Obsah stránky"><p>Na této stránce</p><ul data-scrollspy>{toc}</ul>
-    <a class="btn btn-primary btn-sm" href="#kontakt">Poptat řešení {icon("arrow")}</a></aside>
+  <aside class="toc" aria-label="{L["toc_aria"]}"><p>{L["toc"]}</p><ul data-scrollspy>{toc}</ul>
+    <a class="btn btn-primary btn-sm" href="#kontakt">{L["inquiry"]} {icon("arrow")}</a></aside>
   <div class="page-content">
     <div class="intro reveal">{"".join(f'<p class="lead">{e(p)}</p>' for p in o["uvod"])}</div>
     {sections}
     <section class="refs" id="reference">
-      <div class="section-head reveal"><p class="eyebrow">Reference</p><h2>Vybrané reference – {e(o["nazev"])}</h2></div>
+      <div class="section-head reveal"><p class="eyebrow">{L["refs_eyebrow"]}</p><h2>{L["refs_h"].format(e(o["nazev"]))}</h2></div>
       {refs}
-      <a class="btn btn-ghost" href="reference.html?obor={o["id"]}">Všechny reference {icon("arrow")}</a>
+      <a class="btn btn-ghost" href="reference.html?obor={o["id"]}">{L["all_refs"]} {icon("arrow")}</a>
     </section>
-    <nav class="pager" aria-label="Další obory">
-      <a href="{prev_o["id"]}.html"><small>← Předchozí obor</small><strong>{e(prev_o["nazev"])}</strong></a>
-      <a href="{next_o["id"]}.html" class="next"><small>Další obor →</small><strong>{e(next_o["nazev"])}</strong></a>
+    <nav class="pager" aria-label="{L["pager_aria"]}">
+      <a href="{prev_o["id"]}.html"><small>{L["prev_field"]}</small><strong>{e(prev_o["nazev"])}</strong></a>
+      <a href="{next_o["id"]}.html" class="next"><small>{L["next_field"]}</small><strong>{e(next_o["nazev"])}</strong></a>
     </nav>
   </div>
 </div>'''
-    desc = short(" ".join(o["uvod"]), 155)
-    page(f'{o["id"]}.html', o["nazev"], desc, "obory", body)
+    page(f'{o["id"]}.html', o["nazev"], short(" ".join(o["uvod"]), 155), "obory", body)
 
 
 # --------------------------------------------------------------------------
@@ -552,7 +784,6 @@ def build_cinnosti():
     chips = "".join(f'<li><a href="#{c["id"]}">{icon(c["id"])}{e(c["nazev"])}</a></li>' for c in DATA["cinnosti"])
     secs = []
     for i, c in enumerate(DATA["cinnosti"]):
-        main_f = c["foto"][0] if c["foto"] else None
         secs.append(f'''
   <section class="activity reveal {'alt' if i % 2 else ''}" id="{c["id"]}">
     <div class="activity-text">
@@ -560,56 +791,56 @@ def build_cinnosti():
       <h2>{icon(c["id"])}{e(c["nazev"])}</h2>
       {"".join(f"<p>{e(p)}</p>" for p in c["odstavce"])}
     </div>
-    <div class="activity-media">{gallery(c["foto"], c["nazev"]) if main_f else ""}</div>
+    <div class="activity-media">{gallery(c["foto"], c["nazev"])}</div>
   </section>''')
     body = f'''
 <section class="page-hero slim">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Drobečková navigace"><a href="index.html">Úvod</a><span>/</span><span aria-current="page">Činnosti</span></nav>
-    <h1>Činnosti</h1>
+    {crumbs((None, L["svc_title"]))}
+    <h1>{L["svc_title"]}</h1>
     <p class="lead">{e(DATA["cinnosti_uvod"])}</p>
     <ul class="chips">{chips}</ul>
   </div>
 </section>
 <div class="wrap activities">{"".join(secs)}</div>'''
-    page("cinnosti.html", "Činnosti", DATA["cinnosti_uvod"], "cinnosti", body)
+    page("cinnosti.html", L["svc_title"], DATA["cinnosti_uvod"], "cinnosti", body)
 
 
 # --------------------------------------------------------------------------
 # Reference (s vyhledáváním a filtrem)
 # --------------------------------------------------------------------------
 def build_reference():
-    filters = ['<button class="chip is-active" data-filter="vse">Vše</button>'] + [
+    filters = [f'<button class="chip is-active" data-filter="vse">{L["all"]}</button>'] + [
         f'<button class="chip" data-filter="{o["id"]}">{icon(o["ikona"])}{e(o["nazev"])}</button>' for o in DATA["obory"]
-    ] + ['<button class="chip" data-filter="dalsi">Další reference</button>']
+    ] + [f'<button class="chip" data-filter="dalsi">{L["other_refs"]}</button>']
     blocks = []
     for o in DATA["obory"]:
         blocks.append(f'<h2 class="ref-obor" data-obor="{o["id"]}"><a href="{o["id"]}.html">{icon(o["ikona"])}{e(o["nazev"])}</a></h2>')
         blocks += [ref_block(r, o["id"]) for r in o["reference"]]
-    blocks.append('<h2 class="ref-obor" data-obor="dalsi">Další reference</h2>')
+    blocks.append(f'<h2 class="ref-obor" data-obor="dalsi">{e(DATA["dalsi_reference"]["nazev"])}</h2>')
     blocks.append(ref_block(DATA["dalsi_reference"], "dalsi"))
     total = sum(len(g["polozky"]) for o in DATA["obory"] for r in o["reference"] for g in r["skupiny"])
     total += sum(len(g["polozky"]) for g in DATA["dalsi_reference"]["skupiny"])
     body = f'''
 <section class="page-hero slim">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Drobečková navigace"><a href="index.html">Úvod</a><span>/</span><span aria-current="page">Reference</span></nav>
-    <h1>Reference</h1>
+    {crumbs((None, L["refs_title"]))}
+    <h1>{L["refs_title"]}</h1>
     <p class="lead">{e(DATA["reference_uvod"])}</p>
-    <div class="hero-meta"><span><strong data-count="{total}">{total}</strong> uvedených akcí</span><span><strong>5</strong> oborů</span><span><strong>9</strong> zemí</span></div>
+    <div class="hero-meta"><span><strong data-count="{total}">{total}</strong> {L["listed"]}</span><span><strong>5</strong> {L["fields_n"]}</span><span><strong>9</strong> {L["countries_n"]}</span></div>
   </div>
 </section>
 <div class="wrap ref-page" data-refs>
   <div class="ref-tools">
-    <label class="search">{icon("search")}<span class="sr">Hledat v referencích</span>
-      <input type="search" placeholder="Hledat – např. ČOV, Prazdroj, Třinec, kogenerační…" data-ref-search></label>
-    <div class="chips" role="group" aria-label="Filtr podle oboru">{"".join(filters)}</div>
+    <label class="search">{icon("search")}<span class="sr">{L["search_label"]}</span>
+      <input type="search" placeholder="{e(L["search_ph"])}" data-ref-search></label>
+    <div class="chips" role="group" aria-label="{L["filter_aria"]}">{"".join(filters)}</div>
     <p class="ref-count" aria-live="polite" data-ref-count></p>
   </div>
   <div class="ref-results">{"".join(blocks)}</div>
-  <p class="empty" data-ref-empty hidden>Nic jsme nenašli. Zkuste jiný výraz, nebo nám <a href="#kontakt">napište</a>.</p>
+  <p class="empty" data-ref-empty hidden>{L["empty"]}</p>
 </div>'''
-    page("reference.html", "Reference", DATA["reference_uvod"], "reference", body)
+    page("reference.html", L["refs_title"], DATA["reference_uvod"], "reference", body)
 
 
 # --------------------------------------------------------------------------
@@ -619,31 +850,31 @@ def build_dotace():
     D = DATA["dotace"]
     cards = "".join(f'''
   <article class="grant reveal">
-    <a class="grant-img" href="{e(p["soubor"])}" target="_blank" rel="noopener"><img src="{e(p["nahled"])}" alt="Publicita projektu {e(p["nazev"])}" loading="lazy"></a>
+    <a class="grant-img" href="{P}{e(p["soubor"])}" target="_blank" rel="noopener"><img src="{P}{e(p["nahled"])}" alt="{L["grant_alt"]} – {e(p["nazev"])}" loading="lazy"></a>
     <div>
-      <p class="eyebrow">{e(p["poskytovatel"])} · EU</p>
+      <p class="eyebrow">{e(p["poskytovatel"])} · {L["grant_eu"]}</p>
       <h2>{e(p["nazev"])}</h2>
       <p class="mono">{e(p["kod"])}</p>
       <p>{e(p["popis"])}</p>
       <p><strong>{e(p["financovani"])}</strong></p>
       <dl class="grant-meta">
-        <div><dt>Příjemce</dt><dd>{e(p["prijemce"])}</dd></div>
-        <div><dt>Spolupříjemce</dt><dd>{e(p["spoluprijemce"])}</dd></div>
-        <div><dt>Doba řešení</dt><dd>{e(p["doba"])}</dd></div>
+        <div><dt>{L["recipient"]}</dt><dd>{e(p["prijemce"])}</dd></div>
+        <div><dt>{L["corecipient"]}</dt><dd>{e(p["spoluprijemce"])}</dd></div>
+        <div><dt>{L["duration"]}</dt><dd>{e(p["doba"])}</dd></div>
       </dl>
-      <a class="btn btn-ghost" href="{e(p["soubor"])}" target="_blank" rel="noopener">{icon("doc")}Publicita projektu (PDF)</a>
+      <a class="btn btn-ghost" href="{P}{e(p["soubor"])}" target="_blank" rel="noopener">{icon("doc")}{L["grant_pdf"]}</a>
     </div>
   </article>''' for p in D["projekty"])
     body = f'''
 <section class="page-hero slim">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Drobečková navigace"><a href="index.html">Úvod</a><span>/</span><span aria-current="page">Dotované projekty</span></nav>
-    <h1>Dotované projekty</h1>
+    {crumbs((None, L["grants_title"]))}
+    <h1>{L["grants_title"]}</h1>
     <p class="lead">{e(D["uvod"])}</p>
   </div>
 </section>
 <div class="wrap grants">{cards}</div>'''
-    page("dotovane-projekty.html", "Dotované projekty", D["uvod"], "dotace", body)
+    page("dotovane-projekty.html", L["grants_title"], D["uvod"], "dotace", body)
 
 
 def build_404():
@@ -651,20 +882,24 @@ def build_404():
 <section class="page-hero slim notfound">
   <div class="wrap">
     <p class="mono err">ERR 404 · SIGNAL LOST</p>
-    <h1>Stránka nenalezena</h1>
-    <p class="lead">Požadovaná stránka neexistuje nebo byla přesunuta. Nový web má jednodušší strukturu – zkuste některý z oborů.</p>
+    <h1>{L["nf_title"]}</h1>
+    <p class="lead">{L["nf_lead"]}</p>
     <ul class="chips">{"".join(f'<li><a href="{o["id"]}.html">{icon(o["ikona"])}{e(o["nazev"])}</a></li>' for o in DATA["obory"])}</ul>
-    <p><a class="btn btn-primary" href="index.html">Zpět na úvod {icon("arrow")}</a></p>
+    <p><a class="btn btn-primary" href="index.html">{L["nf_back"]} {icon("arrow")}</a></p>
   </div>
 </section>'''
-    page("404.html", "Stránka nenalezena", "Stránka nenalezena.", "", body)
+    page("404.html", L["nf_title"], L["nf_title"], "", body)
 
 
+# --------------------------------------------------------------------------
+# Sitemap, robots, .htaccess
+# --------------------------------------------------------------------------
 def build_sitemap(files):
     base = F["web"].rstrip("/")
-    urls = "".join(
-        f"<url><loc>{base}/{'' if f == 'index.html' else f}</loc><lastmod>{date.today().isoformat()}</lastmod></url>"
-        for f in files)
+    urls = ""
+    for d in ("", "en/"):
+        for f in files:
+            urls += f"<url><loc>{base}/{d}{'' if f == 'index.html' else f}</loc><lastmod>{date.today().isoformat()}</lastmod></url>"
     (ROOT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n',
         encoding="utf-8")
@@ -697,15 +932,16 @@ REDIRECTS = {
     "srtp-reference": "reference.html#ref-srtp-reference", "silnoprouda-elektrotechnika": "reference.html#ref-silnoprouda-elektrotechnika",
     "trafostanice-reference": "reference.html#ref-trafostanice-reference",
 }
-for o in DATA["obory"]:
-    for s in o["sekce"]:
-        REDIRECTS.setdefault(s["id"], f'{o["id"]}.html#{s["id"]}')
 
 
-def build_htaccess():
+def build_htaccess(cs_data):
+    redirects = dict(REDIRECTS)
+    for o in cs_data["obory"]:
+        for s in o["sekce"]:
+            redirects.setdefault(s["id"], f'{o["id"]}.html#{s["id"]}')
     lines = ["# Vygenerováno skriptem build.py – neupravujte ručně, změny dělejte v REDIRECTS v build.py",
              "ErrorDocument 404 /404.html", "DirectoryIndex index.html", "RewriteEngine On", ""]
-    for old, new in REDIRECTS.items():
+    for old, new in redirects.items():
         lines.append(f"RewriteRule ^{re.escape(old)}/?$ /{new} [R=301,L,NE]")
     lines += ["", "<IfModule mod_expires.c>", "  ExpiresActive On",
               '  ExpiresByType image/webp "access plus 1 year"', '  ExpiresByType text/css "access plus 1 month"',
@@ -713,16 +949,30 @@ def build_htaccess():
     (ROOT / ".htaccess").write_text("\n".join(lines), encoding="utf-8")
 
 
-if __name__ == "__main__":
+# --------------------------------------------------------------------------
+def build_language(lang):
+    global DATA, F, L, LANG, P
+    LANG = lang
+    DATA = json.loads((ROOT / LANGS[lang]["data"]).read_text(encoding="utf-8"))
+    F, L, P = DATA["firma"], T[lang], LANGS[lang]["P"]
     build_index()
     for i, o in enumerate(DATA["obory"]):
         build_obor(o, i)
     build_cinnosti()
     build_reference()
     build_dotace()
-    build_404()
-    pages = ["index.html"] + [f'{o["id"]}.html' for o in DATA["obory"]] + \
+    if lang == "cs":
+        build_404()  # jedna stránka 404 pro celý web
+    return DATA
+
+
+if __name__ == "__main__":
+    cs = build_language("cs")
+    build_language("en")
+    LANG, F = "cs", cs["firma"]
+    pages = ["index.html"] + [f'{o["id"]}.html' for o in cs["obory"]] + \
             ["cinnosti.html", "reference.html", "dotovane-projekty.html"]
     build_sitemap(pages)
-    build_htaccess()
-    print("Hotovo – vygenerováno:", ", ".join(pages + ["404.html", "sitemap.xml", "robots.txt", ".htaccess"]))
+    build_htaccess(cs)
+    print("Hotovo – čeština:", len(pages) + 1, "stránek, angličtina (en/):", len(pages),
+          "stránek + sitemap.xml, robots.txt, .htaccess")

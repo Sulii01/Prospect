@@ -1,0 +1,1049 @@
+{
+  "_napoveda": "English content of the website. After editing run: python3 build.py (see poznámky.md)",
+  "firma": {
+    "nazev": "PROSPECT spol. s r.o.",
+    "kratky_nazev": "PROSPECT",
+    "slogan": "design and supply of automated systems",
+    "ulice": "Výstavní 2224/8",
+    "mesto": "Ostrava – Mariánské Hory",
+    "psc": "709 00",
+    "ic": "14616688",
+    "dic": "CZ14616688",
+    "telefony": [
+      "+420 596 616 500",
+      "+420 596 616 606"
+    ],
+    "fax": "+420 596 616 265",
+    "email": "prospect@prospect.cz",
+    "rejstrik": "The company is registered in the Commercial Register kept by the Regional Court in Ostrava, Section C, File 660.",
+    "kancelar": "Our offices are located in Ostrava-Mariánské Hory, near the Dům Energetiky building at the crossroads of Výstavní and Zelená streets, in the FITE a.s. building on the 4th floor.",
+    "mapa_embed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d41181.151670544685!2d18.264528!3d49.827011!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3cf44ccd3c20c474!2sProspect%20spol.%20S%20R.o.!5e0!3m2!1sen!2scz!4v1572269228667!5m2!1sen!2scz",
+    "mapa_odkaz": "https://www.google.com/maps/search/?api=1&query=V%C3%BDstavn%C3%AD+2224%2F8+Ostrava",
+    "web_en": "http://en.prospect.cz/",
+    "web": "https://www.prospect.cz/"
+  },
+  "seo": {
+    "titulek": "Investment construction of process technology systems | PROSPECT spol. s r.o.",
+    "popis": "We offer comprehensive services for the investment construction of process technology systems. Our expert teams ensure efficient and reliable project delivery."
+  },
+  "uvod": {
+    "hero_stitek": "Ostrava · since 1991",
+    "hero_nadpis": "Control systems and automation of process technology",
+    "hero_text": "An engineering and design company in the field of investment construction. We design, program, supply and service automated process systems – from the design stage all the way to remote monitoring.",
+    "cisla": [
+      {
+        "hodnota": 1991,
+        "pripona": "",
+        "popis": "year the company was founded"
+      },
+      {
+        "hodnota": 100,
+        "pripona": "+",
+        "popis": "projects designed every year"
+      },
+      {
+        "hodnota": 50,
+        "pripona": " %",
+        "popis": "almost half of them we also deliver ourselves"
+      },
+      {
+        "hodnota": 9,
+        "pripona": "",
+        "popis": "countries where we have completed projects"
+      }
+    ],
+    "o_nas": [
+      "PROSPECT spol. s r.o. operates as an engineering and design company in the field of investment construction, focused on turnkey supplies of automated process systems, building services, electrical equipment, instrumentation and control equipment and control systems.",
+      "PROSPECT spol. s r.o. was founded in 1991 and is registered in the Commercial Register at the Regional Court in Ostrava. Our structure of permanent employees, external specialists and proven partner companies enables us to offer and provide comprehensive services for project delivery – from the preparation of design documentation all the way to regular post-warranty inspections and maintenance of the operated equipment, including its remote administration and monitoring via radio or mobile networks and the internet.",
+      "The company's philosophy is based on a professional approach in technical matters and fairness in business relationships."
+    ],
+    "obory_text": "The company focuses mainly on the following fields:",
+    "dodavky_text": [
+      "The professional profile of our staff primarily covers the needs of our own general or final construction supplies, as well as the delivery of contracts based on design documentation provided by the customer.",
+      "In addition to design work, the activities of PROSPECT spol. s r.o. include developing user programs for control systems including their visualisation, technical supervision during construction, individual and comprehensive testing of the supplied equipment, preparation of inspection reports and operating manuals, operator training, and warranty and post-warranty service.",
+      "We also provide these services separately, according to the individual requirements of the client. Complete supplies covering civil, process and electrical works are delivered together with our long-term subcontractors with sufficient production and installation capacities.",
+      "Throughout the company's existence we have regularly prepared design documentation for more than 100 projects a year, and we subsequently deliver almost half of them ourselves."
+    ],
+    "zahranici_text": "Our activities are not limited to the Czech Republic – we have completed projects in Slovakia, Germany, Ukraine, Poland, Lithuania, Bulgaria, Croatia and Spain.",
+    "zeme": [
+      "Czech Republic",
+      "Slovakia",
+      "Germany",
+      "Ukraine",
+      "Poland",
+      "Lithuania",
+      "Bulgaria",
+      "Croatia",
+      "Spain"
+    ],
+    "prostredky_text": "To provide services of this scope, the company has the necessary technical and production resources.",
+    "ism_text": "PROSPECT spol. s r.o. has an integrated quality and environmental management system in place according to ČSN EN ISO 9001, ČSN EN ISO 14001 and ČSN OHSAS 18001.",
+    "certifikaty": [
+      {
+        "nazev": "ISM Policy",
+        "popis": "Integrated management system",
+        "soubor": "assets/docs/politika-ism.pdf"
+      },
+      {
+        "nazev": "ČSN EN ISO 9001",
+        "popis": "Quality management system",
+        "soubor": "assets/docs/csn-en-iso-9001.pdf"
+      },
+      {
+        "nazev": "ČSN EN ISO 14001",
+        "popis": "Environmental management system",
+        "soubor": "assets/docs/csn-en-iso-14001.jpg"
+      },
+      {
+        "nazev": "ČSN OHSAS 18001",
+        "popis": "Occupational health & safety management",
+        "soubor": "assets/docs/csn-ohsas-18001.jpg"
+      }
+    ],
+    "energo_text": "Since 2008, our subsidiary PROSPECT ENERGO a.s. has also been involved in the preparation and delivery of general and final supplies of process systems.",
+    "energo_web": "https://www.prospect-energo.cz",
+    "klienti": [
+      "OVAK a.s.",
+      "Plzeňský Prazdroj a.s.",
+      "EVRAZ VÍTKOVICE STEEL",
+      "ArcelorMittal Ostrava",
+      "Třinecké železárny",
+      "SmVaK Ostrava",
+      "Siemens",
+      "VÚHŽ a.s. Dobrá",
+      "OFZ, a.s. Istebné",
+      "Železiarne Podbrezová",
+      "Huta Częstochowa",
+      "ThyssenKrupp Steel Europe",
+      "TATRA TRUCK",
+      "BONATRANS GROUP",
+      "Vítkovice Heavy Machinery",
+      "ČEZ Aréna Ostrava",
+      "OKD",
+      "RWE Transgas",
+      "Veolia",
+      "City of Ostrava",
+      "Darkov Spa",
+      "Nestlé Holešov",
+      "Spolchemie",
+      "Radegast Brewery",
+      "Velké Popovice Brewery"
+    ]
+  },
+  "ridici_systemy": {
+    "nadpis": "Technologies we work with",
+    "text": "PLCs, visualisation, frequency converters, sensors and remote data transmission – we choose proven brands and respect the customer's standards.",
+    "skupiny": [
+      {
+        "nazev": "PLC – programmable controllers",
+        "polozky": [
+          "Siemens SIMATIC",
+          "Allen-Bradley",
+          "TECO",
+          "Mitsubishi"
+        ]
+      },
+      {
+        "nazev": "Visualisation & SCADA",
+        "polozky": [
+          "Siemens WinCC",
+          "Wonderware InTouch",
+          "Microsys Promotic"
+        ]
+      },
+      {
+        "nazev": "Frequency converters",
+        "polozky": [
+          "Siemens",
+          "Danfoss",
+          "ABB",
+          "Nord",
+          "Lenze"
+        ]
+      },
+      {
+        "nazev": "Sensors & analysers",
+        "polozky": [
+          "Siemens",
+          "Hach-Lange",
+          "Krohne",
+          "Endress+Hauser",
+          "WTW",
+          "Rosemount",
+          "JSP Nová Paka",
+          "BD Sensors"
+        ]
+      },
+      {
+        "nazev": "Remote transmission",
+        "polozky": [
+          "Radio modems",
+          "GSM/GPRS modems",
+          "CONEL",
+          "RACOM"
+        ]
+      },
+      {
+        "nazev": "Design tools",
+        "polozky": [
+          "EPLAN",
+          "AutoCAD",
+          "Word",
+          "Excel"
+        ]
+      }
+    ]
+  },
+  "obory": [
+    {
+      "id": "vodni-hospodarstvi",
+      "nazev": "Water management",
+      "ikona": "voda",
+      "perex": "Water sources, water treatment plants, pumping stations, drinking and process water distribution, and wastewater treatment plants.",
+      "cover": "cerpaci-stanice-a-distribuce-pitne-vody-2",
+      "uvod": [
+        "In water management technologies our activities cover water sources, water treatment plants, pumping stations and distribution systems for drinking water and industrial process water. We are also significantly involved in the design and construction of sewage pumping stations and wastewater treatment plants operated via water management control centres."
+      ],
+      "sekce": [
+        {
+          "id": "vodni-zdroje-a-upravny-vod",
+          "nazev": "Water sources and water treatment plants",
+          "odstavce": [
+            "We have helped to implement pumping from boreholes and wells and subsequent water treatment using wireless communication via water control centres we built at the wellfields and treatment plants of the Pilsner Urquell (Plzeň), Radegast and Velké Popovice breweries. We also provide controlled pumping from local sources and automation of water treatment for Ostravské vodárny a kanalizace a.s.",
+            "With distributed control systems interconnected by radio modems and GSM/GPRS modems, the available drinking water sources are used optimally and the treated water is stored in reservoirs.",
+            "The water treatment technologies we work with also include reverse osmosis, preparation and dosing of lime milk, sand filtration, chlorination systems, etc."
+          ],
+          "foto": [
+            "vodni-zdroje-a-upravny-vod-1",
+            "vodni-zdroje-a-upravny-vod-2",
+            "vodni-zdroje-a-upravny-vod-3",
+            "vodni-zdroje-a-upravny-vod-4"
+          ]
+        },
+        {
+          "id": "cerpaci-stanice-a-distribuce-pitne-vody",
+          "nazev": "Drinking water pumping stations and distribution",
+          "odstavce": [
+            "Supply and control of pumping station complexes and automatic booster stations (ATS) for delivering water to consumers are also part of our turnkey supplies. We are a major supplier of booster stations for the City of Ostrava and take part in the reconstruction of technically obsolete pressure stations in residential areas and in their remote monitoring using modern wireless communication technologies.",
+            "Using automation technology, we also provide distribution of treated water with optimised utilisation in the breweries of the Plzeňský Prazdroj a.s. group and from the sources of the water company OVAK a.s."
+          ],
+          "foto": [
+            "cerpaci-stanice-a-distribuce-pitne-vody-1",
+            "cerpaci-stanice-a-distribuce-pitne-vody-2",
+            "cerpaci-stanice-a-distribuce-pitne-vody-3",
+            "cerpaci-stanice-a-distribuce-pitne-vody-4"
+          ]
+        },
+        {
+          "id": "cerpaci-stanice-a-distribuce-technologicke-vody",
+          "nazev": "Process water pumping stations and distribution",
+          "odstavce": [
+            "We provide pumping of process water into the cooling circuits of thermally stressed parts, especially in metallurgical plants, using automation technology and measuring instruments – for example in secondary (ladle) steel treatment at the EVRAZ VÍTKOVICE STEEL and Huta Częstochowa steelworks. We implemented control of the fire water supply for the Pilsner Urquell brewery. In all cases this is done by industrial control systems linked to the higher level of plant control."
+          ],
+          "foto": [
+            "cerpaci-stanice-a-distribuce-technologicke-vody-1",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-2",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-3",
+            "cerpaci-stanice-a-distribuce-technologicke-vody-4"
+          ]
+        },
+        {
+          "id": "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice",
+          "nazev": "Wastewater treatment plants and sewage pumping stations",
+          "odstavce": [
+            "We take part in the reconstruction of existing and construction of new wastewater treatment plants (WWTPs) for major water companies such as OVAK, SmVaK Ostrava, VaK Vsetín and VaK Krnov, as well as for smaller municipal WWTPs of individual towns or factories. On some contracts we participate only in the design phase, on others we act as the supplier of complete parts of the WWTP and the related pumping stations on sewer mains.",
+            "We also carried out the reconstruction of the electrical part and deployment of control systems at the WWTPs of the Pilsner Urquell and Velké Popovice breweries.",
+            "With final supplies of electrical equipment and control systems we take part in the reconstruction of existing WWTPs in Poland and the construction of new WWTPs in Poland, Bulgaria, Lithuania and Croatia."
+          ],
+          "foto": [
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-1",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-2",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-3",
+            "cistirny-odpadnich-vod-a-kanalizacni-cerpaci-stanice-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "reference-v-oblasti-vodnich-zdroju-a-upraven-vod",
+          "nazev": "Water sources and water treatment plants",
+          "uvod": [
+            "We prepared design documentation for the electrical, I&C, process control and mechanical parts and took part in the reconstruction, intensification and modernisation of wellfields and drinking water treatment plants at the following locations:"
+          ],
+          "skupiny": [
+            {
+              "nazev": "Ostravské vodárny a kanalizace a.s. (Ostrava Waterworks and Sewerage)",
+              "polozky": [
+                "Dubí wellfield",
+                "Nová Ves wellfield",
+                "Bělský Les water source",
+                "Palesek water source",
+                "Pešatek water source",
+                "Důlňák water source",
+                "Ještěrka 1 and 2 water sources",
+                "Nová Ves water treatment plant, Ostrava"
+              ]
+            },
+            {
+              "nazev": "Severomoravské vodovody a kanalizace Ostrava a.s. (North Moravian Water and Sewerage)",
+              "polozky": [
+                "Podhradí water treatment plant",
+                "Vyšní Lhoty water treatment plant"
+              ]
+            },
+            {
+              "nazev": "Plzeňský Prazdroj, a.s. (Pilsner Urquell)",
+              "polozky": [
+                "Water treatment plant at the Pilsner Urquell brewery",
+                "Water sources for the Velké Popovice brewery",
+                "Wells by the Morávka river for the Radegast brewery",
+                "Level measurement Roudná",
+                "Dosing of HCl and H₂SO₄ acids at the water treatment plant",
+                "Construction of the new Habří water source"
+              ]
+            },
+            {
+              "nazev": "Other",
+              "polozky": [
+                "HYDROSPOR spol. s r.o. – MFK water abstraction in Prostřední Suchá"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cerpacich-stanic-a-distribuce-pitne-vody-1",
+          "nazev": "Drinking water pumping stations and distribution",
+          "uvod": [
+            "Design documentation for the electrical, I&C, process control and mechanical parts and participation in the reconstruction of pumping stations that pump drinking water into distribution networks supplying the population, or serve as automatic booster stations (ATS) increasing the pressure of water supplied to consumers."
+          ],
+          "skupiny": [
+            {
+              "nazev": "Ostravské vodárny a kanalizace a.s. (Ostrava Waterworks and Sewerage)",
+              "polozky": [
+                "PS Nová Ves water treatment plant, Ostrava",
+                "PS Bělský Les water source",
+                "PS Palesek water source",
+                "PS Pešatek water source",
+                "PS Důlňák water source",
+                "PS Ještěrka 1 and 2 water sources",
+                "More than 30 booster stations in the Ostrava distribution network"
+              ]
+            },
+            {
+              "nazev": "Plzeňský Prazdroj a.s.",
+              "polozky": [
+                "PS water treatment plant at the Pilsner Urquell brewery",
+                "Fire water booster station at the Pilsner Urquell brewery water treatment plant",
+                "PS by the Morávka river for the Radegast brewery",
+                "Booster station Hotel Harmony Ostrava"
+              ]
+            },
+            {
+              "nazev": "Other",
+              "polozky": [
+                "Bílá municipality – increasing water pumping capacity",
+                "TALPA-RPF, s.r.o. – water main reinforcement, Na Rovince street",
+                "TALPA-RPF, s.r.o. – Hulváky interceptor drain",
+                "STASPO, spol. s r.o. – Mošnov, water control node"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cerpacich-stanic-technologicke-vody",
+          "nazev": "Process water pumping stations",
+          "uvod": [
+            "Design documentation for the electrical, I&C, process control and mechanical parts and participation in the construction and reconstruction of pumping stations in metallurgical and engineering plants"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Cooling water PS for Ostrava Business Park – phase II",
+                "Reconstruction of dredging pumps at the Vítkovice power plant",
+                "Cooling water PS, Siemens Electric Motors Mohelnice",
+                "DHW pumping station at the Pilsner Urquell power plant",
+                "Storage tanks and DHW pumping station, Pilsner Urquell",
+                "Service water PS at the Velké Popovice brewery",
+                "Water pumping for the malt house at the Radegast brewery",
+                "Cooling water PS for the vacuum station at Válcovny trub Chomutov, Železárny Hrádek",
+                "Vacuum station cooling circuit PS for Materiálový a metalurgický výzkum s.r.o.",
+                "PS for cooling thermally stressed parts of electric arc furnace 22 at OFZ Istebné"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reference-v-oblasti-cistiren-odpadnich-vod-cov-a-kanalizacnich-cerpacich-stanic-cs",
+          "nazev": "Wastewater treatment plants (WWTP) and sewage pumping stations (PS)",
+          "uvod": [
+            "We prepared design documentation for the electrical, I&C, process control and mechanical parts and took part in the reconstruction, intensification and modernisation of WWTP technologies operated by water companies, municipalities or private owners at the following locations:"
+          ],
+          "skupiny": [
+            {
+              "nazev": "Selection for Ostravské vodárny a kanalizace a.s.",
+              "polozky": [
+                "Central WWTP Ostrava – reconstruction of the inlet PS",
+                "Central WWTP Ostrava – reconstruction of coarse pre-treatment",
+                "Central WWTP Ostrava – reconstruction of the mechanically pre-treated water PS",
+                "Central WWTP Ostrava – reconstruction of the blower station",
+                "Central WWTP Ostrava – reconstruction of CHP units",
+                "Central WWTP Ostrava – reconstruction of secondary clarifiers",
+                "Central WWTP Ostrava – reconstruction of the sludge centrifuge",
+                "Central WWTP Ostrava – installation of a slurry ice production line",
+                "Central WWTP Ostrava – reconstruction of return sludge pumps",
+                "Central WWTP Ostrava – reconstruction of sludge heat exchangers",
+                "Central WWTP Ostrava – Jan Šverma mine drainage",
+                "Central WWTP Ostrava – reconstruction of main circulation pumps",
+                "Central WWTP Ostrava – reconstruction of the switchgear room",
+                "WWTP Michálkovice – construction of a new WWTP",
+                "Sewage PS Hegerova, Stará Bělá 2 – construction of a new pumping station",
+                "Sewage PS Mexická – reconstruction of electrical installation",
+                "WWTP Heřmanice 1 – WWTP reconstruction",
+                "WWTP Heřmanice 2 – WWTP reconstruction",
+                "WWTP Alexander – construction of a new WWTP",
+                "PS on sewer networks – construction of new pumping stations"
+              ]
+            },
+            {
+              "nazev": "Selection for Severomoravské vodovody a kanalizace Ostrava a.s.",
+              "polozky": [
+                "WWTP Opava",
+                "WWTP Frýdek – Místek",
+                "WWTP Nový Jičín",
+                "WWTP Orlová",
+                "WWTP Rychvald",
+                "WWTP Kopřivnice",
+                "WWTP Frenštát pod Radhoštěm",
+                "WWTP Třinec",
+                "WWTP Karviná",
+                "WWTP Brušperk",
+                "WWTP Štramberk",
+                "WWTP Velké Hoštice",
+                "WWTP Bruntál",
+                "WWTP Václavovice",
+                "Pumping stations on sewer networks"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Vsetín, a.s.",
+              "polozky": [
+                "WWTP Zašová",
+                "WWTP Kelč",
+                "WWTP Valašské Meziříčí"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Hlučín, s.r.o.",
+              "polozky": [
+                "WWTP Hlučín",
+                "Pumping stations on sewer networks"
+              ]
+            },
+            {
+              "nazev": "Krnovské vodovody a kanalizace, s.r.o.",
+              "polozky": [
+                "WWTP Krnov",
+                "Pumping stations on sewer networks"
+              ]
+            },
+            {
+              "nazev": "Vodovody a kanalizace Kroměříž, a.s.",
+              "polozky": [
+                "WWTP Bystřice pod Hostýnem"
+              ]
+            },
+            {
+              "nazev": "Městské vodovody a kanalizace Úpice p.o.",
+              "polozky": [
+                "WWTP Úpice"
+              ]
+            },
+            {
+              "nazev": "WWTPs operated by their owners outside water companies",
+              "polozky": [
+                "WWTP Pilsner Urquell brewery",
+                "WWTP Velké Popovice brewery",
+                "WWTP Litovel sugar factory",
+                "WWTP Spolchemie Ústí nad Labem",
+                "WWTP Štěpánkovice",
+                "WWTP Dolní Životice",
+                "WWTP Štarnov",
+                "WWTP Sulov",
+                "WWTP Hamé Babice",
+                "WWTP Klášter brewery"
+              ]
+            },
+            {
+              "nazev": "WWTPs delivered abroad",
+              "polozky": [
+                "Poland: Wierzawice, Jaroslawsko, Wadowica, Rokietnice and others",
+                "Bulgaria: Sopot, Jablanica, Pirdop, Knezha, Panagyurishte",
+                "Lithuania: Salantai, Vydmantai",
+                "Croatia: Mali Lošinj"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teplo-a-klimatizace",
+      "nazev": "Heating and air conditioning",
+      "ikona": "teplo",
+      "perex": "Boiler rooms, heat exchanger and substations, air conditioning and HVAC including energy control centres.",
+      "cover": "kotelny-a-vymenikove-stanice-2",
+      "uvod": [
+        "Our contribution to the efficient and economical use of heat sources is the supply of heating plant equipment, controlled almost exclusively by SIEMENS control technology, building on the proven foundations of the original instrumentation & control (I&C) components and sensors by LANDIS & GYR, later LANDIS & STAEFA.",
+        "Together with the reconstruction of boiler rooms, heat exchanger and transfer stations and the installation of high-performance air conditioning and HVAC equipment, we also set up new control room workstations for the operators, equipped with computers and visualisation software."
+      ],
+      "sekce": [
+        {
+          "id": "kotelny-a-vymenikove-stanice",
+          "nazev": "Boiler rooms and heat exchanger stations",
+          "odstavce": [
+            "Ever since solid-fuel boiler rooms began to be replaced by gas-fired heat sources, we have been designing and supplying instrumentation and control systems for central and local boiler rooms. From supplying only I&C and electrical equipment we gradually moved on to supplying complete boiler room, heat exchanger station and substation technologies. Major heating projects with our participation include the heating systems of Darkov Spa in Karviná, the Hrabyně Rehabilitation Institute, the Siemens Electric Motors plant in Mohelnice, Jeseník Hospital, and heat exchanger stations in Ostrava, Bohumín, Orlová, Krnov, etc.",
+            "Besides these large projects, we also supply heating technology for medium and small boiler rooms of schools, public offices and residential buildings."
+          ],
+          "foto": [
+            "kotelny-a-vymenikove-stanice-1",
+            "kotelny-a-vymenikove-stanice-2",
+            "kotelny-a-vymenikove-stanice-3",
+            "kotelny-a-vymenikove-stanice-4"
+          ]
+        },
+        {
+          "id": "klimatizacni-zarizeni",
+          "nazev": "Air conditioning equipment",
+          "odstavce": [
+            "Together with control technology for heat sources, we supply air conditioning equipment for all kinds of commercial, residential and production spaces. We have supplied I&C equipment and control systems for the surgical wards of hospitals in Vsetín and Valašské Meziříčí, the air conditioning system of Komerční banka, Česká spořitelna and the Regional Court in Ostrava, as well as the operating building and ceremonial halls of the Ostrava crematorium.",
+            "We control industrial air conditioning and ventilation equipment in OKD mining plants as well as in the ČEZ Aréna sports hall in Ostrava."
+          ],
+          "foto": [
+            "klimatizacni-zarizeni-1",
+            "klimatizacni-zarizeni-2",
+            "klimatizacni-zarizeni-3",
+            "klimatizacni-zarizeni-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "oblast-tepelnych-hospodarstvi-a-klimatizacnich-zarizeni",
+          "nazev": "Heating plants and air conditioning equipment",
+          "uvod": [
+            "Design documentation for the electrical, I&C, process control and mechanical parts and participation in the construction and reconstruction of boiler rooms, heat sources and HVAC equipment for industrial companies, hospitals, healthcare facilities, schools, social care facilities, public amenities, housing associations and public administration."
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "City of Ostrava – Central WWTP boiler room reconstruction",
+                "BorsodChem MCHZ, s.r.o. – new steam boiler house",
+                "IVG Colbachini CZ, s.r.o. – heat exchanger station extension",
+                "Česko-slezská výrobní, a.s. – heating of the company premises",
+                "Siemens, s.r.o., Electric Motors plant Mohelnice – heating plant reconstruction, gas supply for the production site, waste heat recovery from compressors",
+                "Darkov Spa – heating plant reconstruction, control of heat sources including a new energy control centre",
+                "Bonatrans Group Bohumín – central heating of hall S13 of the central warehouse",
+                "Veolia Krnov – reconstruction of heat substations, modernisation of the I&C system",
+                "TŘINECKÉ ŽELEZÁRNY, a.s., Tube Rolling Mill – waste heat recovery from the rotary hearth furnace",
+                "ARMATURY Group a.s. Dolní Benešov – heating control of production halls",
+                "Jeseník Hospital – modernisation of the heating system",
+                "Hrabyně Social Services Centre (rehabilitation institute) – heating plant reconstruction including a heating control centre",
+                "Befra electronic s.r.o., Horní Suchá – gas supply for buildings, control of building boiler rooms, connection of air handling units",
+                "Ostrava Municipal Police, Třebovice station – heat source reconstruction",
+                "RPG building Ostrava, Nádražní street – heating and cooling source",
+                "Hotel Harmony Club Ostrava – heat exchanger station reconstruction",
+                "Darkov Mine – modernisation of the heat control system",
+                "Hotel Imperial Ostrava – heat exchanger station repair",
+                "Darkov Mine, Lazy Mine – heating of intake air",
+                "Frýdek-Místek Hospital – heating plant modernisation",
+                "TESCO Ostrava Hrabová – heat exchanger station, radio data transmission to the control centre",
+                "Darkov Mine – heating plant reconstruction",
+                "ČEZ Aréna Ostrava – heating plant reconstruction",
+                "SmP building reconstruction – boiler room and HVAC",
+                "Biocel Paskov – control of heat exchanger stations including a central control room",
+                "Hrabyně Rehabilitation Centre – HVAC reconstruction",
+                "Valašské Meziříčí Hospital – control of the boiler room and operating theatre air conditioning including an energy control centre",
+                "Ostravské tiskárny – heat exchanger station reconstruction including a central control room",
+                "Vsetín Hospital – control of the boiler room and operating theatre air conditioning including an energy control centre",
+                "MCHZ Ostrava heat exchanger stations – control of heat exchanger stations including an energy control centre",
+                "Reconstruction of local heat exchanger stations – dozens of further projects",
+                "Reconstruction of heat substations – dozens of further projects",
+                "Reconstruction and construction of gas boiler rooms – dozens of further projects"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hute-a-strojirenstvi",
+      "nazev": "Metallurgy and engineering",
+      "ikona": "hute",
+      "perex": "Electrical, I&C and control systems for secondary steel refining, rolling mills and engineering plants.",
+      "cover": "hute-a-strojirenstvi-1",
+      "uvod": [
+        "As part of modernising process technologies in metallurgical production, steelworks and related engineering plants, we mainly supply electrical, instrumentation & control equipment and control systems for secondary (ladle) steel refining as well as rolling mills and rolled material finishing lines.",
+        "Major contracts in our history include supplies for new vacuum degassing stations and secondary metallurgy equipment for the EVRAZ VÍTKOVICE STEEL and Huta Częstochowa (Poland) steelworks, and the deployment of an extensive distributed control system at EVRAZ VÍTKOVICE STEEL for the finishing line of the 3.5 KVARTO plate mill, carried out together with the reconstruction of control pulpits and power switchgear rooms.",
+        "We also took part in building continuous casting and secondary metallurgy equipment at ArcelorMittal Ostrava, and we cooperate closely with VÚHŽ a.s. Dobrá, to whom we supply software for industrial wire and cored-wire feeders and argon stirring equipment for domestic and foreign steelworks.",
+        "Projects delivered according to our designs and using control programs developed by us can also be found at Třinecké železárny a.s., Železiarne Podbrezová and OFZ, a.s. Istebné."
+      ],
+      "sekce": [],
+      "reference": [
+        {
+          "id": "oblast-hutnich-a-strojirenskych-provozu",
+          "nazev": "Metallurgical and engineering plants",
+          "uvod": [
+            "Design documentation for the electrical, I&C and process control parts and participation in the construction of new plants or the reconstruction of existing process lines or machines in heavy engineering plants"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "BONATRANS GROUP a.s. – new water management system for the rolling mill",
+                "BONATRANS GROUP a.s. – modernisation of pumping station No. 2",
+                "Recycling-kovové Odpady a.s. – new shredding line",
+                "AL INVEST Břidličná a.s. – cooling water flow control",
+                "Aludyne Czech s.r.o. – cooling water piping",
+                "Siemens, s.r.o. – compressor station extension",
+                "TATRA TRUCK a.s. – engine test bay, machine shop",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. – ladle furnace technology modification",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. – crane runway for the billet warehouse",
+                "Mondelez CR Biscuit Production s.r.o. – glycol mixture filtration",
+                "VÍTKOVICE STEEL, a.s. – installation of a CNC lathe",
+                "VÍTKOVICE STEEL, a.s. – replacement of the heavy section mill straightener",
+                "OFZ, a.s., Istebné – charging of additives into electric arc furnaces EAF 21 and EAF 22",
+                "OFZ, a.s., Istebné – rebuild of electric arc furnace EAF 21",
+                "ArcelorMittal Ostrava a.s. – reconstruction of the tandem furnace charging machine",
+                "OFZ, a.s., Istebné – rebuild of electric arc furnace EAF 22",
+                "Rotary hearth furnace at Válcovny trub Chomutov, a.s.",
+                "Železiarne Podbrezová a.s. – VD-type vacuum degassing unit",
+                "ArcelorMittal Ostrava a.s. – stockyard machine",
+                "ArcelorMittal Ostrava a.s. – thermal camera system for blast furnaces BF2 and BF3",
+                "KOHUT Třinec s.r.o. – preparation and dosing of lime milk",
+                "VÍTKOVICE STEEL, a.s. – sheet pile pairing line",
+                "ThyssenKrupp Steel Europe (Germany) – experimental coking oven",
+                "Walking beam furnace at Válcovny trub Chomutov, a.s.",
+                "VÍTKOVICE HEAVY MACHINERY a.s. – replacement of process water piping",
+                "VÍTKOVICE HEAVY MACHINERY a.s. – steelworks dedusting",
+                "VÍTKOVICE HEAVY MACHINERY a.s. – waste heat recovery from EAF No. 5",
+                "VD vacuum station at Válcovny trub Chomutov, a.s., Železárny Hrádek",
+                "VÍTKOVICE STEEL, a.s. – renewal of the testing facilities of the 3.5 Kvarto rolling mill",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. – tube rolling mill – reconstruction of Behringer saws",
+                "TŘINECKÉ ŽELEZÁRNY, a.s. – tube rolling mill – repair of hydraulic shears",
+                "VÍTKOVICE STEEL, a.s. – control and information system of the 3.5 Kvarto rolling mill",
+                "Huta Częstochowa (Poland) – reconstruction of the VD/O2 – 100 t vacuum station",
+                "VÍTKOVICE STEEL, a.s. – GOMO steelworks I, ISSM",
+                "Continuous caster No. 3 at Nová huť Ostrava – electric pipe heating",
+                "Continuous caster No. 3 at Nová huť Ostrava – process ventilation",
+                "Compressor station for the mini-mill at Nová huť Ostrava",
+                "Water management for the mini-mill at Nová huť Ostrava",
+                "Dniprodzerzhynsk metallurgical plant (Ukraine)",
+                "Water management for the VD 100 t vacuum station, Huta Częstochowa (Poland)"
+              ]
+            }
+          ]
+        }
+      ],
+      "foto": [
+        "hute-a-strojirenstvi-1",
+        "hute-a-strojirenstvi-2",
+        "hute-a-strojirenstvi-3",
+        "hute-a-strojirenstvi-4"
+      ]
+    },
+    {
+      "id": "plynova-zarizeni",
+      "nazev": "Gas equipment",
+      "ikona": "plyn",
+      "perex": "Gas regulating and transfer stations, gas holders, compressor stations and CHP units.",
+      "cover": "zarizeni-distribucni-plynarenske-soustavy-2",
+      "uvod": [
+        "In this field we take part in the design and supply of electrical and I&C parts for gas equipment associated with distribution and gas regulating stations of RWE Transgas on the one hand, and for gas systems of wastewater treatment plants and degassing stations at OKD mines on the other."
+      ],
+      "sekce": [
+        {
+          "id": "zarizeni-distribucni-plynarenske-soustavy",
+          "nazev": "Gas distribution system equipment",
+          "odstavce": [
+            "Gas regulating stations reducing pressure from extra-high to high and medium pressure at the underground gas storage facility in Štramberk, the node regulating stations in Ostrava-Děhylov and the regulating station for the Hyundai plant in Nošovice were built in their electrical, I&C and process control parts according to our designs, and we also played a significant role in their construction. The same applies to metering nodes of the gas distribution system that are remotely monitored. During project delivery we handle interfaces to separately supplied local subsystems of foreign suppliers such as RMG, ARGUS and SIEGER, and we provided communication links for fiscal and operational metering of the ELSTER and ELCOR systems – all connected to telemetry stations for remote monitoring and control of the station."
+          ],
+          "foto": [
+            "zarizeni-distribucni-plynarenske-soustavy-1",
+            "zarizeni-distribucni-plynarenske-soustavy-2",
+            "zarizeni-distribucni-plynarenske-soustavy-3",
+            "zarizeni-distribucni-plynarenske-soustavy-4"
+          ]
+        },
+        {
+          "id": "plynojemy-a-kompresorove-stanice-plynu",
+          "nazev": "Gas holders and gas compressor stations",
+          "odstavce": [
+            "We equip these facilities at wastewater treatment plants in their electrical and I&C parts with the components and sensors needed for the efficient use of biogas produced in WWTP digesters or bioreactors. As part of reconstructions of WWTP gas systems we take part in contracts covering gas compressor units and the connection and control of newly installed CHP units (mostly by TEDOM or MOTORGAS) linked to the operator's heating system."
+          ],
+          "foto": [
+            "plynojemy-a-kompresorove-stanice-plynu-1",
+            "plynojemy-a-kompresorove-stanice-plynu-2",
+            "plynojemy-a-kompresorove-stanice-plynu-3",
+            "plynojemy-a-kompresorove-stanice-plynu-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "oblast-plynovych-zarizeni",
+          "nazev": "Gas equipment",
+          "uvod": [
+            "Design documentation for the electrical, I&C and process control parts and participation in the construction of new gas facilities or the reconstruction of existing gas regulating and transfer stations, WWTP gas systems and biogas plants."
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Gas regulating station, Pilsner Urquell",
+                "Piaszcyna biogas plant (Poland)",
+                "Gas regulating station Kladno 7",
+                "Ultzama biogas plant (Spain)",
+                "Gas pressure reducing station Ruská – Mokrý Háj",
+                "Gas transfer and regulating station for the Nošovice industrial zone",
+                "Darkov Mine – installation of a CHP unit",
+                "Lazy Mine – installation of a CHP unit",
+                "Central WWTP – I&C repair of the gas system",
+                "CHP units at the Central WWTP Ostrava",
+                "CHP unit at WWTP Český Těšín",
+                "Gas holder reconstruction and CHP unit at WWTP Nový Jičín",
+                "CHP unit at WWTP Třinec",
+                "SmP a.s. dispatching system",
+                "CHP unit as part of the WWTP Orlová reconstruction",
+                "Reconstruction of the Děhylov II gas transfer station",
+                "Reconstruction of the WWTP Opava gas system",
+                "Reconstruction of the transfer station of the Štramberk underground gas storage"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "srtp-a-elektro",
+      "nazev": "Process control & electrical",
+      "ikona": "srtp",
+      "perex": "Process control systems, power distribution, energy and building electrical installations.",
+      "cover": "ridici-systemy-2",
+      "uvod": [
+        "Designing automation components and supplying them to control entire plants, interconnected process units or individual machines and mechanisms using PLCs and operator and dispatcher workstations has been one of our core tasks since the company was founded. Machinery equipped with control technology supplied and commissioned by us can be found in every field we work in."
+      ],
+      "sekce": [
+        {
+          "id": "ridici-systemy",
+          "nazev": "Control systems",
+          "odstavce": [
+            "We work mainly with Siemens SIMATIC programmable controllers, but at customers' request we have also delivered projects with Allen-Bradley, TECO and Mitsubishi PLCs.",
+            "Process sensors, process analysers and control actuators are sourced mainly from foreign companies such as Siemens, Hach-Lange, Krohne, Endress+Hauser, WTW and Rosemount, or from domestic suppliers such as JSP Nová Paka, BD Sensors and others. We consult the choice of sensors with the customer to meet their chosen standardisation. For economical speed control of drives we use frequency converters from proven manufacturers Siemens, Danfoss, ABB, Nord and Lenze.",
+            "We have implemented extensive control systems and control centres at EVRAZ VÍTKOVICE STEEL, in the breweries of Plzeňský Prazdroj a.s., at wastewater treatment plants of water companies, and at the sources and the central drinking water treatment plant for Ostrava operated by OVAK a.s.",
+            "For remote transmission we mainly use radio modems and GSM/GPRS modems by CONEL and RACOM."
+          ],
+          "foto": [
+            "ridici-systemy-1",
+            "ridici-systemy-2",
+            "ridici-systemy-3",
+            "ridici-systemy-4"
+          ]
+        },
+        {
+          "id": "provozni-rozvody-silnoproudu",
+          "nazev": "Power distribution",
+          "odstavce": [
+            "Besides designing new power switchboards at various voltage levels, we reconstruct existing low and high voltage switchgear with minimal outages and without the need for long-term plant shutdown. The same applies to the reconstruction of control pulpits in engineering plants. We have reconstructed entire switchgear rooms at EVRAZ Vítkovice Steel and at the Central WWTP in Ostrava.",
+            "We have experience with surge protection, trace heating of process piping, etc."
+          ],
+          "foto": [
+            "provozni-rozvody-silnoproudu-1",
+            "provozni-rozvody-silnoproudu-2",
+            "provozni-rozvody-silnoproudu-3",
+            "provozni-rozvody-silnoproudu-4"
+          ]
+        },
+        {
+          "id": "energetika",
+          "nazev": "Energy",
+          "odstavce": [
+            "We design and supply HV switchgear and transformer substations, including their connection to high-voltage supply systems. We can connect electricity generated by CHP units to the grid or provide backup power using battery emergency sources and diesel generators.",
+            "We supply power factor correction switchboards and, as part of control system supplies, we can provide quarter-hour peak demand monitoring.",
+            "We have delivered electrical designs for biogas plants (BGP) and final supplies including commissioning and remote administration of electrical equipment, process sensors and control systems for biogas plants in the Czech Republic, Spain and Poland."
+          ],
+          "foto": [
+            "energetika-1",
+            "energetika-2",
+            "energetika-3",
+            "energetika-4"
+          ]
+        },
+        {
+          "id": "stavebni-elektroinstalace",
+          "nazev": "Building electrical installations",
+          "odstavce": [
+            "As part of our contracts we also prepare design documentation for the electrical installations of operating buildings, office buildings, halls and workshops, and then supply and install them accordingly. We take the same approach to outdoor lighting. Interior and exterior lighting and internal power distribution designed by us can be found, for example, in the Vinohradská 230 office complex in Prague and in newly built wastewater treatment plants, water treatment plants and reconstructed facilities."
+          ],
+          "foto": [
+            "stavebni-elektroinstalace-1",
+            "stavebni-elektroinstalace-2",
+            "stavebni-elektroinstalace-3",
+            "stavebni-elektroinstalace-4"
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "id": "srtp-reference",
+          "nazev": "Process control – control systems and control rooms",
+          "uvod": [
+            "When deploying modern PLC-based control technology in all areas of our activity (see references by field), we have built, among other things, control room workstations equipped with computers and visualisation software for the following contracts:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "WWTP SPOLCHEMIE – control system replacement",
+                "OVAK a.s. – monitoring stations Na Heleně, Hornopolní",
+                "Aludyne Czech s.r.o. – software and visualisation work",
+                "Central WWTP Ostrava – control system modernisation",
+                "Central WWTP Ostrava – replacement of process stations",
+                "WWTP Krnov – reconstruction and intensification",
+                "Pilsner Urquell brewery – data acquisition from the plant's water management sensors",
+                "Radegast brewery – water management monitoring",
+                "Rychtář Hlinsko brewery – cold water treatment",
+                "Litovel brewery – brewing water production",
+                "Huta Częstochowa – reconstruction of the VD/O2 – 100 t vacuum station",
+                "Vítkovice power plant – sludge dewatering",
+                "WWTP Velké Popovice and water source monitoring",
+                "PERLA, bavlnářské závody a.s., Ústí nad Orlicí – well water treatment",
+                "Reconstruction of WWTP Nový Jičín",
+                "Reconstruction of WWTP Brušperk",
+                "Pilsner Urquell brewery – water treatment plant and water management monitoring",
+                "Pilsner Urquell brewery – capacity increase of the Roudná wellfield",
+                "WWTP Jablonné nad Orlicí",
+                "Reconstruction of the Hrabyně Rehabilitation Centre WWTP",
+                "Reconstruction and repair of the Nová Ves water treatment plant PS",
+                "Darkov Mine – heating plant reconstruction",
+                "Reconstruction of heat distribution at the Hrabyně Rehabilitation Centre",
+                "WWTP Brottewitz sugar factory (Germany)",
+                "Valašské Meziříčí Hospital – heating plant and operating theatre air conditioning",
+                "Darkov State Spa – heating plant",
+                "Vsetín Hospital – heating plant and operating theatre air conditioning"
+              ]
+            },
+            {
+              "popis": "We replace obsolete PLCs from various manufacturers with SIMATIC control systems and then extend these systems to monitor and automate further technology of the operator. Such control system reconstructions were carried out, for example, on these contracts:",
+              "polozky": [
+                "Central Wastewater Treatment Plant Ostrava – process control system reconstruction",
+                "Nová Ves water treatment plant, Ostrava – control system replacement",
+                "Vítkovické slévárny, spol. s r. o. – casting machine reconstruction"
+              ]
+            },
+            {
+              "popis": "In cooperation with Siemens, s.r.o. on control system replacements in the coke plant of ArcelorMittal Ostrava (dedusting, coke quenching, rope haulage, SHO experimental coke plant, desulphurisation), where we provided design documentation, installation and software work.",
+              "polozky": []
+            }
+          ]
+        },
+        {
+          "id": "silnoprouda-elektrotechnika",
+          "nazev": "Power engineering",
+          "uvod": [
+            "We have reconstructed switchgear without interrupting operation at:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "OVAK a.s. – sewage PS Mexická, power supply repair",
+                "Dopravní podnik Ostrava a.s. – power distribution at the Poruba depot",
+                "Dopravní podnik Ostrava a.s. – power distribution for the tram washing plant",
+                "Český Těšín microbrewery – manufacture and supply of switchboards",
+                "WWTP Krnov – reconstruction and intensification",
+                "Central WWTP Ostrava – reconstruction of inlet A switchgear",
+                "Central WWTP Ostrava – reconstruction of the boiler room switchgear",
+                "Central WWTP Ostrava – reconstruction of two blower station switchgears",
+                "Třinecké železárny – reconstruction of the Steel Foundry II switchgear",
+                "Central WWTP Ostrava – reconstruction of the mechanically pre-treated water PS switchgear",
+                "Central WWTP Ostrava – reconstruction of the switchgear on collector D"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "trafostanice-reference",
+          "nazev": "Transformer substations",
+          "uvod": [
+            "We designed transformer substations or their modifications and reconstructions, including connection to HV supply lines, on these contracts:"
+          ],
+          "skupiny": [
+            {
+              "polozky": [
+                "Ostrava Business Park – phase II",
+                "Nová Ves wellfield – transformer reconstruction",
+                "Central WWTP Ostrava – reconstruction of the LV switchgear of the main substation",
+                "Central WWTP Ostrava – reconstruction of the HV switchgear of the main substation",
+                "Reconstruction of the 22/0.4 kV substation for PK Raduň",
+                "22/0.4 kV substation for the Silesian Theatre Opava",
+                "Reconstruction of the 22/0.4 kV substation of the Palesek water source",
+                "Kiosk 22/0.4 kV substations of the Bělský Les water source",
+                "22/0.4 kV substation of the OVAK a.s. headquarters",
+                "22/0.4 kV substation in the underground utility tunnel in Ostrava",
+                "Replacement of transformers at WWTP Frýdek – Místek"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cinnosti_uvod": "Design, development, supply, installation, software and service – we cover the entire life cycle of the equipment, or individual services separately according to the client's requirements.",
+  "cinnosti": [
+    {
+      "id": "projektovani",
+      "nazev": "Design",
+      "odstavce": [
+        "Separately or as part of turnkey supplies, we prepare design documentation for construction at all stages – from studies and investment plans, documentation for zoning and building permits and tender documentation for public procurement, to construction documentation and as-built documentation. Preparing operating regulations and operating manuals is also an integral part of our design team's work.",
+        "In accordance with the Building Act, we negotiate the documentation with utility network administrators and with persons or organisations whose approval of the proposed technical solution is required.",
+        "Electrical, I&C and process control designs are prepared by our own design department with authorised engineers; documentation for other professions is provided with the support of partner companies, with us acting as the general designer.",
+        "We prepare designs electronically using EPLAN, AUTOCAD, WORD and EXCEL, and we have our own high-performance reprographic equipment."
+      ],
+      "foto": [
+        "projektovani-1",
+        "projektovani-2",
+        "projektovani-3",
+        "projektovani-4"
+      ]
+    },
+    {
+      "id": "vyvoj",
+      "nazev": "Development",
+      "odstavce": [
+        "Based on requests for non-standard solutions, or to meet individual customer wishes, we take part in the development of new devices, which are then verified in practical use. This also includes model workstations for verifying alternative process procedures and not yet proven operating methods, or alternative uses of modified process sensors and electronic devices for purposes other than those primarily intended by the manufacturer.",
+        "One result of our own development is FISHMONITOR, a device for continuous monitoring of drinking water quality based on computer evaluation of the activity of detection fish. In its extended version, the device can also wirelessly transmit images from the aquarium to control rooms or to any computer connected to the internet."
+      ],
+      "foto": [
+        "vyvoj-1",
+        "vyvoj-2",
+        "vyvoj-3",
+        "vyvoj-4"
+      ]
+    },
+    {
+      "id": "dodavky",
+      "nazev": "Supply",
+      "odstavce": [
+        "To deliver supplies based on our own or customer-provided designs, we have an implementation team that carries out general or final supplies and sub-supplies of construction projects in an engineering manner, based on contracts with selected subcontractors who have sufficient technical capacities and qualified specialists.",
+        "The implementation team also purchases process equipment and sensors from foreign or domestic suppliers and hands them over for installation on site."
+      ],
+      "foto": [
+        "dodavky-1",
+        "dodavky-2",
+        "dodavky-3",
+        "dodavky-4"
+      ]
+    },
+    {
+      "id": "montaze",
+      "nazev": "Installation",
+      "odstavce": [
+        "With our own site coordinators we provide professional management of construction and installation work by our partner installation companies according to the approved design documentation and prepared construction schedules. During installation we coordinate with other project participants and, together with the design team, take the operational measures needed for successful completion of the installation work.",
+        "We complete the installation with individual tests, followed by comprehensive testing and handover of the work for trial operation. We hand the work over to the customer with complete documentation of the supplied equipment, the required inspection reports, as-built documentation and operating regulations."
+      ],
+      "foto": [
+        "montaze-1",
+        "montaze-2",
+        "montaze-3",
+        "montaze-4"
+      ]
+    },
+    {
+      "id": "software",
+      "nazev": "Software",
+      "odstavce": [
+        "Our team of programmers within the implementation department develops control programs for the automation equipment used, creates visualisation programs for operator workstations and provides communication with other independent subsystems or the higher control level.",
+        "We program PLCs using the software of the individual PLC manufacturers. To display data on operator PCs we use visualisation software Siemens WinCC, Wonderware InTouch or Microsys Promotic. The choice of visualisation depends on the customer's wishes, the size of the application and the cost of the visualisation.",
+        "We design PLC systems as open, easily expandable systems able to communicate with the customer's other systems via a range of standard industrial protocols. We also transmit information from the controlled process not only to process PCs but also to computers in the local company network or the internet. We provide remote supervision with the option of remote software modifications via mobile networks.",
+        "We transmit process data and alarms from unmanned sites to central control rooms or to mobile phones via radio or mobile networks."
+      ],
+      "foto": [
+        "software-1",
+        "software-2",
+        "software-3",
+        "software-4"
+      ]
+    },
+    {
+      "id": "servis",
+      "nazev": "Service",
+      "odstavce": [
+        "We provide warranty and post-warranty service for all completed contracts, and we apply our knowledge of equipment diagnostics and parameterisation for customers also to familiar components supplied by third parties. We provide periodic inspections under contract and carry out pre-season and post-season checks on heating equipment."
+      ],
+      "foto": [
+        "servis-1",
+        "servis-2",
+        "servis-3",
+        "servis-4"
+      ]
+    },
+    {
+      "id": "obchodni-cinnost",
+      "nazev": "Trading",
+      "odstavce": [
+        "An important part of our business is also trading in components of control systems, controllers, sensors, control valves and other instrumentation and control equipment at attractive prices for the customer, as well as providing expert assistance to external organisations."
+      ],
+      "foto": [
+        "obchodni-cinnost-1",
+        "obchodni-cinnost-2",
+        "obchodni-cinnost-3",
+        "obchodni-cinnost-4"
+      ]
+    }
+  ],
+  "reference_uvod": "A list of ongoing and completed projects, organised by field. Use the search box or the field filter.",
+  "dalsi_reference": {
+    "id": "dalsi-reference",
+    "nazev": "Other references",
+    "uvod": [
+      "Here we list less common or otherwise interesting projects we have delivered:"
+    ],
+    "skupiny": [
+      {
+        "polozky": [
+          "Nitrogen production equipment for the ČSM Jih mine and for the VŠB – Technical University of Ostrava",
+          "Slurry storage and pumping stations at livestock farms in Návsí near Jablunkov and in Sázava",
+          "Nitrogen fertiliser warehouses Dobre Miasto and Człuchów in Poland",
+          "Nestlé Holešov – flavouring and colouring station of a candy production line",
+          "Installation of rain gauges with remote transmission for monitoring the Ostrava sewer network",
+          "Oncology, University Hospital Ostrava – Gamma Knife – design documentation",
+          "Sedlnice fish farm",
+          "Nová Karolína – communication networks for heating and cooling technology",
+          "Reconstruction of the Ostrava House of Culture",
+          "Pumping station for the skid training track of the AQUAVANA Safe Driving Centre",
+          "Biogas plant model – remote monitoring",
+          "Synchronisation of the fountain with the carillon on Masarykovo Square in Ostrava",
+          "Biomass input mixing equipment for the Klokočov, Bílovec and Pustějov biogas plants",
+          "Retractable bollards in the pedestrian zone in central Ostrava",
+          "Centrum underground utility tunnel in Ostrava – measuring and signalling equipment",
+          "Feed dispenser for a livestock farm in Ukraine",
+          "Pilsner Urquell brewery – trace heating of drinking and treated water pipelines",
+          "Digester model for research purposes of SmVaK Ostrava a.s."
+        ]
+      }
+    ]
+  },
+  "dotace": {
+    "uvod": "We also take part in projects co-financed by the European Union or other organisations.",
+    "projekty": [
+      {
+        "nazev": "Special controlled rotary drives for industrial units",
+        "kod": "CZ.01.1.02/0.0/0.0/16_084/0010144",
+        "popis": "The subject of the project is industrial research and experimental development of motion control of rotary drives of industrial equipment at a set speed, with the possibility of changing and synchronising them within the system, for optimal conditions of the production process. The main result of the project will be a prototype and utility model of a Mini digital control unit enabling precise setting of production process parameters with maximum electricity savings.",
+        "financovani": "It is co-financed by the European Union.",
+        "prijemce": "Projekt HTL s.r.o.",
+        "spoluprijemce": "PROSPECT spol. s r.o.",
+        "doba": "18 April 2018 – 17 April 2020",
+        "poskytovatel": "Ministry of Industry and Trade of the Czech Republic",
+        "soubor": "assets/docs/dotace-htl-publicita-2019.pdf",
+        "nahled": "assets/img/dotace-htl-nahled.webp"
+      }
+    ]
+  }
+}

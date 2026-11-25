@@ -8,6 +8,12 @@
   var doc = document.documentElement;
   doc.classList.remove("no-js");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // texty podle jazyka stránky (<html lang="cs|en">)
+  var LANG = doc.lang === "en" ? "en" : "cs";
+  var TXT = {
+    cs: { open: "Otevřít menu", close: "Zavřít menu", shown: "Zobrazeno {n} akcí", forq: " pro „{q}“", locale: "cs-CZ" },
+    en: { open: "Open menu", close: "Close menu", shown: "Showing {n} projects", forq: " for “{q}”", locale: "en-GB" }
+  }[LANG];
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
@@ -22,7 +28,7 @@
     burger.addEventListener("click", function () {
       var open = header.classList.toggle("is-open");
       burger.setAttribute("aria-expanded", open);
-      burger.setAttribute("aria-label", open ? "Zavřít menu" : "Otevřít menu");
+      burger.setAttribute("aria-label", open ? TXT.close : TXT.open);
       document.body.style.overflow = open ? "hidden" : "";
     });
     // zavření menu po kliknutí na odkaz (mobil)
@@ -92,14 +98,14 @@
   /* 4) HMI PANEL (ilustrační „živá“ data) ------------------------------------ */
   var clock = $("[data-clock]");
   if (clock) {
-    var tick = function () { clock.textContent = new Date().toLocaleTimeString("cs-CZ"); };
+    var tick = function () { clock.textContent = new Date().toLocaleTimeString(TXT.locale); };
     tick(); setInterval(tick, 1000);
   }
   var vals = { pressure: 4.2, flow: 128.4, level: 72 };
   var fields = {
     pressure: $('[data-val="pressure"]'), flow: $('[data-val="flow"]'), level: $('[data-val="level"]')
   };
-  var levelRect = $("[data-level-rect]"), wave = $("[data-wave]");
+  var levelRect = $("[data-level-rect]");
   var canvas = $("[data-trend]");
   var trendData = [];
   for (var i = 0; i < 60; i++) trendData.push(128 + Math.sin(i / 5) * 4);
@@ -112,24 +118,24 @@
     var ctx = canvas.getContext("2d");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, w, h);
-    ctx.strokeStyle = "rgba(120,180,255,.08)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(255,255,255,.12)"; ctx.lineWidth = 1;
     for (var g = 1; g < 4; g++) { ctx.beginPath(); ctx.moveTo(0, h * g / 4); ctx.lineTo(w, h * g / 4); ctx.stroke(); }
     var min = 115, max = 142;
     var pts = trendData.map(function (v, idx) {
       return [idx / (trendData.length - 1) * w, h - (v - min) / (max - min) * (h - 10) - 5];
     });
     var grad = ctx.createLinearGradient(0, 0, 0, h);
-    grad.addColorStop(0, "rgba(0,189,242,.35)"); grad.addColorStop(1, "rgba(0,189,242,0)");
+    grad.addColorStop(0, "rgba(255,235,59,.30)"); grad.addColorStop(1, "rgba(255,235,59,0)");
     ctx.beginPath(); ctx.moveTo(pts[0][0], h);
     pts.forEach(function (p) { ctx.lineTo(p[0], p[1]); });
     ctx.lineTo(w, h); ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
     ctx.beginPath();
     pts.forEach(function (p, idx) { idx ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); });
-    ctx.strokeStyle = "#00bdf2"; ctx.lineWidth = 1.8; ctx.stroke();
+    ctx.strokeStyle = "#ffeb3b"; ctx.lineWidth = 1.8; ctx.stroke();
     var last = pts[pts.length - 1];
-    ctx.beginPath(); ctx.arc(last[0] - 3, last[1], 3, 0, Math.PI * 2); ctx.fillStyle = "#3cf0a0"; ctx.fill();
-    ctx.fillStyle = "rgba(146,166,189,.8)"; ctx.font = "10px JetBrains Mono, monospace";
-    ctx.fillText("TREND FT-201 · m³/h", 8, 14);
+    ctx.beginPath(); ctx.arc(last[0] - 3, last[1], 3, 0, Math.PI * 2); ctx.fillStyle = "#39e75f"; ctx.fill();
+    ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.font = "bold 10px Arial, sans-serif";
+    ctx.fillText(canvas.getAttribute("data-label") || "TREND", 8, 14);
   }
 
   function updateHmi() {
@@ -141,10 +147,10 @@
     if (fields.flow) fields.flow.textContent = vals.flow.toFixed(1);
     if (fields.level) fields.level.textContent = vals.level.toFixed(1);
     if (levelRect) {
-      // nádrž: y 52–202 (výška 150) → plnění podle hladiny
-      var hh = 146 * vals.level / 100;
-      levelRect.setAttribute("y", 200 - hh); levelRect.setAttribute("height", hh);
-      if (wave) wave.setAttribute("transform", "translate(0 " + (200 - hh - 96) + ")");
+      // výška vody v nádrži podle hladiny (data-bottom = dno, data-height = max. výška)
+      var bottom = parseFloat(levelRect.getAttribute("data-bottom"));
+      var hh = parseFloat(levelRect.getAttribute("data-height")) * vals.level / 100;
+      levelRect.setAttribute("y", bottom - hh); levelRect.setAttribute("height", hh);
     }
     trendData.push(vals.flow); trendData.shift();
     drawTrend();
@@ -245,7 +251,7 @@
         var o = h.getAttribute("data-obor");
         h.hidden = !blocks.some(function (b) { return b.getAttribute("data-obor") === o && !b.hidden; });
       });
-      countEl.textContent = "Zobrazeno " + shown + " akcí" + (q ? " pro „" + input.value.trim() + "“" : "");
+      countEl.textContent = TXT.shown.replace("{n}", shown) + (q ? TXT.forq.replace("{q}", input.value.trim()) : "");
       emptyEl.hidden = shown > 0;
     };
 
